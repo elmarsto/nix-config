@@ -1,0 +1,36 @@
+{ lib, config, pkgs, ... }:
+let
+  unstable = config.lattice.unstable;
+  termPkgs = with pkgs; [
+    # android-studio
+    # autoconf
+    # automake
+    # boost
+    # clang
+    # cmake
+    # comby
+    # gnumake
+    # hexyl
+    # iperf
+    # just
+    # netperf
+    # ngrok
+    # ninja
+    # perf-tools
+    # valgrind
+  ];
+
+  guiPkgs = with pkgs; [
+    #godot
+    # hotspot
+    # unstable.lapce
+    # qcachegrind
+    #love
+  ];
+
+in
+{
+  imports = [ ./vscode.nix ];
+  config.home.packages = if config.lattice.gui.enable then termPkgs ++ guiPkgs else termPkgs;
+}
+
