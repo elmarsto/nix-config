@@ -45,6 +45,7 @@ hostname: {
     config = {
       allowUnfree = true;
     };
+    hostPlatform = lib.mkDefault "x86_64-linux";
   };
 
   nix.registry = (lib.mapAttrs (_: flake: {inherit flake;})) ((lib.filterAttrs (_: lib.isType "flake")) inputs);
