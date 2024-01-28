@@ -43,7 +43,7 @@
 
     ns = import ./nixos/configuration.nix;
     mk-system = hostname: nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs outputs;};
+      specialArgs = {inherit inputs outputs home-manager nixpkgs-unstable;};
       modules = [
         (ns hostname)
       ];
