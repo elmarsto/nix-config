@@ -41,9 +41,11 @@
     # pass to it, with each system as an argument
     forAllSystems = nixpkgs.lib.genAttrs systems;
 
+    lattice = ./lattice;
+
     ns = import ./nixos/configuration.nix;
     mk-system = hostname: nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs outputs home-manager nixpkgs-unstable;};
+      specialArgs = {inherit inputs outputs home-manager nixpkgs-unstable lattice;};
       modules = [
         (ns hostname)
       ];
@@ -51,7 +53,7 @@
     hm = import ./home-manager/home.nix;
     mk-home = hostname: home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-      extraSpecialArgs = {inherit inputs outputs nixpkgs-unstable;};
+      extraSpecialArgs = {inherit inputs outputs nixpkgs-unstable lattice;};
       modules = [
         (hm hostname)
       ];
