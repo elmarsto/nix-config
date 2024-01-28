@@ -1,17 +1,17 @@
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 hostname: {
-  inputs,
-  outputs,
-  lib,
   config,
-  pkgs,
+  inputs,
   lattice,
+  lib,
+  outputs,
+  pkgs,
   unstable,
   ...
 }: {
   imports = [
-    (lattice + /system/${hostname}/home.nix);
-    (lattice + /concern/home-manager.nix);
+    (lattice + /system/${hostname}/home.nix)
+    (lattice + /share/home-manager.nix)
   ];
 
   nixpkgs = {

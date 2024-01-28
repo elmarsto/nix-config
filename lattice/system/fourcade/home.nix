@@ -1,5 +1,4 @@
-{ lib, config, lattice, ... }: in
-{
+{ lib, config, lattice, ... }: {
   config = {
     home = {
       username = "lattice";

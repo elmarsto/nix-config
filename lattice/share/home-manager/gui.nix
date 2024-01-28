@@ -140,58 +140,57 @@ let
   '';
 
 
-  basePackages = with pkgs; [
-    (google-fonts.override {
-      fonts = [
-        "Raleway"
-        "Roboto Slab"
-        "Roboto Mono"
-        "Roboto Sans"
-        "Roboto Serif"
-        "Source Code Pro"
-        "Source Sans"
-        "Source Serif"
-        "Zen Loop"
-      ];
-    })
-    dconf
-    gnome.gnome-sound-recorder
-    gnome.nautilus
-    gnome.adwaita-icon-theme
-    gnome.dconf-editor
-    gnome.gnome-disk-utility
-    gnome.gnome-settings-daemon
-    gnome.gnome-tweaks
-    gnome.seahorse
-    gnomeExtensions.battery-health-charging
-    gnomeExtensions.clipboard-indicator
-    gnomeExtensions.compiz-windows-effect
-    gnomeExtensions.espresso
-    gnomeExtensions.gnome-40-ui-improvements
-    gnomeExtensions.vitals
-    google-chrome
-    gsettings-desktop-schemas
-    libinput
-    libreoffice-fresh
-    libsForQt5.okular
-    libsecret
-    lsix
-    notify-desktop
-    transmission-gtk
-    firefox
-    monaspace
-    wayland-utils
-    wezterm
-    wl-clipboard
-    xdg-utils
-    xorg.xeyes
-  ];
 in
 {
   dconf.enable = true;
   fonts.fontconfig.enable = true;
   home = {
-    packages = if config.lattice.gui.enable then basePackages else [ ];
+    packages = with pkgs; [
+      (google-fonts.override {
+        fonts = [
+          "Raleway"
+          "Roboto Slab"
+          "Roboto Mono"
+          "Roboto Sans"
+          "Roboto Serif"
+          "Source Code Pro"
+          "Source Sans"
+          "Source Serif"
+          "Zen Loop"
+        ];
+      })
+      dconf
+      gnome.gnome-sound-recorder
+      gnome.nautilus
+      gnome.adwaita-icon-theme
+      gnome.dconf-editor
+      gnome.gnome-disk-utility
+      gnome.gnome-settings-daemon
+      gnome.gnome-tweaks
+      gnome.seahorse
+      gnomeExtensions.battery-health-charging
+      gnomeExtensions.clipboard-indicator
+      gnomeExtensions.compiz-windows-effect
+      gnomeExtensions.espresso
+      gnomeExtensions.gnome-40-ui-improvements
+      gnomeExtensions.vitals
+      google-chrome
+      gsettings-desktop-schemas
+      libinput
+      libreoffice-fresh
+      libsForQt5.okular
+      libsecret
+      lsix
+      notify-desktop
+      transmission-gtk
+      firefox
+      monaspace
+      wayland-utils
+      wezterm
+      wl-clipboard
+      xdg-utils
+      xorg.xeyes
+    ];
     file.".wezterm.lua".source = weztermLua;
     file.".wezterm-prose.lua".source = weztermProseLua; # TODO: some cool thing that opens nvim in pencil mode in a new wezterm with this config
 

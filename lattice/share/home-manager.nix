@@ -1,4 +1,4 @@
-{}: {
+{ ... }: {
   imports = [
     ./home-manager/audio.nix
     ./home-manager/comms.nix

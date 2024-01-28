@@ -12,7 +12,7 @@ hostname: {
   # You can import other NixOS modules here
   imports = [
     (lattice + /system/${hostname}/configuration.nix)
-    (lattice + /concern/nixos.nix)
+    (lattice + /share/nixos.nix)
   ];
 
   nixpkgs = {
