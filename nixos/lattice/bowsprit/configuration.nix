@@ -1,6 +1,7 @@
 { config, lib, pkgs, modulesPath, ... }: let
   credential = builtins.readFile ./secret.fido2luks.id;
 in {
+  system.stateVersion = "22.05"; # Did you read the comment?
   config = {
       boot = {
         loader = {
@@ -31,14 +32,19 @@ in {
   };
   imports =
     [
-      ./bowsprit.backup.nix
-      ./bowsprit.network.nix
-      ./bowsprit.filesystem.nix
-      ./bowsprit.peripherals.nix
-      ./hardware-configuration.bowsprit.nix
-      # WARNING: do not remove next line because not-detected.nix is important
+      ../audio.nix
+      ../bluetooth.nix
+      ../cachix.nix
+      ../common.nix
+      ../console.nix
+      ../gui.nix
+      ./hardware-configuration.nix
+      ./network.nix
+      ../users.nix
+      ../virt.nix
+      ../backup.nix
+      ../yubikey.nix
       (modulesPath + "/installer/scan/not-detected.nix")
     ];
-
 
 }

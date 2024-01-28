@@ -1,5 +1,5 @@
 { config, pkgs, lib, ... }: let
-  mkBackup = import ./mk-backup.nix { lib = lib; repo = "lattice@localhost:/tmp/"; passCommand = "/etc/secrets/borgbackup.sh"; };
+  mkBackup = import ./util/mk-backup.nix { inherit lib; repo = "lattice@localhost:/tmp/"; passCommand = "/etc/secrets/borgbackup.sh"; };
 in {
   services = {
     borgbackup.jobs = mkBackup "system" {

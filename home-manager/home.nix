@@ -10,7 +10,7 @@ hostname: {
 }: {
   # You can import other home-manager modules here
   imports = [
-    ./lattice/${hostname}.nix
+    ./lattice/${hostname}/home.nix
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
 

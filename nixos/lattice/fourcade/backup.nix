@@ -1,14 +1,13 @@
 
 { lib, ... }: 
 let
-  mkBackup = import ./mk-backup.nix {
+  mkBackup = import ../util/mk-backup.nix {
     lib = lib;
     repo = "nope@localhost:/tmp";
     passCommand = "/etc/secrets/borgbackup.sh";
   };
 in
 {
-  imports = [ ./backup.nix ]; # TODO: passthru somehow? too sleepy
   services = {
     borgbackup.jobs = mkBackup "fourcade" { paths = ["/rheic"]; };
     btrbk.instances = {

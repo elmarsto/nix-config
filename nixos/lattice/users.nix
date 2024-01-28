@@ -1,5 +1,4 @@
-{ pkgs, ... }: let
-  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+{ pkgs, home-manager, ... }: let
   authorizedKeyFiles = [
     ./ssh/id_fourcade.pub
     ./ssh/id_bowsprit.pub
@@ -8,7 +7,7 @@
   ];
  in {
   nix.settings.trusted-users = [ "root" "lattice" ];
-  imports = [ <home-manager/nixos> ];
+  imports = [ home-manager.nixosModules ];
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
@@ -95,7 +94,7 @@
             #tshark
             unar
             unionfs-fuse
-            unstable.footswitch
+            footswitch
             unzip
             #virt-manager
             #virt-viewer

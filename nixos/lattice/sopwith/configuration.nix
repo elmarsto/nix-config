@@ -1,6 +1,7 @@
 { config, lib, pkgs, modulesPath, ... }: let
   credential = builtins.readFile ./secret.fido2luks.id;
 in {
+  system.stateVersion = "22.05"; # Did you read the comment?
   config = {
       hardware = {
         nvidia.modesetting.enable = true;
@@ -38,12 +39,23 @@ in {
   };
   imports =
     [
-      ./sopwith.backup.nix
-      ./sopwith.network.nix
-      ./sopwith.filesystem.nix
-      ./sopwith.peripherals.nix
-      ./hardware-configuration.sopwith.nix
-      # WARNING: do not remove next line because not-detected.nix is important
+      ../audio.nix
+      ../bluetooth.nix
+      ../cachix.nix
+      ../common.nix
+      ../console.nix
+      ../epson.nix
+      ../gui.nix
+      ../users.nix
+      ../virt.nix
+      ../wacom.nix
+      ../xbox.nix
+      ../yubikey.nix
+      ./backup.nix
+      ./filesystem.nix
+      ./hardware-configuration.nix
+      ./network.nix
+      ./peripherals.nix
       (modulesPath + "/installer/scan/not-detected.nix")
     ];
 

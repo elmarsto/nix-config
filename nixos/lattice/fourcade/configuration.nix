@@ -1,4 +1,5 @@
-{ config, lib, pkgs, modulesPath, ... }: {
+{ pkgs, modulesPath, lib, ... }: {
+  system.stateVersion = "22.05";
   config = {
       boot = {
         loader = {
@@ -15,17 +16,27 @@
       services.fwupd.enable = true;
       hardware.cpu.amd.updateMicrocode = true;
   };
-  # WARNING: do not remove imports thingy, not-detect is important
   imports =
     [
-      ./fourcade.backup.nix
-      ./fourcade.filesystem.nix
-      ./fourcade.graphics.nix
-      ./fourcade.kernel.nix
-      ./fourcade.network.nix
-      ./fourcade.peripherals.nix
+      ../audio.nix
+      ../backup.nix
+      ../bluetooth.nix
+      ../cachix.nix
+      ../common.nix
+      ../console.nix
+      ../epson.nix
+      ../gui.nix
+      ../rng.nix
+      ../users.nix
+      ../virt.nix
+      ../wacom.nix
+      ../xbox.nix
+      ../yubikey.nix
+      ./backup.nix
+      ./filesystem.nix
+      ./graphics.nix
+      ./kernel.nix
+      ./network.nix
       (modulesPath + "/installer/scan/not-detected.nix")
     ];
-
-
 }
