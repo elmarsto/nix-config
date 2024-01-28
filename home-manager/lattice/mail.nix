@@ -1,6 +1,5 @@
 { config, pkgs, lib, ... }:
 let
-  unstable = config.lattice.unstable;
   me = config.home.username;
   host = "100.69.208.95";
   fleshyPassword = "/etc/secrets/fleshy-email-password.sh";

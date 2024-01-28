@@ -1,6 +1,5 @@
-{ config, pkgs, lib, modulesPath, options, specialArgs }:
+{ config, pkgs, lib, modulesPath, options, specialArgs, ... }:
 let
-  unstable = config.lattice.unstable;
   guiPkgs = with pkgs; [ neovide ];
   termPkgs = with pkgs; [ neovim-remote ];
   vimConfig = ''

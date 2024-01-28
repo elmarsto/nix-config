@@ -1,11 +1,9 @@
 { lib, config, pkgs, ... }:
 let
-  unstable = config.lattice.unstable;
 in
 {
   programs.vscode = if !config.lattice.gui.enable then { } else {
     enable = false;
-    package = unstable.vscode;
   };
   # xdg = if !config.programs.vscode.enable then { } else {
   #   mimeApps = {

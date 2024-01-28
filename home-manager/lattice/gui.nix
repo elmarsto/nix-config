@@ -1,6 +1,5 @@
 { config, pkgs, lib, ... }:
 let
-  unstable = config.lattice.unstable;
   weztermLua = pkgs.writeText "wezterm" ''
     -- Pull in the wezterm API
     local wezterm = require 'wezterm'
@@ -88,7 +87,7 @@ let
     c.xcursor_theme = 'Adwaita'
     c.font = wezterm.font 'Monaspace Xenon'
     c.harfbuzz_features = { "ss01=0", "ss02=0", "ss03=0", "ss04=0", "ss05=0", "ss06", "ss07=0", "ss08=0", "calt", "dlig" }
-    c.font_size = 21 
+    c.font_size = 21
     c.font_rules = {
       {
         underline = 'Single',
@@ -136,7 +135,7 @@ let
     return c
   '';
   vimnom = pkgs.writeScriptBin "vimnom" ''
-    # murder the alt-<Space> gnome shortcut so vim can have it 
+    # murder the alt-<Space> gnome shortcut so vim can have it
     gsettings set org.gnome.desktop.wm.keybindings activate-window-menu []
   '';
 
@@ -288,7 +287,7 @@ let
     #sysprof
     transmission-gtk
     firefox
-    unstable.monaspace
+    monaspace
     # vimnom
     wayland-utils
     wezterm

@@ -1,6 +1,5 @@
 { config, pkgs, lib, ... }:
 {
-  options.lattice.unstable = lib.mkOption { };
   config = {
     home = {
       stateVersion = "23.11";
@@ -9,7 +8,6 @@
       '';
     };
     manual.html.enable = true;
-    lattice.unstable = import <nixos-unstable> { config.allowUnfree = true; };
     nixpkgs.config = {
       allowUnfree = true;
       nixpkgs.config.packageOverrides = pkgs: {

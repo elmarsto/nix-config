@@ -1,6 +1,5 @@
 { config, pkgs, ... }:
 let
-  unstable = config.lattice.unstable;
   termPkgs = with pkgs; [
     cachix
     comma

@@ -9,7 +9,6 @@ let
   dw = pkgs.writeScriptBin "dw" ''
     ${pkgs.diceware}/bin/diceware -d ' ' --no-caps $@
   '';
-  unstable = config.lattice.unstable;
   termPkgs = with pkgs; [
     #age
     #angle-grinder
@@ -55,7 +54,7 @@ let
     #traceroute
     #unar
     #unionfs-fuse
-    unstable.footswitch
+    footswitch
     unzip
     #websocat
     #whois
@@ -64,7 +63,7 @@ let
   ];
   guiPkgs = with pkgs; [
     #gsmartcontrol
-    unstable.bitwarden
+    bitwarden
   ];
 in
 {
@@ -207,7 +206,6 @@ in
       watson.enable = true;
       yazi = {
         enable = true;
-        package = unstable.yazi;
         enableBashIntegration = true;
         settings = {
           log = {

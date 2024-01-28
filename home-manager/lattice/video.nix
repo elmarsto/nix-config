@@ -11,7 +11,6 @@ let
     handbrake
     #hugin
     losslesscut-bin
-    #config.lattice.unstable.pitivi
   ];
 in
 {

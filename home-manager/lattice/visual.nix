@@ -1,6 +1,5 @@
 { config, pkgs, ... }:
 let
-  unstable = config.lattice.unstable;
   termPkgs = with pkgs; [
     exif
     exiv2
@@ -13,7 +12,7 @@ let
     gimp
     graphviz
     krita
-    unstable.inkscape-with-extensions
+    inkscape-with-extensions
   ];
   headlessPkgs = with pkgs; [
     ghostscript_headless # needed by imageMagick among others

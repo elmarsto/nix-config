@@ -1,6 +1,5 @@
 { config, pkgs, ... }:
 let
-  unstable = config.lattice.unstable;
   mdMime = pkgs.writeText "text-markdown.xml" ''
     <?xml version="1.0" encoding="UTF-8"?>
     <mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
@@ -17,9 +16,7 @@ let
     #epr
     #fop
     #glow
-    unstable.joplin
-    #unstable.logseq
-    #unstable.jaq
+    joplin
     #marksman
     #mdbook
     #mdbook-mermaid
@@ -31,7 +28,6 @@ let
     #sad
     #sd
     #scowl
-    #unstable.sublime4-dev
     #unicode-character-database
     #unicode-paracode
     #unipicker
@@ -45,7 +41,7 @@ let
     #sigil
     foliate
     #fontpreview
-    unstable.joplin-desktop
+    joplin-desktop
     write_stylus
   ];
 in

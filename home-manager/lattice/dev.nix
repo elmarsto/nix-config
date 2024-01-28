@@ -1,6 +1,5 @@
 { lib, config, pkgs, ... }:
 let
-  unstable = config.lattice.unstable;
   termPkgs = with pkgs; [
     # android-studio
     # autoconf
@@ -23,7 +22,6 @@ let
   guiPkgs = with pkgs; [
     #godot
     # hotspot
-    # unstable.lapce
     # qcachegrind
     #love
   ];

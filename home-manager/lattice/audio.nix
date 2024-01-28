@@ -1,6 +1,5 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib,  ... }:
 let
-  unstable = config.lattice.unstable;
   #reaperDir = ../reaper-config;
 in
 {
@@ -32,7 +31,7 @@ in
       #soundconverter
       #spot
       spotify
-      #unstable.reaper
+      #reaper
       #yabridge
       #yabridgectl
     ];
