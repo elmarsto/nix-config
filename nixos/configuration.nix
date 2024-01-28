@@ -11,7 +11,7 @@ hostname: {
 }: {
   # You can import other NixOS modules here
   imports = [
-    (lattice + /system/${hostname}/configuration)
+    (lattice + /sys/${hostname}/configuration)
     (lattice + /share/nixos)
   ];
 

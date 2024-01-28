@@ -10,7 +10,7 @@ hostname: {
   ...
 }: {
   imports = [
-    (lattice + /system/${hostname}/home)
+    (lattice + /sys/${hostname}/home)
     (lattice + /share/home-manager)
   ];
 
