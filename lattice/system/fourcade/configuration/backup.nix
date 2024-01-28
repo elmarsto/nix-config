@@ -1,7 +1,7 @@
 
-{ lib, ... }: 
+{ lib, lattice, ... }: 
 let
-  mkBackup = import ../util/mk-backup.nix {
+  mkBackup = import (lattice + /share/util/mk-backup.nix) {
     lib = lib;
     repo = "nope@localhost:/tmp";
     passCommand = "/etc/secrets/borgbackup.sh";

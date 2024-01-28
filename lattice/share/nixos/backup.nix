@@ -1,5 +1,5 @@
 { config, pkgs, lib, lattice, ... }: let
-  mkBackup = import (lattice + /util/mk-backup.nix) { inherit lib; repo = "lattice@localhost:/tmp/"; passCommand = "/etc/secrets/borgbackup.sh"; };
+  mkBackup = import (lattice + /share/util/mk-backup.nix) { inherit lib; repo = "lattice@localhost:/tmp/"; passCommand = "/etc/secrets/borgbackup.sh"; };
 in {
   services = {
     borgbackup.jobs = mkBackup "system" {

@@ -10,8 +10,8 @@ hostname: {
   ...
 }: {
   imports = [
-    (lattice + /system/${hostname}/home.nix)
-    (lattice + /share/home-manager.nix)
+    (lattice + /system/${hostname}/home)
+    (lattice + /share/home-manager)
   ];
 
   nixpkgs = {
