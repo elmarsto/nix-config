@@ -21,7 +21,7 @@ hostname: {
     # ./users.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
-    ./lattice/${hostname}.nix
+    ./lattice/configuration.${hostname}.nix
   ];
 
   nixpkgs = {
