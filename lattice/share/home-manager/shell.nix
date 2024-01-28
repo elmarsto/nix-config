@@ -1,11 +1,6 @@
 { config, pkgs, lib, ... }:
 let
   # FIXME: figure out what is pulling in openssl and either remove or fix the package. INSECURE is, well, insecure.
-  hms = pkgs.writeScriptBin "hms" ''
-    #export NIXPKGS_ALLOW_INSECURE=1;
-    rm -f ~/.config/mimeapps.list;
-    home-manager switch
-  '';
   dw = pkgs.writeScriptBin "dw" ''
     ${pkgs.diceware}/bin/diceware -d ' ' --no-caps $@
   '';
@@ -37,7 +32,6 @@ in
     fd
     file
     glow
-    hms
     inotify-tools
     ncdu
     pinentry.gnome3

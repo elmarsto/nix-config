@@ -6,6 +6,7 @@ hostname: {
   lib,
   outputs,
   pkgs,
+  repo,
   unstable,
   ...
 }: {
@@ -31,6 +32,11 @@ hostname: {
     activation.report-changes = config.lib.dag.entryAnywhere ''
       ${pkgs.nvd}/bin/nvd diff $oldGenPath $newGenPath
     '';
+    packages = [
+      (pkgs.writeScriptBin "lattice-hms" ''
+        home-manager switch --flake ${repo}#${hostname}
+      '')
+    ];
   };
   manual.html.enable = true;
   programs = {
