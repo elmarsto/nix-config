@@ -17,19 +17,19 @@
   };
 in {
   imports = [
-    ./nixos/audio.nix
-    ./nixos/backup.nix
-    ./nixos/cachix.nix
-    ./nixos/console.nix
-    ./nixos/epson.nix
-    ./nixos/gui.nix
-    ./nixos/razer.nix
-    ./nixos/rng.nix
-    ./nixos/users.nix
-    ./nixos/virt.nix
-    ./nixos/wacom.nix
-    ./nixos/xbox.nix
-    ./nixos/yubikey.nix
+    ./audio.nix
+    ./backup.nix
+    ./cachix.nix
+    ./console.nix
+    ./epson.nix
+    ./gui.nix
+    ./razer.nix
+    ./rng.nix
+    ./users.nix
+    ./virt.nix
+    ./wacom.nix
+    ./xbox.nix
+    ./yubikey.nix
   ];
   nixpkgs.config.allowUnfree = true;
   boot.loader.systemd-boot.enable = true;
