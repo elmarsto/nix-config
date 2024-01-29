@@ -13,7 +13,6 @@
       createHome = false;
       isNormalUser = true;
       openssh.authorizedKeys.keyFiles = authorizedKeyFiles;
-      # TODO: maybe DRY this out? I see these settings duplicated elsewhere (grep 'extraSettings')
       extraGroups = [
         "adbusers"
         "adm"

@@ -1,32 +1,54 @@
 { lib, pkgs, ... }:  {
+  environment.systemPackages = with pkgs; [
+    clinfo
+    openxr-loader
+    xrgears
+    vulkan-tools
+    vulkan-validation-layers
+  ];
+  fonts = {
+    enableDefaultPackages = true;
+    fontconfig.defaultFonts = {
+      serif = [ "Noto Serif" ];
+      sansSerif = [ "Noto Sans" ];
+      monospace = [ "Noto Sans Mono" ];
+    };
+    fontDir.enable = true;
+    packages = with pkgs; [
+      noto-fonts
+      noto-fonts-emoji
+    ];
+  };
+  hardware.opengl = {
+    driSupport = true;
+    driSupport32Bit = true;
+  };
   nixpkgs.config.firefox.enableGnomeExtensions = true;
   services =  {
-    udev.extraRules = ''
-      ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", MODE="0666", RUN+="${pkgs.coreutils}/bin/chmod a+w /sys/class/backlight/%k/brightness"
-    '';
+    pipewire = {
+      alsa = {
+        enable = true;
+        support32Bit = true;
+      };
+      enable = true;
+      jack.enable = true;
+      pulse.enable = true;
+    };
     xserver = {
+      desktopManager.gnome.enable = true;
+      displayManager = {
+        defaultSession = "gnome";
+        gdm = {
+          enable = true;
+          wayland = true;
+        };
+      };
+      enable = true;
       layout = "us";
       xkbOptions = "caps:escape"; #sanity
       xkbVariant = "";
     };
+    xwayland.enable = true;
   };
-  fonts = {
-    fontDir.enable = true;
-    enableDefaultPackages = true;
-    packages = with pkgs; [
-      noto-fonts
-      noto-fonts-emoji
-      noto-fonts-cjk-sans
-      noto-fonts-lgc-plus
-      noto-fonts-cjk-serif
-      noto-fonts-emoji-blob-bin
-    ];
-    fontconfig = {
-      defaultFonts = {
-        serif = [ "Noto Serif" ];
-        sansSerif = [ "Noto Sans" ];
-        monospace = [ "Noto Sans Mono" ];
-      };
-    };
-  };
+  sound.enable = true;
 }

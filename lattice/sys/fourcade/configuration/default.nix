@@ -1,29 +1,55 @@
 { pkgs, modulesPath, lib, ... }: {
-  boot = {
-    loader = {
-        systemd-boot.enable = true;
-        efi.canTouchEfiVariables = true;
-    };
-    kernelParams = [
-      "hugepagesz=1gib" "hugepages=16"
-      "console=ttyS0,115200"
-      "console=tty1"
-    ];
+  boot = { 
+   initrd.availableKernelModules = [
+     "aesni_intel"
+     "ahci"
+     "cryptd"
+     "nvme"
+     "sd_mod"
+     "thunderbolt"
+     "uas"
+     "usb_storage"
+     "usbhid"
+     "xhci_pci"
+   ];
+   kernelParams = [
+     "iommu=pt"
+     "iommu=1"
+     "console=ttyS0,115200"
+     "console=tty1"
+     "hugepagesz=1gib"
+     "hugepages=16"
+   ];
+   kernelModules = [
+     "dm_crypt"
+     "dm_mod"
+     "vfio-pci"
+   ];
+   kernel.sysctl = {
+     "kernel.shmmax" = "5368709120";
+     "kernel.sysrq" = 1;
+   };
   };
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
-  services.fwupd.enable = true;
-  hardware = {
-    cpu.amd.updateMicrocode = true;
-     # important (https://discourse.nixos.org/t/whats-the-rationale-behind-not-detected-nix/5403     
-    enableRedistributableFirmware = lib.mkDefault true;
+  environment.systemPackages = with pkgs; [
+    radeon-profile
+    radeontools
+    radeontop
+    rocmPackages.clr # radeon
+    rocmPackages.rocm-thunk # radeon
+  ];
+  hardware.opengl.extraPackages = with pkgs; [
+    rocm-opencl-icd
+    rocmPackages.rocm-runtime
+    amdvlk
+  ];
+  imports = [
+    ./backup.nix
+    ./filesystem.nix
+  ];
+  networking = {
+    hostId = "1183aa1f";
+    hostName = "fourcade"; 
+    networkmanager.enable = false;
   };
-  system.stateVersion = "22.05";
-  imports =
-    [
-      ./backup.nix
-      ./filesystem.nix
-      ./graphics.nix
-      ./kernel.nix
-      ./network.nix
-    ];
+  services.xserver.videoDrivers = [ "amdgpu" ];
 }

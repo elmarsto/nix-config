@@ -1,14 +1,43 @@
-{ lib, pkgs, ... }: let 
-  #fontSize = "12x24";
-  fontSize = "16x32";
-  #fontSize = "5x8";
-  #fontSize = "6x12";
-  #fontSize = "8x16";
+{ lib, pkgs, ... }: let
+  doas-rule = command: {
+    args = [ command "gpm" ];
+    cmd = "systemctl";
+    groups = [ "wheel" ];
+    keepEnv = true;
+    noPass = true;
+    runAs = "root";
+  };
 in {
+  console = {
+    colors = [
+      "002b36"
+      "dc322f"
+      "859900"
+      "b58900"
+      "268bd2"
+      "d33682"
+      "2aa198"
+      "eee8d5"
+      "002b36"
+      "cb4b16"
+      "586e75"
+      "657b83"
+      "839496"
+      "6c71c4"
+      "93a1a1"
+      "fdf6e3"
+    ];
+    earlySetup = true;
+    font = "${pkgs.spleen}/share/consolefonts/spleen-16x32.psfu";
+    packages = with pkgs; [ spleen ];
+    useXkbConfig = true; # pairs with xserver.xkbOptions above to fuck up that capslock
+  };
   i18n.defaultLocale = "en_US.UTF-8";
+  security.doas.extraRules = [
+    (doas-rule "start")
+    (doas-rule "stop")
+  ];
   services = {
-    xserver.xkbOptions = "caps:escape";
-    gpm.enable = true;
     acpid = {
       enable = true;
       logEvents = true;
@@ -19,35 +48,10 @@ in {
         systemctl suspend 
       '';
     };
+    gpm.enable = true;
     logind.extraConfig = ''
       HandlePowerKey=ignore
     '';
+    xserver.xkbOptions = "caps:escape";
   }; 
-  security.doas = {
-    extraRules = [
-      {
-        runAs = "root";
-        groups = [ "wheel" ];
-        noPass = true;
-        keepEnv = true;
-        cmd = "systemctl";
-        args = [ "stop" "gpm" ];
-      }
-      {
-        runAs = "root";
-        groups = [ "wheel" ];
-        noPass = true;
-        keepEnv = true;
-        cmd = "systemctl";
-        args = [ "start" "gpm" ];
-      }
-    ];
-  };
-  console = {
-    useXkbConfig = true; # pairs with xserver.xkbOptions above to fuck up that capslock
-    earlySetup = true;
-    font = "${pkgs.spleen}/share/consolefonts/spleen-${fontSize}.psfu";
-    packages = with pkgs; [ spleen ];
-    colors = [ "002b36" "dc322f" "859900" "b58900" "268bd2" "d33682" "2aa198" "eee8d5" "002b36" "cb4b16" "586e75" "657b83" "839496" "6c71c4" "93a1a1" "fdf6e3" ];
-  };
 }

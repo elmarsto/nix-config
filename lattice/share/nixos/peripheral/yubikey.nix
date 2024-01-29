@@ -9,7 +9,6 @@
       #doas.unixAuth = false;
       #su.unixAuth = false;
     };
-
     yubico = {
       enable = true;
       control = "sufficient";
