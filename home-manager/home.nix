@@ -14,32 +14,46 @@ hostname: {
     (lattice + /sys/${hostname}/home)
     (lattice + /share/home-manager)
   ];
-
   nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = _: true;
+    };
     overlays = [
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
     ];
-    config = {
-      allowUnfree = true;
-      allowUnfreePredicate = _: true;
-    };
   };
-  systemd.user.startServices = "sd-switch";
   home = {
-    stateVersion = "23.11";
     activation.report-changes = config.lib.dag.entryAnywhere ''
       ${pkgs.nvd}/bin/nvd diff $oldGenPath $newGenPath
     '';
-    packages = [
+    packages = with pkgs; [
       (pkgs.writeScriptBin "lattice-hms" ''
         home-manager switch --flake ${repo}#${hostname}
       '')
+      cachix
+      comma
+      manix
+      nix-doc
+      nurl
     ];
+    stateVersion = "23.11";
   };
   manual.html.enable = true;
   programs = {
+    direnv = {
+      enable = true;
+      enableBashIntegration = true;
+      enableNushellIntegration = true;
+      nix-direnv.enable = true;
+    };
     home-manager.enable = true;
+    nix-index = {
+      enable = true;
+      enableBashIntegration = true;
+    };
   };
+  systemd.user.startServices = "sd-switch";
 }

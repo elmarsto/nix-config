@@ -100,8 +100,8 @@ in
       extraConfig = vimConfig;
     };
   };
-  xdg.configFile."nvim" = {
-    source = ./neovim;
+  xdg.configFile."nvim/lua" = {
+    source = ./neovim/lua;
     recursive = true;
   };
 }
