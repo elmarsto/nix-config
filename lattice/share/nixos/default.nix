@@ -31,14 +31,12 @@
       "vm.min_free_kbytes" = "112640";
     };
   };
-  environment = {
-    systemPackages = with pkgs; [
-      coreutils
-      exfat
-      findutils
-      nvd
-    ]; 
-  };
+  environment.systemPackages = with pkgs; [
+    coreutils
+    exfat
+    findutils
+    nvd
+  ]; 
   hardware = {
     cpu.intel.updateMicrocode = true;
     cpu.amd.updateMicrocode = true;

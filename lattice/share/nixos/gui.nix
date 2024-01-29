@@ -24,6 +24,7 @@
     driSupport32Bit = true;
   };
   nixpkgs.config.firefox.enableGnomeExtensions = true;
+  programs.xwayland.enable = true;
   services =  {
     pipewire = {
       alsa = {
@@ -48,7 +49,6 @@
       xkbOptions = "caps:escape"; #sanity
       xkbVariant = "";
     };
-    xwayland.enable = true;
   };
   sound.enable = true;
 }
