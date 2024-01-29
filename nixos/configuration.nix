@@ -52,9 +52,9 @@ hostname: {
       })
       config.nix.registry;
     systemPackages = [
-      pkgs.writeScriptBin "lattice-nrs" ''
+      (pkgs.writeScriptBin "lattice-nrs" ''
         nixos-rebuild switch --flake ${repo}#${hostname}
-      ''
+      '')
     ];
   };
   nix.settings = {
