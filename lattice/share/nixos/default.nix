@@ -111,10 +111,6 @@
       prunePaths = [ "/tmp" "/var/tmp" "/var/cache" "/var/lock" "/var/run" "/var/spool" "/nix/store" "/nix/var/log/nix" ] ;
     };
     postfix.enable = true;
-    printing = {
-       enable = true;
-       drivers = [ pkgs.gutenprint pkgs.gutenprintBin ];
-    };
   };
   system = {
     autoUpgrade = {

@@ -2,7 +2,6 @@
   authorizedKeyFiles = [
     ./users/id_fourcade.pub
     ./users/id_bowsprit.pub
-    ./users/id_lain.pub
     ./users/id_sopwith.pub
   ];
  in {
