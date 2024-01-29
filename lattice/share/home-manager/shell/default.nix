@@ -2,7 +2,7 @@
 let
   # FIXME: figure out what is pulling in openssl and either remove or fix the package. INSECURE is, well, insecure.
   dw = pkgs.writeScriptBin "dw" ''
-    ${pkgs.diceware}/bin/diceware -d ' ' --no-caps $@
+    ${pkgs.diceware}/bin/diceware -d '-' --no-caps $@
   '';
 in
 {
