@@ -1,7 +1,6 @@
 { config, lib, pkgs, ... }: {
   imports = [
     ./epson.nix
-    ./razer.nix
     ./rng.nix
     ./wacom.nix
     ./xbox.nix
