@@ -101,7 +101,7 @@ in
     };
   };
   xdg.configFile."nvim/lua" = {
-    source = ./neovim/lua;
+    source = ./lua;
     recursive = true;
   };
 }

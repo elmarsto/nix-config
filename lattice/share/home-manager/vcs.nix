@@ -23,8 +23,8 @@
       package = pkgs.gitFull;
       lfs.enable = true;
       delta.enable = true;
-      userName = config.lattice.vcs.name;
-      userEmail = config.lattice.vcs.email;
+      userName = "Elizabeth Marston";
+      userEmail = "315987+elmarsto@users.noreply.github.com";
       ignores = [
         " .stignore"
         "*.secret"
