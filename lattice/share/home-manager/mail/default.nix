@@ -179,9 +179,6 @@ in
       };
     };
   };
-  programs = {
-    himalaya.enable = true;
-    # thunderbird.enable = true; # TODO: nixify
-  };
+  programs.himalaya.enable = true;
 }
 

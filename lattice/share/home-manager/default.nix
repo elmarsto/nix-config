@@ -13,4 +13,8 @@
     ./virt.nix
     ./visual.nix
   ]; 
+  home = {
+    username = "lattice";
+    homeDirectory = "/home/lattice";
+  };
 }
