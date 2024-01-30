@@ -31,7 +31,7 @@ hostname: {
     '';
     packages = with pkgs; [
       (pkgs.writeScriptBin "lattice-hms" ''
-        home-manager switch --flake ${repo}#${hostname} $@
+        home-manager switch --flake ${repo}#${hostname} --refresh $@
       '')
       cachix
       comma
