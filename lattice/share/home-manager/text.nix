@@ -17,19 +17,12 @@ in
     ruplacer
     calibre
     foliate
+    glow
     joplin-desktop
     write_stylus
   ];
   programs = {
     fzf.enable = true;
-    pandoc = {
-      enable = true;
-      defaults = {
-        metadata = {
-          author = "Elizabeth Marston";
-        };
-      };
-    };
     readline.enable = true;
     skim.enable = true;
   };

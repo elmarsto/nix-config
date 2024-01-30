@@ -6,7 +6,6 @@
     ./mail
     ./neovim
     ./shell
-    ./ssh
     ./text.nix
     ./vcs.nix
     ./video.nix
