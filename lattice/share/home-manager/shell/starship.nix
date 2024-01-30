@@ -156,7 +156,7 @@
 
       jobs = {
         style = "bg:#33658A";
-        symbol = "";
+        symbol = " ";
         format = "[$symbol]($style)";
         disabled = false;
       };
