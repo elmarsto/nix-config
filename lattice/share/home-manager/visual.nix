@@ -1,5 +1,6 @@
 { config, pkgs, ... }: {
   home.packages = with pkgs; [
+    gnome.cheese
     darktable
     exif
     exiv2

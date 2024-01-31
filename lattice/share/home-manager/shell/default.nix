@@ -38,7 +38,7 @@ in
   ];
   imports = [
     ./starship.nix
-    ./tmux.nux
+    ./tmux.nix
     ./ssh
   ];
   programs = {
@@ -120,12 +120,12 @@ in
           "~/work"
         ];
       };
-      udiskie = {
-        enable = true;
-        automount = false; # may help with garmin mess
-      };
     };
     syncthing.enable = true;
+    udiskie = {
+      enable = true;
+      automount = false; # may help with garmin mess
+    };
   };
 }
 
