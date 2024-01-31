@@ -1,14 +1,15 @@
 { config, pkgs, ... }: {
   home.packages = with pkgs; [
+    gnome.cheese
+    darktable
     exif
     exiv2
-    imagemagick
-    libheif
-    darktable
     figma-linux
     gimp
     graphviz
-    krita
+    imagemagick
     inkscape-with-extensions
+    krita
+    libheif
   ];
 }
