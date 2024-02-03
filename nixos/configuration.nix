@@ -8,8 +8,7 @@ hostname: {
   pkgs,
   ...
 }: let
-  args = ["switch" "--flake" "${repo}#${hostname}" "--refresh"];
-  cmd = "${pkgs.nixos-rebuild}/bin/nixos-rebuild";
+  cmd = pkgs.writeShellScript "nrs" "nixos-rebuild switch --flake ${repo}#${hostname} --refresh";
 in {
   imports = [
     (lattice + /sys/${hostname}/configuration)
@@ -40,12 +39,10 @@ in {
       })
       config.nix.registry;
     systemPackages = [
-      (pkgs.writeScriptBin "lattice-nrs" ''
-        doas ${cmd} ${builtins.concatStringsSep " " args}
-      '')
+      (pkgs.writeScriptBin "lattice-nrs" "doas ${cmd}")
     ];
   };
-  security.doas.extraRules = [{ inherit cmd args; noPass = true; }];
+  security.doas.extraRules = [{ inherit cmd; noPass = true; args = []; }];
   nix.settings = {
     experimental-features = "nix-command flakes";
     auto-optimise-store = true;
