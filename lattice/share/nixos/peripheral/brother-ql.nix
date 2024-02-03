@@ -1,6 +1,6 @@
 { pkgs, ... }: let
   bql = pkgs.writeScriptBin "bql" ''
-    nix run github:elmarsto/brother-ql -m QL-800 -b pyusb -p usb://0x04f9:0x209b $@
+    nix run github:elmarsto/brother-ql -- -m QL-800 -b pyusb -p usb://0x04f9:0x209b $@
    '';
   bql-p = pkgs.writeScriptBin "bql" ''
     ${bql} print -l 62 $@
