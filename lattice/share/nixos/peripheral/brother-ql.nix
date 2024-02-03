@@ -1,5 +1,6 @@
-{ inputs, ... }: {
+{ inputs, system, ... }: {
   environment.systemPackages = [
-    inputs.brother-ql.packages.default
+    # FIXME: hardwired architecture
+    inputs.brother-ql.packages.x86_64-linux.default
   ];
 }

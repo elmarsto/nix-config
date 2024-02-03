@@ -36,6 +36,7 @@
     };
     hm = import ./home-manager/home.nix;
     mk-home = hostname: home-manager.lib.homeManagerConfiguration {
+      # FIXME: hardwared system value (x86_64-linux)
       pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
       extraSpecialArgs = {inherit inputs outputs nixpkgs-unstable lattice repo;};
       modules = [
