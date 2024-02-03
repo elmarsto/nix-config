@@ -8,7 +8,7 @@ hostname: {
   pkgs,
   ...
 }: let
-  cmd = pkgs.writeShellScript "nrs" "nixos-rebuild switch --flake ${repo}#${hostname} --refresh";
+  nrs = pkgs.writeShellScript "nrs" "nixos-rebuild switch --flake ${repo}#${hostname} --refresh";
 in {
   imports = [
     (lattice + /sys/${hostname}/configuration)
@@ -39,10 +39,10 @@ in {
       })
       config.nix.registry;
     systemPackages = [
-      (pkgs.writeScriptBin "lattice-nrs" "doas ${cmd}")
+      (pkgs.writeScriptBin "lattice-nrs" "doas ${nrs}")
     ];
   };
-  security.doas.extraRules = [{ inherit cmd; noPass = true; args = []; }];
+  security.doas.extraRules = [{ cmd = "${nrs}"; noPass = true; groups = [ "wheel" ]; }];
   nix.settings = {
     experimental-features = "nix-command flakes";
     auto-optimise-store = true;
