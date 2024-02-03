@@ -1,16 +1,24 @@
 { pkgs, ... }: let
-  bql = pkgs.writeScriptBin "bql" ''
+  bql = pkgs.writeScript "bql" ''
     nix run github:elmarsto/brother-ql -- -m QL-800 -b pyusb -p usb://0x04f9:0x209b $@
    '';
-  bql-p = pkgs.writeScriptBin "bql" ''
+  bql-p = pkgs.writeScript "bql-p" ''
     ${bql} print -l 62 $@
-   '';
-  doasRule = cmd: {
-    cmd = "${cmd}";
+  '';
+
+  brother-ql = pkgs.writeScriptBin "brother-ql" ''
+    doas ${bql} $@
+  '';
+  brother-ql-print = pkgs.writeScriptBin "brother-ql-print" ''
+    doas ${bql-p} $@
+  '';
+
+  doasRule = exe: {
+    cmd = "${exe}";
     groups = [ "wheel" ];
     noPass = true;
   };
 in {
-  environment.systemPackages = [ bql bql-p ];
+  environment.systemPackages = [ brother-ql brother-ql-print ];
   security.doas.extraRules = builtins.map doasRule [bql bql-p];
 }

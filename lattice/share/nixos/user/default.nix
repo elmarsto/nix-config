@@ -36,14 +36,6 @@
     };
   };
   security = {
-    doas.extraRules = [
-      {
-        runAs = "root";
-        groups = [ "wheel" ];
-        noPass = false;
-        keepEnv = false;
-      }
-    ];
     polkit.adminIdentities = [ "unix-user:lattice" ];
   };
   services = {

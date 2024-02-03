@@ -13,21 +13,17 @@ in {
     SUBSYSTEM=="usb", ATTRS{idVendor}=="28de", MODE="0666"
   '';
   security = {
-    doas = {
-      extraRules = [
-        { 
-          groups = [ "wheel" ];
-          cmd = "${rngd}";
-          noPass = true;
-          keepEnv = false;
-        }
-      ];
-    };
-    sudo = {
-      extraConfig = ''
-        %wheel  ALL=(ALL:ALL)   NOPASSWD: ${rngd}
-      '';
-    };
+    doas.extraRules = [
+      { 
+        groups = [ "wheel" ];
+        cmd = "${rngd}";
+        noPass = true;
+        keepEnv = false;
+      }
+    ];
+    sudo.extraConfig = ''
+      %wheel  ALL=(ALL:ALL)   NOPASSWD: ${rngd}
+    '';
   };
   systemd.services.rnger = {
     description = "Rnger: Activate RNG daemon and hardware";
