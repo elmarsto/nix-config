@@ -1,0 +1,15 @@
+name: Nix Flake Update
+on:
+  schedule:
+    - cron: "* * * * 5"
+jobs:
+  nix-flake-update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: nix flake update
+      - uses: peter-evans/create-pull-request@v5
+        with:
+          branch: "nix-flake-update"
+          delete-branch: true
+          title: "`nix flake update`"
