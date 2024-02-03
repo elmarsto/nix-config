@@ -1,7 +1,6 @@
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 hostname: {
   config,
-  inputs,
   lattice,
   lib,
   outputs,
