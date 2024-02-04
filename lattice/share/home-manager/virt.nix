@@ -1,8 +1,6 @@
 { config, lib, pkgs, ... }: {
   home.packages = with pkgs; [
-    docker-compose
+    podman-compose
     lazydocker
-    podman
-    virt-manager
   ];
 }
