@@ -30,7 +30,7 @@
       enable = true;
       authKeyFile = "/run/secrets/tailscale_key";
       openFirewall = true;
-      useRoutingFeatures = true;
+      useRoutingFeatures = "both";
     };
   };
 }
