@@ -18,6 +18,7 @@
     ./console.nix
     ./peripheral
     ./gui.nix
+    ./network.nix
     ./user
     ./virt.nix
   ];
