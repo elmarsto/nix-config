@@ -1,8 +1,8 @@
 { pkgs, ... }: let
   authorizedKeyFiles = [
-    ./users/id_fourcade.pub
-    ./users/id_bowsprit.pub
-    ./users/id_sopwith.pub
+    ./id_fourcade.pub
+    ./id_bowsprit.pub
+    ./id_sopwith.pub
   ];
  in {
   nix.settings.trusted-users = [ "root" "lattice" ];

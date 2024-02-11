@@ -18,8 +18,8 @@
     ./console.nix
     ./peripheral
     ./gui.nix
-    ./network.nix
     ./user
+    ./network.nix
     ./virt.nix
   ];
   boot = {
