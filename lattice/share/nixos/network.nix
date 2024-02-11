@@ -28,7 +28,7 @@
     };
     tailscale =  {
       enable = true;
-      authKeyFile = "/var/run/secrets/tailscale_key";
+      authKeyFile = "/run/secrets/tailscale_key";
       openFirewall = true;
       useRoutingFeatures = true;
     };
