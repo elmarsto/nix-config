@@ -21,6 +21,7 @@
       gnomeExtensions.vitals
       (google-fonts.override {
         fonts = [
+          "Oxanium"
           "Raleway"
           "Roboto Slab"
           "Roboto Mono"
@@ -59,7 +60,7 @@
       enable = true;
       package = pkgs.ungoogled-chromium;
     };
-    firefox.enable = true; 
+    firefox.enable = true;
   };
   services.fusuma = {
     enable = true;
