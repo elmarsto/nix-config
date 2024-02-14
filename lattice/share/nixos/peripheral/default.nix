@@ -8,7 +8,7 @@
   ];
   services.printing = {
     enable = true;
-    drivers = with pkgs; [ gutenprint gutenprintBin espon-escpr hplip canon-cups-ufr2 ];
+    drivers = with pkgs; [ gutenprint gutenprintBin epson-escpr epson-escpr2 hplipWithPlugin canon-cups-ufr2 ];
     browsing = true;
     allowFrom = ["all"];
     defaultShared = true;
