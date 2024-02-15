@@ -3,6 +3,7 @@
     element-desktop
     signal-desktop
     slack
+    zoom-us
   ];
 }
 
