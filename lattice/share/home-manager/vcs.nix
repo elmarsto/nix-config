@@ -41,17 +41,47 @@
       ];
 
       extraConfig = {
-        pull.ff = "only";
-        push.autoSetupRemote = true;
-        global.sequence.editor = "${pkgs.git-interactive-rebase-tool}/bin/interactive-rebase-tool";
+        branch.sort = "committerdate";
+        commit.verbose = true;
         credential.helper = "libsecret";
-        init.defaultBranch = "main";
+        diff = {
+          algorithm = "histogram";
+          context = 10;
+          submodule = "log";
+          tool = "nvimdiff";
+        };
         difftool = {
           prompt = true;
           nvimdiff.cmd = "nvim -d \"$LOCAL\" \"$REMOTE\"";
         };
-        diff.tool = "nvimdiff";
-        merge.tool = "nvimdiff";
+        fetch = {
+          fsckobjects = true;
+          prune = true;
+          prunetags = true;
+        };
+        global.sequence.editor = "${pkgs.git-interactive-rebase-tool}/bin/interactive-rebase-tool";
+        init.defaultbranch = "main";
+        log.date = "iso";
+        merge = {
+          conflictstyle = "zdiff3";
+          tool = "meld";
+        };
+        pull.ff = "only";
+        push = {
+          autosetupremote = true;
+          default = "current";
+          followtags = true;
+        };
+        rebase = {
+          autosquash = true;
+          autostash = true;
+        };
+        receive.fsckobjects = true;
+        rerere.enabled = true;
+        status.submodulesummary = true;
+        submodule.recurse = true;
+        tag.sort = "taggerdate";
+        transfer.fsckobjects = true;
       };
     };
   };
