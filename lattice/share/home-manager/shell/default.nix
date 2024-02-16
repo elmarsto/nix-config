@@ -102,6 +102,11 @@ in
     zoxide.enable = true;
   };
   services = {
+    gpg-agent = {
+      enable = true;
+      enableExtraSocket = true;
+      pinentryFlavor = "gnome3";
+    };
     gnome-keyring = {
       enable = true;
       components = [ "pkcs11" "secrets" ];
