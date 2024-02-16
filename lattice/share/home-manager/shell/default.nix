@@ -67,8 +67,8 @@ in
     fzf.enable = true;
     gpg = {
       enable = true;
-      mutableKeys = false;
-      mutableTrust = false;
+      mutableKeys = true;
+      mutableTrust = true;
       publicKeys = [ { source = ./gpg-pubkeys.txt; trust = "full"; } ];
     };
     man = {
