@@ -32,7 +32,7 @@
       package = pkgs.gitAndTools.gitFull;
       lfs.enable = true;
       delta.enable = true;
-      userName = "Elizabeth Marston";
+      userName = "Elizabeth Marston (GitHub)";
       userEmail = "315987+elmarsto@users.noreply.github.com";
       ignores = [
         " .stignore"
@@ -95,7 +95,7 @@
         transfer.fsckobjects = true;
       };
       signing = {
-        key = null; # let GPG choose based on email address
+        key = "3B65 D56E 51BB 22BC FB8E  E221 8405 F834 149D 0ED8";
         signByDefault = true;
       };
     };
