@@ -26,6 +26,7 @@ in
     diceware
     dw
     footswitch
+    gpg-tui
     libsecret
     ncdu
     pinentry.gnome3
@@ -64,7 +65,12 @@ in
       icons = true;
     };
     fzf.enable = true;
-    gpg.enable = true;
+    gpg = {
+      enable = true;
+      mutableKeys = false;
+      mutableTrust = false;
+      publicKeys = [ { source = ./gpg-pubkeys.txt; trust = "full"; } ];
+    };
     man = {
       enable = true;
       generateCaches = true;

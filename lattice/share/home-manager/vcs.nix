@@ -20,10 +20,16 @@
     };
     git = {
       aliases = {
+        c  = "commit";
         co = "checkout";
-        # TODO: more
+        m  = "merge";
+        p  = "pull";
+        P  = "push";
+        r  = "rebase";
+        s  = "switch";
       };
       enable = true;
+      package = pkgs.gitAndTools.gitFull;
       lfs.enable = true;
       delta.enable = true;
       userName = "Elizabeth Marston";
@@ -42,7 +48,9 @@
         ".trash/"
         ".*trashed"
       ];
-
+      includes = [
+        { condition = "gitdir:~/code/quandri"; contents.user = { email = "elizabeth.marston@quandri.io"; }; }
+      ];
       extraConfig = {
         branch.sort = "committerdate";
         commit.verbose = true;
@@ -85,6 +93,10 @@
         submodule.recurse = true;
         tag.sort = "taggerdate";
         transfer.fsckobjects = true;
+      };
+      signing = {
+        key = null; # let GPG choose based on email address
+        signByDefault = true;
       };
     };
   };
