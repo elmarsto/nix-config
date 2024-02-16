@@ -19,8 +19,11 @@
       };
     };
     git = {
+      aliases = {
+        co = "checkout";
+        # TODO: more
+      };
       enable = true;
-      package = pkgs.gitFull;
       lfs.enable = true;
       delta.enable = true;
       userName = "Elizabeth Marston";
