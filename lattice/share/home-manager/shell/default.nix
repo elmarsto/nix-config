@@ -111,6 +111,10 @@ in
       enable = true;
       components = [ "pkcs11" "secrets" ];
     };
+    pueue = {
+      enable = true;
+      settings.daemon.default_parallel_tasks = 4;
+    };
     recoll = {
       enable = true;
       settings = {
