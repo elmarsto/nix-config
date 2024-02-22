@@ -56,7 +56,7 @@ in
       };
     };
     bottom.enable = true;
-    # direnv is in nix.nix
+    broot.enable = true;
     eza = {
       enable = true;
       enableAliases = true;

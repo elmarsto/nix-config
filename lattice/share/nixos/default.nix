@@ -37,7 +37,8 @@
     exfat
     findutils
     nvd
-  ]; 
+    sysz # systemctl tui
+  ];
   hardware = {
     cpu.intel.updateMicrocode = true;
     cpu.amd.updateMicrocode = true;

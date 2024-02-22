@@ -41,6 +41,7 @@
       lsix
       monaspace
       notify-desktop
+      qjournalctl
       wayland-utils
       wezterm
       wl-clipboard
