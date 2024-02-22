@@ -33,11 +33,20 @@
     };
   };
   environment.systemPackages = with pkgs; [
+    # tracee RESEARCH: what thisis and how to use it
+    bcc
+    below
     coreutils
     exfat
     findutils
+    lsof
+    nethogs
     nvd
+    perf-tools
     sysz # systemctl tui
+    termshark
+    traceroute
+    tshark
   ];
   hardware = {
     cpu.intel.updateMicrocode = true;

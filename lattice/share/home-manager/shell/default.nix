@@ -27,7 +27,9 @@ in
     dw
     footswitch
     gpg-tui
+    gdb
     libsecret
+    lldb
     ncdu
     pinentry.gnome3
     rbw
