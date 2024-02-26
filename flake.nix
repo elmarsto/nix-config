@@ -6,14 +6,12 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    dwarffs.url = "github:edolstra/dwarffs";
   };
 
   outputs = {
     self,
     nixpkgs,
     nixpkgs-unstable,
-    dwarffs,
     home-manager,
     ...
   } @ inputs: let
@@ -32,7 +30,6 @@
     mk-system = hostname: nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs outputs home-manager nixpkgs-unstable lattice repo;};
       modules = [
-        dwarffs.nixosModules.dwarffs
         (ns hostname)
       ];
     };
