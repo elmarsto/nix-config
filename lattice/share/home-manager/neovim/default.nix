@@ -31,6 +31,9 @@ in
     neovim = {
       enable = true;
       defaultEditor = true;
+      plugins = with pkgs.vimPlugins; [
+        nvim-treesitter.withAllGrammars
+      ];
       withNodeJs = true;
       withPython3 = true;
       vimdiffAlias = true;
@@ -52,6 +55,7 @@ in
         nixd
         nsh
         python311Packages.ipython
+        shellcheck
         sqlite
         sqls
         stylelint

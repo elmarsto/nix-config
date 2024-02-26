@@ -1,118 +1,30 @@
 local treesitter = {}
 
 function treesitter.setup(use)
-  use {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-    config = function()
-      require "nvim-treesitter.configs".setup {
-        sync_install = false,
-        auto_install = true,
-        ensure_installed = {
-          "awk",
-          "bash",
-          "c",
-          "c_sharp",
-          "capnp",
-          "clojure",
-          "cmake",
-          "commonlisp",
-          "cpp",
-          "css",
-          "csv",
-          "dart",
-          "diff",
-          "dockerfile",
-          "dot",
-          "dtd",
-          "ebnf",
-          "fennel",
-          "gdscript",
-          "git_config",
-          "git_rebase",
-          "gitattributes",
-          "gitcommit",
-          "gitignore",
-          "go",
-          "gomod",
-          "gosum",
-          "gpg",
-          "graphql",
-          "html",
-          "htmldjango",
-          "http",
-          "hurl",
-          "ini",
-          "java",
-          "javascript",
-          "jq",
-          "jsdoc",
-          "json",
-          "kdl",
-          "kotlin",
-          "latex",
-          "ledger",
-          "lua",
-          "luadoc",
-          "luap",
-          "make",
-          "markdown",
-          "markdown_inline",
-          "mermaid",
-          "ninja",
-          "nix",
-          "passwd",
-          "pem",
-          "perl",
-          "php",
-          "phpdoc",
-          "printf",
-          "proto",
-          "psv",
-          "python",
-          "regex",
-          "rust",
-          "scheme",
-          "scss",
-          "sql",
-          "ssh_config",
-          "strace",
-          "svelte",
-          "terraform",
-          "textproto",
-          "todotxt",
-          "toml",
-          "tsv",
-          "tsx",
-          "typescript",
-          "udev",
-          "unison",
-          "vim",
-          "vimdoc",
-          "yaml",
-        },
-        highlight = {
-          enable = true, -- false will disable the whole extension
-        },
-        incremental_selection = {
-          enable = true,
-          keymaps = {
-            -- TODO: figure out how to move these into keyboard.lua (look up function associated?)
-            init_selection = "<CR>",
-            node_incremental = "<CR>",
-            scope_incremental = "<Tab>",
-            scope_decremental = "<S-Tab>",
-            node_decremental = "<S-CR>"
-          }
-        }
+  # installed in nix https://nixos.wiki/wiki/Treesitter
+  require "nvim-treesitter.configs".setup {
+    sync_install = false,
+    auto_install = true,
+    highlight = {
+      enable = true, -- false will disable the whole extension
+    },
+    incremental_selection = {
+      enable = true,
+      keymaps = {
+        -- TODO: figure out how to move these into keyboard.lua (look up function associated?)
+        init_selection = "<CR>",
+        node_incremental = "<CR>",
+        scope_incremental = "<Tab>",
+        scope_decremental = "<S-Tab>",
+        node_decremental = "<S-CR>"
       }
-      vim.cmd [[
-          set foldmethod=expr
-          set foldexpr=nvim_treesitter#foldexpr()
-          set nofoldenable
-      ]]
-    end
+    }
   }
+  vim.cmd [[
+      set foldmethod=expr
+      set foldexpr=nvim_treesitter#foldexpr()
+      set nofoldenable
+  ]]
   use {
     "kylechui/nvim-surround",
     after = {
