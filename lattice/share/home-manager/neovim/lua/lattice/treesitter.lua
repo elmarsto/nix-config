@@ -13,8 +13,8 @@ function treesitter.setup(use)
         init_selection = "<CR>",
         node_incremental = "<CR>",
         scope_incremental = "<Tab>",
-        scope_decremental = "<S-Tab>",
-        node_decremental = "<S-CR>"
+        -- scope_decremental = "<S-Tab>",
+        -- node_decremental = "<S-CR>"
       }
     },
     matchup = {
