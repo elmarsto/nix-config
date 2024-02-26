@@ -46,6 +46,7 @@ in
       vimdiffAlias = true;
       extraLuaPackages = p: with p; [ luautf8 ];
       extraPackages = with pkgs; with nodePackages; [
+        alejandra
         bash-language-server
         boost
         ccls
@@ -66,6 +67,7 @@ in
         sqlite
         sqls
         stylelint
+        statix
         taplo
         tree-sitter
         typescript-language-server
