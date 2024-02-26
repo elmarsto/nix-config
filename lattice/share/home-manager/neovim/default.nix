@@ -31,12 +31,13 @@ in
     neovim = {
       enable = true;
       defaultEditor = true;
-      plugins = with pkgs.unstable.vimPlugins; [
+      plugins = with pkgs.unstable.vimPlugins;  [
         nvim-surround
         nvim-treesitter-refactor
         nvim-treesitter-textobjects
         nvim-treesitter-textsubjects
         nvim-treesitter.withAllGrammars
+        pkgs.unstable.tree-sitter-grammars.tree-sitter-just
         treesj
         vim-matchup
       ];
