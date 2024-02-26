@@ -28,16 +28,15 @@
 
     ns = import ./nixos/configuration.nix;
     mk-system = hostname: nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs outputs home-manager nixpkgs-unstable lattice repo;};
+      specialArgs = {inherit inputs outputs home-manager lattice repo;};
       modules = [
         (ns hostname)
       ];
     };
     hm = import ./home-manager/home.nix;
     mk-home = hostname: home-manager.lib.homeManagerConfiguration {
-      # FIXME: hardwared system value (x86_64-linux)
       pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-      extraSpecialArgs = {inherit inputs outputs nixpkgs-unstable lattice repo;};
+      extraSpecialArgs = {inherit inputs outputs lattice repo;};
       modules = [
         (hm hostname)
       ];

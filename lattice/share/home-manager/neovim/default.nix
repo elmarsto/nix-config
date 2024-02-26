@@ -31,8 +31,14 @@ in
     neovim = {
       enable = true;
       defaultEditor = true;
-      plugins = with pkgs.vimPlugins; [
+      plugins = with pkgs.unstable.vimPlugins; [
+        nvim-surround
+        nvim-treesitter-refactor
+        nvim-treesitter-textobjects
+        nvim-treesitter-textsubjects
         nvim-treesitter.withAllGrammars
+        treesj
+        vim-matchup
       ];
       withNodeJs = true;
       withPython3 = true;
