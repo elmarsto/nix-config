@@ -25,8 +25,10 @@
 
     lattice = ./lattice;
     repo = "github:elmarsto/nix-config";
+    pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
 
     ns = import ./nixos/configuration.nix;
+    mk-app = p: { program = "${p}"; type = "app"; };
     mk-system = hostname: nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs outputs home-manager lattice repo;};
       modules = [
@@ -35,13 +37,32 @@
     };
     hm = import ./home-manager/home.nix;
     mk-home = hostname: home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+      inherit pkgs;
       extraSpecialArgs = {inherit inputs outputs lattice repo;};
       modules = [
         (hm hostname)
       ];
     };
+
+    host = pkgs.writeShellScript "host" ''
+      echo .#`${pkgs.nettools}/bin/hostname`
+    '';
+    hms = pkgs.writeShellScript "flake-hms" ''
+      ${pkgs.home-manager}/bin/home-manager switch --flake `${host}`
+    '';
+    nrs = pkgs.writeShellScript "flake-nrs" ''
+      ${pkgs.doas}/bin/doas ${pkgs.nixos-rebuild}/bin/nixos-rebuild switch --flake `${host}`
+    '';
+    switch = pkgs.writeShellScript "flake-switch" ''
+      ${hms}
+      ${nrs}
+    '';
   in {
+    apps.x86_64-linux = {
+      default = mk-app switch;
+      nrs = mk-app nrs;
+      hms = mk-app hms;
+    };
     # Your custom packages
     # Accessible through 'nix build', 'nix shell', etc
     packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
