@@ -7,9 +7,7 @@ hostname: {
   repo,
   pkgs,
   ...
-}: let
-  nrs = pkgs.writeShellScript "nrs" "nixos-rebuild switch --flake ${repo}#${hostname} --refresh";
-in {
+}: {
   imports = [
     (lattice + /sys/${hostname}/configuration)
     (lattice + /share/nixos)
@@ -38,11 +36,7 @@ in {
         value.source = value.flake;
       })
       config.nix.registry;
-    systemPackages = [
-      (pkgs.writeScriptBin "lattice-nrs" "doas ${nrs}")
-    ];
   };
-  security.doas.extraRules = [{ cmd = "${nrs}"; noPass = true; groups = [ "wheel" ]; }];
   nix.settings = {
     experimental-features = "nix-command flakes";
     auto-optimise-store = true;
