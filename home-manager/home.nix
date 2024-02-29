@@ -17,9 +17,6 @@ hostname: {
     config = {
       allowUnfree = true;
       allowUnfreePredicate = _: true;
-      permittedInsecurePackages = [
-        "openssl-1.1.1w"
-      ];
     };
     overlays = [
       outputs.overlays.additions
@@ -32,6 +29,9 @@ hostname: {
       ${pkgs.nvd}/bin/nvd diff $oldGenPath $newGenPath
     '';
     packages = with pkgs; [
+      (pkgs.writeScriptBin "lattice-hms" ''
+        home-manager switch --flake ${repo}#${hostname} --refresh $@
+      '')
       cachix
       comma
       manix
