@@ -40,6 +40,11 @@ in
         pkgs.unstable.tree-sitter-grammars.tree-sitter-just
         treesj
         vim-matchup
+        vim-repeat
+        undotree
+        oil-nvim
+        indent-blankline-nvim
+        marks-nvim
       ];
       withNodeJs = true;
       withPython3 = true;
