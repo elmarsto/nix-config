@@ -124,6 +124,7 @@ in
         live-command-nvim
         open-browser-vim
         luasnip
+        ssr
       ];
       withNodeJs = true;
       withPython3 = true;
