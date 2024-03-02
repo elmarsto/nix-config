@@ -29,7 +29,7 @@ in
   home.packages = with pkgs; [ neovide neovim-remote ];
   programs = {
     neovim = {
-      enable = true;
+     enable = true;
       defaultEditor = true;
       plugins = with pkgs.unstable.vimPlugins;  [
         SchemaStore-nvim

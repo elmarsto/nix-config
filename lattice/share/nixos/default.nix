@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   nixpkgs.config.allowUnfree = true;
   nix = {
     package = pkgs.nixFlakes;
@@ -92,14 +97,14 @@
         }
       ];
     };
-    polkit.adminIdentities = [ "unix-group:wheel" ];
+    polkit.adminIdentities = ["unix-group:wheel"];
     protectKernelImage = true;
     sudo.enable = false;
     rtkit.enable = true;
     tpm2.enable = true;
     tpm2.abrmd.enable = true;
   };
-  services =  {
+  services = {
     acpid.enable = true;
     fcron = {
       enable = true;
@@ -116,8 +121,8 @@
       interval = "3:00";
       package = pkgs.plocate;
       pruneBindMounts = true;
-      pruneNames = [ ".bzr" ".git" ".hg" ".svn" ".pijul" ".stfolder" "$RECYCLE.BIN" ".Trashes" "node_packages" ".snapshots" ];
-      prunePaths = [ "/tmp" "/var/tmp" "/var/cache" "/var/lock" "/var/run" "/var/spool" "/nix/store" "/nix/var/log/nix" ] ;
+      pruneNames = [".bzr" ".git" ".hg" ".svn" ".pijul" ".stfolder" "$RECYCLE.BIN" ".Trashes" "node_packages" ".snapshots"];
+      prunePaths = ["/tmp" "/var/tmp" "/var/cache" "/var/lock" "/var/run" "/var/spool" "/nix/store" "/nix/var/log/nix"];
     };
     postfix.enable = true;
   };

@@ -25,9 +25,9 @@ function lsp.setup()
   end
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
-  nvim_lsp.ast_grep.setup {
-    capabilities = capabilities,
-  }
+  -- nvim_lsp.ast_grep.setup {
+  --   capabilities = capabilities,
+  -- }
   nvim_lsp.awk_ls.setup {
     capabilities = capabilities,
   }
@@ -61,9 +61,9 @@ function lsp.setup()
     on_attach = on_attach_format_navbuddy,
     capabilities = capabilities,
   }
-  nvim_lsp.contextive.setup {
-    capabilities = capabilities,
-  }
+  -- nvim_lsp.contextive.setup {
+  --   capabilities = capabilities,
+  -- }
   nvim_lsp.denols.setup {
     on_attach = on_attach_format_navbuddy,
     capabilities = capabilities,
