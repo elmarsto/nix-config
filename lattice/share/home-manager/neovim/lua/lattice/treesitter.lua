@@ -137,12 +137,6 @@ function treesitter.setup(use)
   vim.keymap.set('n', 'gM', function()
     require('treesj').toggle({ split = { recursive = true } })
   end)
-  use {
-    "IndianBoy42/tree-sitter-just",
-    config = function()
-      require('tree-sitter-just').setup {}
-    end
-  }
 end
 
 return treesitter
