@@ -40,6 +40,7 @@ in
         treesj
         vim-matchup
         vim-repeat
+        vim-just
         undotree
         oil-nvim
         indent-blankline-nvim
