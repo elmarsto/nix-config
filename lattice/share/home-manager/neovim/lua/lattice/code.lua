@@ -9,7 +9,7 @@ function code.setup(use)
     end
   }
   use "bfredl/nvim-luadev"
-  use { "folke/trouble.nvim", after = "nvim-web-devicons" }
+  use { "folke/trouble.nvim" }
   use { "mfussenegger/nvim-dap",
     requires = { -- TODO: break up into separate use blocks
       "rcarriga/nvim-dap-ui",
