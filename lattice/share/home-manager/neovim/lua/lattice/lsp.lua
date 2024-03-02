@@ -71,7 +71,7 @@ function lsp.setup()
   vim.g.markdown_fenced_languages = {
     "ts=typescript"
   }
-  nvim_lsp.docker_compose_language_server.setup {
+  nvim_lsp.docker_compose_language_service.setup {
     on_attach = on_attach_format,
     capabilities = capabilities,
   }
@@ -251,7 +251,7 @@ function lsp.setup()
       "typescript.tsx"
     },
   }
-  nvim_lsp.vale.setup {
+  nvim_lsp.vale_ls.setup {
     on_attach = on_attach_format,
     capabilities = capabilities,
   }
