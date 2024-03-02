@@ -34,7 +34,7 @@ function avigation.setup(use)
     },
     mappings = {}
   }
-  require("indent_blankline").setup()
+  require("ibl").setup()
   use { "kiyoon/treesitter-indent-object.nvim",
     config = function()
       -- select context-aware indent
