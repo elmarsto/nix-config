@@ -165,9 +165,9 @@ function lsp.setup()
   nvim_lsp.qmlls.setup {
     capabilities = capabilities,
   }
-  nvim_lsp.remark_ls.setup {
-    capabilities = capabilities,
-  }
+  -- nvim_lsp.remark_ls.setup {
+  --   capabilities = capabilities,
+  -- }
   nvim_lsp.rust_analyzer.setup {
     capabilities = capabilities,
   }
