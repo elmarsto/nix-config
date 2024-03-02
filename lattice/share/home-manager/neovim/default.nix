@@ -32,105 +32,105 @@ in
       enable = true;
       defaultEditor = true;
       plugins = with pkgs.unstable.vimPlugins;  [
+        SchemaStore-nvim
+        aurora
+        blamer-nvim
+        boole-nvim
+        cmp-buffer
+        cmp-cmdline
+        cmp-dictionary
+        cmp-emoji
+        cmp-npm
+        cmp-nvim-lsp
+        cmp-nvim-lsp
+        cmp-path
+        cmp-rg
+        cmp-spell
+        cmp-treesitter
+        cmp_luasnip
+        comment-nvim
+        copilot-cmp
+        copilot-lua
+        diffview-nvim
+        dressing-nvim
+        fidget-nvim
+        formatter-nvim
+        git-conflict-nvim
+        gitsigns-nvim
+        glow-nvim
+        inc-rename-nvim
+        indent-blankline-nvim
+        iron-nvim
+        legendary-nvim
+        live-command-nvim
+        lsp-format-nvim
+        lspkind-nvim
+        lualine-nvim
+        luasnip
+        luasnip
+        marks-nvim
+        mkdir-nvim
+        mkdnflow-nvim
+        mkdnflow-nvim
+        neoscroll-nvim
+        nui-nvim
+        nvim-autopairs
+        nvim-cmp
+        nvim-cmp
+        nvim-colorizer-lua
+        nvim-dap
+        nvim-dap-ui
+        nvim-dap-virtual-text
+        nvim-lightbulb
+        nvim-lspconfig
+        nvim-luadev
+        nvim-luapad
+        nvim-navbuddy
+        nvim-navic
+        nvim-notify
+        nvim-scrollbar
         nvim-surround
         nvim-treesitter-refactor
         nvim-treesitter-textobjects
         nvim-treesitter-textsubjects
         nvim-treesitter.withAllGrammars
-        treesj
-        vim-matchup
-        vim-repeat
-        vim-just
-        undotree
-        oil-nvim
-        indent-blankline-nvim
-        marks-nvim
-        nui-nvim
-        specs-nvim
-        todo-comments-nvim
-        aurora
-        nvim-web-devicons
-        neoscroll-nvim
-        smart-splits-nvim
-        lualine-nvim
-        nvim-colorizer-lua
-        lspkind-nvim
-        nvim-notify
-        winshift-nvim 
-        nvim-scrollbar
-        dressing-nvim
-        sqlite-lua
-        nvim-lspconfig
-        nvim-navbuddy
-        nvim-navic
-        SchemaStore-nvim
-        lsp-format-nvim
-        cmp-nvim-lsp
-        nvim-cmp
-        fidget-nvim
-        nvim-lightbulb
-        inc-rename-nvim
-        nvim-dap
-        comment-nvim
-        nvim-luadev
-        trouble-nvim
-        nvim-dap-ui
-        nvim-dap-virtual-text
-        formatter-nvim
-        vim-test
-        nvim-autopairs
-        vim-dadbod
-        vim-dadbod-ui
-        vim-dadbod-completion
-        git-conflict-nvim
-        blamer-nvim
-        gitsigns-nvim
-        diffview-nvim
-        vim-fugitive
-        legendary-nvim
-        vim-repeat
-        nvim-cmp
-        cmp-npm
-        cmp-spell
-        cmp-buffer
-        cmp-cmdline
-        cmp-emoji
-        cmp-nvim-lsp
-        cmp-path
-        cmp-rg
-        cmp-treesitter
-        cmp_luasnip
-        cmp-dictionary
-        copilot-cmp
-        plenary-nvim
-        mkdnflow-nvim
-        luasnip
-        copilot-lua
-        telescope-nvim
-        telescope-undo-nvim
-        telescope-project-nvim
-        telescope-frecency-nvim
-        telescope-symbols-nvim
-        iron-nvim
-        nvim-luapad
-        glow-nvim
-        mkdnflow-nvim
-        venn-nvim
-        vim-pencil
-        vim-abolish
-        mkdir-nvim
-        boole-nvim
         nvim-unception
-        live-command-nvim
+        nvim-web-devicons
+        oil-nvim
         open-browser-vim
-        luasnip
+        plenary-nvim
+        smart-splits-nvim
+        specs-nvim
+        sqlite-lua
         ssr
+        telescope-frecency-nvim
+        telescope-nvim
+        telescope-project-nvim
+        telescope-symbols-nvim
+        telescope-undo-nvim
+        todo-comments-nvim
+        treesj
+        trouble-nvim
+        undotree
+        venn-nvim
+        vim-abolish
+        vim-dadbod
+        vim-dadbod-completion
+        vim-dadbod-ui
+        vim-fugitive
+        vim-just
+        vim-matchup
+        vim-pencil
+        vim-repeat
+        vim-repeat
+        vim-test
+        winshift-nvim 
       ];
       withNodeJs = true;
       withPython3 = true;
       vimdiffAlias = true;
       extraLuaPackages = p: with p; [ luautf8 ];
-      extraPackages = with pkgs; with nodePackages; [
+      extraPackages = with pkgs.unstable; with nodePackages; [
         alejandra
         bash-language-server
         boost
@@ -149,10 +149,9 @@ in
         nsh
         python311Packages.ipython
         shellcheck
-        sqlite
         sqls
-        stylelint
         statix
+        stylelint
         taplo
         tree-sitter
         typescript-language-server
@@ -161,6 +160,21 @@ in
         vscode-langservers-extracted
         yaml-language-server
         zig
+        # new
+        emmet-language-server
+        docker-compose-language-service
+        buf-language-server
+        clang-tools # clangd
+        cmake-language-server
+        helm-ls
+        fennel-ls
+        htmx-lsp
+        postgres-lsp
+        rustup # rls
+        # statix has lsp
+        zk
+
+
       ];
       extraConfig = ''
         ${vimConfig}
