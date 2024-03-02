@@ -59,6 +59,7 @@ in
         winshift-nvim 
         nvim-scrollbar
         dressing-nvim
+        sqlite-lua
       ];
       withNodeJs = true;
       withPython3 = true;

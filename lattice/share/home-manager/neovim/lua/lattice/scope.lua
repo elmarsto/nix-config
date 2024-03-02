@@ -51,7 +51,6 @@ function scope.setup(use)
       "fdschmidt93/telescope-egrepify.nvim",
       "nvim-lua/plenary.nvim",
     },
-    after = { "sqlite.lua", },
     config = function()
       local tscope = require("telescope")
       tscope.setup {

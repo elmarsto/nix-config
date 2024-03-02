@@ -3,7 +3,7 @@ local keyboard = {}
 function keyboard.setup(use)
   use {
     "mrjones2014/legendary.nvim",
-    after = { "sqlite.lua", "dressing.nvim", "telescope.nvim" },
+    after = { "telescope.nvim" },
     config = function()
       require("legendary").setup(
         {

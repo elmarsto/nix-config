@@ -4,8 +4,7 @@ function data.setup(use)
   use {
     "kristijanhusak/vim-dadbod-ui",
     after = { "vim-dadbod" }
-	  }
-  use { "tami5/sqlite.lua" }
+  }
   use {
     "kristijanhusak/vim-dadbod-completion",
     after = { "vim-dadbod", "nvim-cmp" },
