@@ -1,9 +1,6 @@
 local repl = {}
 
 function repl.setup(use)
-  -- TODO: add quarto-nvim
-  use { "Vigemus/iron.nvim",
-    config = function()
       local nOrD = function(ts)
         local nodeOut
         if (ts) then
@@ -68,18 +65,6 @@ function repl.setup(use)
         },
         ignore_blank_lines = true,
       }
-    end
-  }
-  -- use {
-  --   "GCBallesteros/jupytext.vim",
-  --   config = function()
-  --     vim.cmd [[
-  --         let g:jupytext_fmt = 'py'
-  --         let g:jupytext_style = 'hydrogen'
-  --       ]]
-  --   end
-  -- }
-  use "rafcamlet/nvim-luapad"
 end
 
 return repl

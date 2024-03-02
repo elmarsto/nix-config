@@ -60,6 +60,70 @@ in
         nvim-scrollbar
         dressing-nvim
         sqlite-lua
+        nvim-lspconfig
+        nvim-navbuddy
+        nvim-navic
+        SchemaStore-nvim
+        lsp-format-nvim
+        cmp-nvim-lsp
+        nvim-cmp
+        fidget-nvim
+        nvim-lightbulb
+        inc-rename-nvim
+        nvim-dap
+        comment-nvim
+        nvim-luadev
+        trouble-nvim
+        nvim-dap-ui
+        nvim-dap-virtual-text
+        formatter-nvim
+        vim-test
+        nvim-autopairs
+        vim-dadbod
+        vim-dadbod-ui
+        vim-dadbod-completion
+        git-conflict-nvim
+        blamer-nvim
+        gitsigns-nvim
+        diffview-nvim
+        vim-fugitive
+        legendary-nvim
+        vim-repeat
+        nvim-cmp
+        cmp-npm
+        cmp-spell
+        cmp-buffer
+        cmp-cmdline
+        cmp-emoji
+        cmp-nvim-lsp
+        cmp-path
+        cmp-rg
+        cmp-treesitter
+        cmp_luasnip
+        cmp-dictionary
+        copilot-cmp
+        plenary-nvim
+        mkdnflow-nvim
+        luasnip
+        copilot-lua
+        telescope-nvim
+        telescope-undo-nvim
+        telescope-project-nvim
+        telescope-frecency-nvim
+        telescope-symbols-nvim
+        iron-nvim
+        nvim-luapad
+        glow-nvim
+        mkdnflow-nvim
+        venn-nvim
+        vim-pencil
+        vim-abolish
+        mkdir-nvim
+        boole-nvim
+        nvim-unception
+        live-command-nvim
+        open-browser-vim
+        luasnip
       ];
       withNodeJs = true;
       withPython3 = true;
