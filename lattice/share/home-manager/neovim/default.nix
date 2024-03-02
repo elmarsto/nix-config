@@ -159,8 +159,8 @@ in
         vim-language-server
         vscode-langservers-extracted
         yaml-language-server
-        zig
-        # new
+        zls
+        efm-langserver
         emmet-language-server
         docker-compose-language-service
         buf-language-server
@@ -168,13 +168,12 @@ in
         cmake-language-server
         helm-ls
         fennel-ls
+        jq-lsp
         htmx-lsp
         postgres-lsp
-        rustup # rls
-        # statix has lsp
+        rust-analyzer
         zk
-
-
+        nushell
       ];
       extraConfig = ''
         ${vimConfig}
