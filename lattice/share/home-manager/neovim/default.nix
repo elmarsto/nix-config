@@ -37,7 +37,6 @@ in
         nvim-treesitter-textobjects
         nvim-treesitter-textsubjects
         nvim-treesitter.withAllGrammars
-        pkgs.unstable.tree-sitter-grammars.tree-sitter-just
         treesj
         vim-matchup
         vim-repeat
