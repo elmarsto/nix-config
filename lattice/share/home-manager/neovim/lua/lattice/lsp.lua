@@ -207,9 +207,9 @@ function lsp.setup()
       "typescript.tsx"
     },
   }
-  nvim_lsp.vale_ls.setup {
-    capabilities = capabilities,
-  }
+  -- nvim_lsp.vale_ls.setup {
+  --   capabilities = capabilities,
+  -- }
   nvim_lsp.vimls.setup {
     capabilities = capabilities,
   }
