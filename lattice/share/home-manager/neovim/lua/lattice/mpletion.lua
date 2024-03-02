@@ -3,7 +3,7 @@ local mpletion = {}
 function mpletion.setup(use)
   use {
     "hrsh7th/nvim-cmp",
-    after = { "LuaSnip", "plenary.nvim", "lspkind.nvim", "mkdnflow.nvim" },
+    after = { "LuaSnip", "plenary.nvim", "mkdnflow.nvim" },
     requires = {
       "David-Kunz/cmp-npm",
       "L3MON4D3/cmp-luasnip-choice",

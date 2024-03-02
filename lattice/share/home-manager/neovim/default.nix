@@ -45,6 +45,20 @@ in
         oil-nvim
         indent-blankline-nvim
         marks-nvim
+        nui-nvim
+        specs-nvim
+        todo-comments-nvim
+        aurora
+        nvim-web-devicons
+        neoscroll-nvim
+        smart-splits-nvim
+        lualine-nvim
+        nvim-colorizer-lua
+        lspkind-nvim
+        nvim-notify
+        winshift-nvim 
+        nvim-scrollbar
+        dressing-nvim
       ];
       withNodeJs = true;
       withPython3 = true;
