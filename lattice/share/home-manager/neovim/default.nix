@@ -1,5 +1,12 @@
-{ config, pkgs, lib, modulesPath, options, specialArgs, ... }:
-let
+{
+  config,
+  pkgs,
+  lib,
+  modulesPath,
+  options,
+  specialArgs,
+  ...
+}: let
   vimConfig = ''
     au CursorHold,CursorHoldI * :silent! checktime
     au FocusGained,BufEnter * :silent! checktime
@@ -24,14 +31,13 @@ let
     set undofile
     set wrap
   '';
-in
-{
-  home.packages = with pkgs; [ neovide neovim-remote ];
+in {
+  home.packages = with pkgs; [neovide neovim-remote];
   programs = {
     neovim = {
-     enable = true;
+      enable = true;
       defaultEditor = true;
-      plugins = with pkgs.unstable.vimPlugins;  [
+      plugins = with pkgs.unstable.vimPlugins; [
         SchemaStore-nvim
         aurora
         blamer-nvim
@@ -41,7 +47,6 @@ in
         cmp-dictionary
         cmp-emoji
         cmp-npm
-        cmp-nvim-lsp
         cmp-nvim-lsp
         cmp-path
         cmp-rg
@@ -67,15 +72,12 @@ in
         lspkind-nvim
         lualine-nvim
         luasnip
-        luasnip
         marks-nvim
         mkdir-nvim
-        mkdnflow-nvim
         mkdnflow-nvim
         neoscroll-nvim
         nui-nvim
         nvim-autopairs
-        nvim-cmp
         nvim-cmp
         nvim-colorizer-lua
         nvim-dap
@@ -85,7 +87,6 @@ in
         nvim-lspconfig
         nvim-luadev
         nvim-luapad
-        nvim-navbuddy
         nvim-navic
         nvim-notify
         nvim-scrollbar
@@ -122,20 +123,22 @@ in
         vim-matchup
         vim-pencil
         vim-repeat
-        vim-repeat
         vim-test
-        winshift-nvim 
+        winshift-nvim
       ];
       withNodeJs = true;
       withPython3 = true;
       vimdiffAlias = true;
-      extraLuaPackages = p: with p; [ luautf8 ];
-      extraPackages = with pkgs.unstable; with nodePackages; [
+      extraLuaPackages = p: with p; [luautf8];
+      extraPackages = with pkgs.unstable;
+      with nodePackages; [
         alejandra
+        black
         bash-language-server
         boost
         ccls
         cmake-language-server
+        prettierd
         deno
         fennel
         graphql-language-service-cli
@@ -147,6 +150,8 @@ in
         marksman
         nixd
         nsh
+        pyright
+        shfmt
         python311Packages.ipython
         shellcheck
         sqls

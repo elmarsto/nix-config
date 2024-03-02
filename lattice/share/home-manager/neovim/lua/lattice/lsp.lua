@@ -13,16 +13,6 @@ function lsp.setup()
 
   require 'lsp-format'.setup {}
   -- declare local in this scope so we don't `require` every run of on_attach below
-  local formatAttach = require "lsp-format".on_attach
-  local on_attach_format = function(client, bufnr)
-    client.server_capabilities.document_formatting = true
-    formatAttach(client)
-    vim.api.nvim_buf_set_option(bufnr or 0, "omnifunc", "v:lua.vim.lsp.omnifunc")
-  end
-  local on_attach_format_navbuddy = function(client, bufnr)
-    require 'nvim-navbuddy'.attach(client, bufnr)
-    on_attach_format(client, bufnr)
-  end
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
   -- nvim_lsp.ast_grep.setup {
@@ -32,55 +22,45 @@ function lsp.setup()
     capabilities = capabilities,
   }
   nvim_lsp.bashls.setup {
-    on_attach = on_attach_format_navbuddy,
     capabilities = capabilities,
   }
   nvim_lsp.autotools_ls.setup {
     capabilities = capabilities,
   }
   nvim_lsp.bufls.setup {
-    on_attach = on_attach_format,
     capabilities = capabilities,
   }
   nvim_lsp.ccls.setup {
-    on_attach = on_attach_format_navbuddy,
     capabilities = capabilities,
   }
   nvim_lsp.clangd.setup {
     capabilities = capabilities,
   }
   nvim_lsp.cmake.setup {
-    on_attach = on_attach_format_navbuddy,
     capabilities = capabilities,
   }
   nvim_lsp.cucumber_language_server.setup {
-    on_attach = on_attach_format,
     capabilities = capabilities,
   }
   nvim_lsp.cssls.setup {
-    on_attach = on_attach_format_navbuddy,
     capabilities = capabilities,
   }
   -- nvim_lsp.contextive.setup {
   --   capabilities = capabilities,
   -- }
   nvim_lsp.denols.setup {
-    on_attach = on_attach_format_navbuddy,
     capabilities = capabilities,
   }
   vim.g.markdown_fenced_languages = {
     "ts=typescript"
   }
   nvim_lsp.docker_compose_language_service.setup {
-    on_attach = on_attach_format,
     capabilities = capabilities,
   }
   nvim_lsp.dockerls.setup {
-    on_attach = on_attach_format,
     capabilities = capabilities,
   }
   nvim_lsp.dotls.setup {
-    on_attach = on_attach_format,
     capabilities = capabilities,
   }
   nvim_lsp.efm.setup {
@@ -95,39 +75,32 @@ function lsp.setup()
         buffer = bufnr,
         command = "EslintFixAll",
       })
-      on_attach_format(client, bufnr)
     end,
     capabilities = capabilities,
     init_options = { documentFormatting = true },
   }
   nvim_lsp.fennel_ls.setup {
-    on_attach = on_attach_format_navbuddy,
     capabilities = capabilities,
   }
   nvim_lsp.gopls.setup {
-    on_attach = on_attach_format_navbuddy,
     capabilities = capabilities,
   }
   nvim_lsp.graphql.setup {
     capabilities = capabilities,
   }
   nvim_lsp.hls.setup {
-    on_attach = on_attach_format_navbuddy,
     capabilities = capabilities,
   }
   nvim_lsp.html.setup {
-    on_attach = on_attach_format_navbuddy,
     capabilities = capabilities,
   }
   nvim_lsp.htmx.setup {
     capabilities = capabilities,
   }
   nvim_lsp.jqls.setup {
-    on_attach = on_attach_format_navbuddy,
     capabilities = capabilities,
   }
   nvim_lsp.jsonls.setup {
-    on_attach = on_attach_format_navbuddy,
     capabilities = capabilities,
     settings = {
       schemas = require "schemastore".json.schemas(),
@@ -135,7 +108,6 @@ function lsp.setup()
     }
   }
   nvim_lsp.lua_ls.setup {
-    on_attach = on_attach_format_navbuddy,
     capabilities = capabilities,
     on_init = function(client)
       local path = client.workspace_folders[1].name
@@ -167,53 +139,42 @@ function lsp.setup()
     end
   }
   nvim_lsp.marksman.setup {
-    on_attach = on_attach_format_navbuddy,
     capabilities = capabilities,
   }
   nvim_lsp.mdx_analyzer.setup {
-    on_attach = on_attach_format,
     capabilities = capabilities,
   }
   nvim_lsp.nixd.setup {
-    on_attach = on_attach_format_navbuddy,
     capabilities = capabilities,
   }
   nvim_lsp.nushell.setup {
-    on_attach = on_attach_format_navbuddy,
     capabilities = capabilities,
   }
   nvim_lsp.perlls.setup {
-    on_attach = on_attach_format_navbuddy,
     capabilities = capabilities,
   }
   nvim_lsp.postgres_lsp.setup {
-    on_attach = on_attach_format,
     capabilities = capabilities,
   }
   nvim_lsp.pyright.setup {
-    on_attach = on_attach_format,
     capabilities = capabilities,
   }
   nvim_lsp.ocamllsp.setup {
-    on_attach = on_attach_format_navbuddy,
     capabilities = capabilities,
   }
   nvim_lsp.qmlls.setup {
-    on_attach = on_attach_format,
     capabilities = capabilities,
   }
   nvim_lsp.remark_ls.setup {
     capabilities = capabilities,
   }
   nvim_lsp.rust_analyzer.setup {
-    on_attach = on_attach_format_navbuddy,
     capabilities = capabilities,
   }
-  nvim_lsp.spectral.setup {
-    capabilities = capabilities,
-  }
+  -- nvim_lsp.spectral.setup {
+  --   capabilities = capabilities,
+  -- }
   nvim_lsp.sqlls.setup {
-    on_attach = on_attach_format_navbuddy,
     settings = {
       sqlls = {
         connections = { vim.g.lattice.sqlls.config }
@@ -221,26 +182,21 @@ function lsp.setup()
     }
   }
   nvim_lsp.stylelint_lsp.setup {
-    on_attach = on_attach_format,
     filetypes = { "css" },
     settings = {
       stylelintplus = {}
     }
   }
   nvim_lsp.statix.setup {
-    on_attach = on_attach_format,
     capabilities = capabilities,
   }
   nvim_lsp.svelte.setup {
-    on_attach = on_attach_format_navbuddy,
     capabilities = capabilities,
   }
   nvim_lsp.taplo.setup {
-    on_attach = on_attach_format_navbuddy,
     capabilities = capabilities,
   }
   nvim_lsp.tsserver.setup {
-    on_attach = on_attach_format_navbuddy,
     capabilities = capabilities,
     filetypes = {
       "javascript",
@@ -252,15 +208,12 @@ function lsp.setup()
     },
   }
   nvim_lsp.vale_ls.setup {
-    on_attach = on_attach_format,
     capabilities = capabilities,
   }
   nvim_lsp.vimls.setup {
-    on_attach = on_attach_format,
     capabilities = capabilities,
   }
   nvim_lsp.yamlls.setup {
-    on_attach = on_attach_format_navbuddy,
     capabilities = capabilities,
     filetypes = { "yaml", "yml" },
     settings = {
@@ -280,7 +233,6 @@ function lsp.setup()
     }
   }
   require 'lspconfig'.zls.setup {
-    on_attach = on_attach_format_navbuddy,
     capabilities = capabilities,
   }
   -- TODO: json schemas

@@ -28,21 +28,26 @@
     pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
 
     ns = import ./nixos/configuration.nix;
-    mk-app = p: { program = "${p}"; type = "app"; };
-    mk-system = hostname: nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs outputs home-manager lattice repo;};
-      modules = [
-        (ns hostname)
-      ];
+    mk-app = p: {
+      program = "${p}";
+      type = "app";
     };
+    mk-system = hostname:
+      nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs home-manager lattice repo;};
+        modules = [
+          (ns hostname)
+        ];
+      };
     hm = import ./home-manager/home.nix;
-    mk-home = hostname: home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-      extraSpecialArgs = {inherit inputs outputs lattice repo;};
-      modules = [
-        (hm hostname)
-      ];
-    };
+    mk-home = hostname:
+      home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = {inherit inputs outputs lattice repo;};
+        modules = [
+          (hm hostname)
+        ];
+      };
 
     host = pkgs.writeShellScript "host" ''
       echo .#`${pkgs.nettools}/bin/hostname`
