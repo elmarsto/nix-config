@@ -1,12 +1,15 @@
-{ config, pkgs, lib, ... }:
-let
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
   me = config.home.username;
   host = "100.69.208.95";
   fleshyPassword = "/etc/secrets/fleshy-email-password.sh";
   newsletterPassword = "/etc/secrets/newsletter-email-password.sh";
   protonPassword = "/etc/secrets/proton-email-password.sh";
-in
-{
+in {
   home.packages = with pkgs; [
     protonmail-bridge
     hydroxide
@@ -35,8 +38,8 @@ in
       userName = "root@fleshcassette.net";
       himalaya = {
         enable = true;
-        backend = "imap";
-        sender = "smtp";
+        #backend = "imap";
+        #sender = "smtp";
         settings = {
           imap-insecure = true;
           smtp-insecure = true;
@@ -69,8 +72,8 @@ in
       userName = "lattice@saccades.ca";
       himalaya = {
         enable = true;
-        sender = "smtp";
-        backend = "imap";
+        #sender = "smtp";
+        #backend = "imap";
         settings = {
           imap-insecure = true;
           smtp-insecure = true;
@@ -100,8 +103,8 @@ in
       userName = "newsletter@lizmars.net";
       himalaya = {
         enable = true;
-        backend = "imap";
-        sender = "smtp";
+        #backend = "imap";
+        #sender = "smtp";
         settings = {
           imap-insecure = true;
           smtp-insecure = true;
@@ -134,8 +137,8 @@ in
       userName = "her@lizmars.net";
       himalaya = {
         enable = true;
-        backend = "imap";
-        sender = "smtp";
+        #backend = "imap";
+        #sender = "smtp";
         settings = {
           imap-insecure = true;
           smtp-insecure = true;
@@ -146,7 +149,7 @@ in
     pm = {
       address = "1attice@proton.me";
       realName = "Liz";
-      aliases = [ "1attice@protonmail.com" "liz.mars@pm.me" ];
+      aliases = ["1attice@protonmail.com" "liz.mars@pm.me"];
       imap = {
         host = "127.0.0.1";
         port = 1143;
@@ -169,8 +172,8 @@ in
       userName = "1attice@proton.me";
       himalaya = {
         enable = true;
-        backend = "imap";
-        sender = "smtp";
+        #backend = "imap";
+        #sender = "smtp";
         settings = {
           imap-insecure = true;
           smtp-insecure = true;
@@ -179,6 +182,7 @@ in
       };
     };
   };
-  programs.himalaya.enable = true;
+  programs = {
+    himalaya.enable = true;
+  };
 }
-
