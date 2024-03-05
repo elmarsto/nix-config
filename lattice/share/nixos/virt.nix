@@ -1,22 +1,25 @@
-{pkgs, config, ... }:
 {
+  pkgs,
+  config,
+  ...
+}: {
   boot = {
-    kernelModules = [ "kvm" "kvm-amd" "kvm-intel" "vfio-pci" ];
-    kernel.sysctl = { "vm.hugetlb_shm_group" = "301"; };
+    kernelModules = ["kvm" "kvm-amd" "kvm-intel" "vfio-pci"];
+    kernel.sysctl = {"vm.hugetlb_shm_group" = "301";};
   };
-  environment.systemPackages = with pkgs; [ virt-manager podman ];
+  environment.systemPackages = with pkgs; [virt-manager podman];
   programs.dconf.enable = true; #needed by virt-manager
   services.flatpak.enable = true;
   virtualisation = {
     libvirtd.enable = true;
-    docker.enable = false;  
+    docker.enable = false;
+    containers.cdi.dynamic.nvidia.enable = true;
     podman = {
-     enable = true;
-     enableNvidia = true;
-     dockerCompat = true;
-     dockerSocket.enable = true;
-     defaultNetwork.settings.dns_enabled = true;
-     defaultNetwork.settings.dnsname_enabled = true;
+      enable = true;
+      dockerCompat = true;
+      dockerSocket.enable = true;
+      defaultNetwork.settings.dns_enabled = true;
+      defaultNetwork.settings.dnsname_enabled = true;
     };
     spiceUSBRedirection.enable = true;
   };

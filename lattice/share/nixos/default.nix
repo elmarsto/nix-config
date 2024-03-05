@@ -75,7 +75,7 @@
   security = {
     doas.enable = true;
     pam = {
-      enableSSHAgentAuth = true;
+      sshAgentAuth.enable = true;
       loginLimits = [
         {
           domain = "*";

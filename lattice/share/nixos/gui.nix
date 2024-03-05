@@ -1,4 +1,8 @@
-{ lib, pkgs, ... }:  {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     clinfo
     openxr-loader
@@ -9,9 +13,9 @@
   fonts = {
     enableDefaultPackages = true;
     fontconfig.defaultFonts = {
-      serif = [ "Noto Serif" ];
-      sansSerif = [ "Noto Sans" ];
-      monospace = [ "Noto Sans Mono" ];
+      serif = ["Noto Serif"];
+      sansSerif = ["Noto Sans"];
+      monospace = ["Noto Sans Mono"];
     };
     fontDir.enable = true;
     packages = with pkgs; [
@@ -25,7 +29,7 @@
   };
   nixpkgs.config.firefox.enableGnomeExtensions = true;
   programs.xwayland.enable = true;
-  services =  {
+  services = {
     pipewire = {
       alsa = {
         enable = true;
@@ -45,9 +49,11 @@
         };
       };
       enable = true;
-      layout = "us";
-      xkbOptions = "caps:escape"; #sanity
-      xkbVariant = "";
+      xkb = {
+        options = "caps:escape"; #sanity
+        variant = "";
+        layout = "us";
+      };
     };
   };
   sound.enable = true;

@@ -1,6 +1,10 @@
-{ lib, pkgs, ... }: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   boot.kernel.sysctl."net.ipv4.conf.all.forwarding" = true;
-  environment.systemPackages = [ pkgs.tailscale ];
+  environment.systemPackages = [pkgs.tailscale];
   networking = {
     extraHosts = ''
       100.100.65.126     bowsprit.fleshcassette.net bowsprit.localdomain bowsprit
@@ -13,7 +17,7 @@
   services = {
     avahi = {
       enable = true;
-      nssmdns = true;
+      nssmdns4 = true;
     };
     openssh = {
       enable = true;
@@ -26,7 +30,7 @@
         X11Forwarding = false;
       };
     };
-    tailscale =  {
+    tailscale = {
       enable = true;
       authKeyFile = "/run/secrets/tailscale_key";
       openFirewall = true;
