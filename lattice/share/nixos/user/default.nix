@@ -1,4 +1,5 @@
 { pkgs, ... }: let
+  # TODO: put these in a separate flake and refer to it by URL as a flake input
   authorizedKeyFiles = [
     ./id_fourcade.pub
     ./id_bowsprit.pub

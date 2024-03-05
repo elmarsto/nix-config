@@ -1,8 +1,12 @@
-{ lib, pkgs, ... }: let
+{
+  lib,
+  pkgs,
+  ...
+}: let
   doas-rule = command: {
-    args = [ command "gpm" ];
+    args = [command "gpm"];
     cmd = "systemctl";
-    groups = [ "wheel" ];
+    groups = ["wheel"];
     keepEnv = true;
     noPass = true;
     runAs = "root";
@@ -29,7 +33,7 @@ in {
     ];
     earlySetup = true;
     font = "${pkgs.spleen}/share/consolefonts/spleen-16x32.psfu";
-    packages = with pkgs; [ spleen ];
+    packages = with pkgs; [spleen];
     useXkbConfig = true; # pairs with xserver.xkbOptions above to fuck up that capslock
   };
   i18n.defaultLocale = "en_US.UTF-8";
@@ -42,16 +46,16 @@ in {
       enable = true;
       logEvents = true;
       powerEventCommands = ''
-        systemctl suspend 
+        systemctl suspend
       '';
       lidEventCommands = ''
-        systemctl suspend 
+        systemctl suspend
       '';
     };
     gpm.enable = true;
     logind.extraConfig = ''
       HandlePowerKey=ignore
     '';
-    xserver.xkbOptions = "caps:escape";
-  }; 
+    xserver.xkb.options = "caps:escape";
+  };
 }
