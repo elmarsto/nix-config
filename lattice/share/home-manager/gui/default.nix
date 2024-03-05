@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }: {
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   dconf.enable = true;
   fonts.fontconfig.enable = true;
   home = {
@@ -33,11 +38,11 @@
           "Zen Loop"
         ];
       })
+      (nerdfonts.override { fonts = [ "VictorMono" "Monaspace" ]; })
       google-chrome
       gsettings-desktop-schemas
       libinput
       libreoffice-fresh
-      libsForQt5.okular
       lsix
       monaspace
       notify-desktop
@@ -57,7 +62,7 @@
       QT_QPA_PLATFORM = "wayland";
     };
   };
-  imports = [ ./wezterm.nix ];
+  imports = [./wezterm.nix];
   programs = {
     chromium = {
       enable = true;
@@ -67,15 +72,7 @@
   };
   services.fusuma = {
     enable = true;
-    settings = { };
-  };
-  qt = {
-    enable = true;
-    platformTheme = "gnome";
-    style = {
-      package = pkgs.adwaita-qt;
-      name = "adwaita";
-    };
+    settings = {};
   };
   xdg = {
     enable = true;
@@ -106,4 +103,3 @@
     userDirs.enable = true;
   };
 }
-

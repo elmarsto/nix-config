@@ -1,10 +1,13 @@
-{ config, pkgs, lib, ... }:
-let
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
   dw = pkgs.writeScriptBin "dw" ''
     ${pkgs.diceware}/bin/diceware -n 3 -d '-' --no-caps $@
   '';
-in
-{
+in {
   editorconfig = {
     enable = true;
     settings = {
@@ -31,7 +34,7 @@ in
     libsecret
     lldb
     ncdu
-    pinentry.gnome3
+    pinentry.qt
     rbw
     ripgrep
     rsync
@@ -62,7 +65,7 @@ in
     eza = {
       enable = true;
       enableAliases = true;
-      extraOptions = [ "--group-directories-first" "--header" ];
+      extraOptions = ["--group-directories-first" "--header"];
       git = true;
       icons = true;
     };
@@ -71,7 +74,12 @@ in
       enable = true;
       mutableKeys = true;
       mutableTrust = true;
-      publicKeys = [ { source = ./gpg-pubkeys.txt; trust = "full"; } ];
+      publicKeys = [
+        {
+          source = ./gpg-pubkeys.txt;
+          trust = "full";
+        }
+      ];
     };
     man = {
       enable = true;
@@ -83,7 +91,7 @@ in
       settings = {
         email = "liz.mars@pm.me";
         lock_timeout = 300;
-        pinentry = "gnome3";
+        pinentry = "qt";
       };
     };
     watson.enable = true;
@@ -107,11 +115,11 @@ in
     gpg-agent = {
       enable = true;
       enableExtraSocket = true;
-      pinentryFlavor = "gnome3";
+      pinentryFlavor = "qt";
     };
     gnome-keyring = {
       enable = true;
-      components = [ "pkcs11" "secrets" ];
+      components = ["pkcs11" "secrets"];
     };
     pueue = {
       enable = true;
@@ -122,7 +130,7 @@ in
       settings = {
         loglevel = 5;
         nocjk = true;
-        "skippedNames+" = [ "node_modules" "target" "result" ".git" "*.iso" ];
+        "skippedNames+" = ["node_modules" "target" "result" ".git" "*.iso"];
         topdirs = [
           "~/Audio"
           "~/Calibre Library"
@@ -145,4 +153,3 @@ in
     };
   };
 }
-

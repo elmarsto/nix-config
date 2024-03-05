@@ -28,7 +28,10 @@
     driSupport32Bit = true;
   };
   nixpkgs.config.firefox.enableGnomeExtensions = true;
-  programs.xwayland.enable = true;
+  programs = {
+    xwayland.enable = true;
+    dconf.enable = true;
+  };
   services = {
     pipewire = {
       alsa = {
@@ -40,13 +43,20 @@
       pulse.enable = true;
     };
     xserver = {
-      desktopManager.gnome.enable = true;
+      desktopManager = {
+        # gnome.enable = true;
+        plasma6.enable = true;
+      };
       displayManager = {
-        defaultSession = "gnome";
-        gdm = {
+        defaultSession = "plasma";
+        sddm = {
           enable = true;
-          wayland = true;
+          wayland.enable = true;
         };
+        # gdm = {
+        #   enable = true;
+        #   wayland = true;
+        # };
       };
       enable = true;
       xkb = {
