@@ -56,7 +56,7 @@
       ${pkgs.home-manager}/bin/home-manager switch --flake `${host}`
     '';
     nrs = pkgs.writeShellScript "flake-nrs" ''
-      ${pkgs.doas}/bin/doas ${pkgs.nixos-rebuild}/bin/nixos-rebuild switch --flake `${host}`
+      ${pkgs.nixos-rebuild}/bin/nixos-rebuild switch --flake `${host}`
     '';
     switch = pkgs.writeShellScript "flake-switch" ''
       ${hms}
