@@ -80,6 +80,7 @@ in {
         nvim-autopairs
         nvim-cmp
         nvim-colorizer-lua
+        nvim-config-local
         nvim-dap
         nvim-dap-ui
         nvim-dap-virtual-text
