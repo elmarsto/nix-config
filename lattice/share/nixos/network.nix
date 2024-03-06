@@ -14,6 +14,9 @@
     '';
     nat.enable = true;
   };
+  programs = {
+    kdeconnect.enable = true;
+  };
   services = {
     avahi = {
       enable = true;
