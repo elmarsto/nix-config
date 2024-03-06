@@ -216,12 +216,9 @@ in {
       extraConfig = vimConfig;
     };
   };
-  xdg.configFile = {
-    "nvim/lua" = {
-      source = ./lua;
-      recursive = true;
-    };
-    "lattice-vscode.vim".text = vimConfig; # TODO: add more goodies here
+  xdg.configFile."nvim/lua" = {
+    source = ./lua;
+    recursive = true;
   };
   home.file = {
     ".vimrc".text = vimConfig;
