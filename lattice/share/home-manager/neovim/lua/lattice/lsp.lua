@@ -48,9 +48,9 @@ function lsp.setup()
   -- nvim_lsp.contextive.setup {
   --   capabilities = capabilities,
   -- }
-  nvim_lsp.denols.setup {
-    capabilities = capabilities,
-  }
+  -- nvim_lsp.denols.setup {
+  --   capabilities = capabilities,
+  -- }
   vim.g.markdown_fenced_languages = {
     "ts=typescript"
   }
@@ -66,9 +66,9 @@ function lsp.setup()
   nvim_lsp.efm.setup {
     capabilities = capabilities,
   }
-  nvim_lsp.emmet_ls.setup {
-    capabilities = capabilities,
-  }
+  -- nvim_lsp.emmet_ls.setup {
+  --   capabilities = capabilities,
+  -- }
   nvim_lsp.eslint.setup {
     on_attach = function(client, bufnr)
       vim.api.nvim_create_autocmd("BufWritePre", {
