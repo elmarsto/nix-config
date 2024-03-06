@@ -28,7 +28,6 @@ in {
     ddgr
     diceware
     dw
-    footswitch
     gpg-tui
     gdb
     libsecret
