@@ -1,12 +1,12 @@
-{ pkgs, ... }: let
+{pkgs, ...}: let
   # TODO: put these in a separate flake and refer to it by URL as a flake input
   authorizedKeyFiles = [
     ./id_fourcade.pub
     ./id_bowsprit.pub
     ./id_sopwith.pub
   ];
- in {
-  nix.settings.trusted-users = [ "root" "lattice" ];
+in {
+  nix.settings.trusted-users = ["root" "lattice"];
   users.users = {
     root.openssh.authorizedKeys.keyFiles = authorizedKeyFiles;
     lattice = {
@@ -37,9 +37,15 @@
     };
   };
   security = {
-    polkit.adminIdentities = [ "unix-user:lattice" ];
+    polkit.adminIdentities = ["unix-user:lattice"];
+    doas.extraRules = [
+      {
+        users = ["lattice"];
+        persist = true;
+      }
+    ];
   };
   services = {
-    locate.prunePaths = [ "/home/lattice/.mozilla" "/home/lattice/.local" "/home/lattice/.cache" "/home/lattice/.thunderbird"  ];
+    locate.prunePaths = ["/home/lattice/.mozilla" "/home/lattice/.local" "/home/lattice/.cache" "/home/lattice/.thunderbird"];
   };
 }
