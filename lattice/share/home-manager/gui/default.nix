@@ -70,9 +70,15 @@
     };
     firefox.enable = true;
   };
-  services.fusuma = {
-    enable = true;
-    settings = {};
+  services = {
+    fusuma = {
+      enable = true;
+      settings = {};
+    };
+    kdeconnect = {
+      enable = true;
+      indicator = true;
+    };
   };
   xdg = {
     enable = true;
