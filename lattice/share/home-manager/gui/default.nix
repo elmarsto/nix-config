@@ -52,8 +52,8 @@
       wl-clipboard
       xdg-utils
       xorg.xeyes
-      #unstable.sublime4
-      unstable.sublime-merge
+      sublime-merge
+      vscode
     ];
     sessionVariables = {
       MOZ_ENABLE_WAYLAND = 1;

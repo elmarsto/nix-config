@@ -70,7 +70,7 @@ function lsp.setup()
     -- }
     nvim_lsp.eslint.setup {
         capabilities = capabilities,
-        filetypes = {"json", "javascript", "javascriptreact", "typescript", "typescriptreact"},
+        filetypes = {"json", "javascript", "javascriptreact", "typescript", "typescriptreact"}
     }
     nvim_lsp.fennel_ls.setup {
         capabilities = capabilities
