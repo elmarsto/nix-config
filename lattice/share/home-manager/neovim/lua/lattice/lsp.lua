@@ -69,7 +69,7 @@ function lsp.setup()
     --   capabilities = capabilities,
     -- }
     nvim_lsp.eslint.setup {
-        on_attach = function(client, bufnr)
+        on_attach = function(_, bufnr)
             vim.api.nvim_create_autocmd(
                 "BufWritePre",
                 {
@@ -146,7 +146,10 @@ function lsp.setup()
                 )
             end
             return true
-        end
+        end,
+        settings = {
+            Lua = {}
+        }
     }
     nvim_lsp.marksman.setup {
         capabilities = capabilities
@@ -232,7 +235,10 @@ function lsp.setup()
         settings = {
             yaml = {
                 schemas = {
-                    ["https://json.schemastore.org/github-workflow.json"] = ".github/workflows/*"
+                    ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+                    ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "/docker-compose.*",
+                    ["https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json"] = "/openapi-schema.*"
+
                     -- TODO: docker-compose schema
                 },
                 format = {
