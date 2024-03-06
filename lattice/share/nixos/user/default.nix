@@ -26,7 +26,6 @@ in {
         "input"
         "libvirtd"
         "lp"
-        "podman"
         "qemu-libvirtd"
         "render"
         "scanner"

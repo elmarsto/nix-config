@@ -12,7 +12,13 @@
   services.flatpak.enable = true;
   virtualisation = {
     libvirtd.enable = true;
-    docker.enable = true;
+    docker = {
+      enable = true;
+      rootless = {
+        enable = true;
+        setSocketVariable = true;
+      };
+    };
     containers.cdi.dynamic.nvidia.enable = true;
     # podman = {
     #   enable = true;
