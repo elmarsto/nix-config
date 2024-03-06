@@ -39,8 +39,7 @@ function code.setup()
                 require("formatter.filetypes.toml").taplo
             },
             ["*"] = {
-                require("formatter.defaults").prettierd,
-                require("formatter.filetypes.any").remove_trailing_whitespace
+                require("formatter.defaults").prettierd
             }
         }
     }
