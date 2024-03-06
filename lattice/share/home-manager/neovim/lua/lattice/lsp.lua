@@ -69,17 +69,8 @@ function lsp.setup()
     --   capabilities = capabilities,
     -- }
     nvim_lsp.eslint.setup {
-        on_attach = function(_, bufnr)
-            vim.api.nvim_create_autocmd(
-                "BufWritePre",
-                {
-                    buffer = bufnr,
-                    command = "EslintFixAll"
-                }
-            )
-        end,
         capabilities = capabilities,
-        init_options = {documentFormatting = true}
+        filetypes = {"json", "javascript", "javascriptreact", "typescript", "typescriptreact"},
     }
     nvim_lsp.fennel_ls.setup {
         capabilities = capabilities
@@ -103,7 +94,7 @@ function lsp.setup()
         capabilities = capabilities
     }
     nvim_lsp.jsonls.setup {
-        capabilities = capabilities,
+        capabilities = capabilities
     }
     nvim_lsp.lua_ls.setup {
         capabilities = capabilities,
