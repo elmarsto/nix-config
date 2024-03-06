@@ -38,7 +38,7 @@
           "Zen Loop"
         ];
       })
-      (nerdfonts.override { fonts = [ "VictorMono" "Monaspace" ]; })
+      (nerdfonts.override {fonts = ["VictorMono" "Monaspace"];})
       google-chrome
       gsettings-desktop-schemas
       libinput
