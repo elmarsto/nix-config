@@ -104,10 +104,6 @@ function lsp.setup()
     }
     nvim_lsp.jsonls.setup {
         capabilities = capabilities,
-        settings = {
-            schemas = require "schemastore".json.schemas(),
-            validate = {enable = true}
-        }
     }
     nvim_lsp.lua_ls.setup {
         capabilities = capabilities,
