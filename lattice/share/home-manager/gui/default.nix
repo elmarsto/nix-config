@@ -10,20 +10,6 @@
     packages = with pkgs; [
       bitwarden
       dconf
-      gnome.adwaita-icon-theme
-      gnome.dconf-editor
-      gnome.gnome-disk-utility
-      gnome.gnome-settings-daemon
-      gnome.gnome-sound-recorder
-      gnome.gnome-tweaks
-      gnome.nautilus
-      gnome.seahorse
-      gnomeExtensions.battery-health-charging
-      gnomeExtensions.clipboard-indicator
-      gnomeExtensions.compiz-windows-effect
-      gnomeExtensions.espresso
-      gnomeExtensions.gnome-40-ui-improvements
-      gnomeExtensions.vitals
       (google-fonts.override {
         fonts = [
           "Oxanium"
@@ -40,7 +26,7 @@
       })
       (nerdfonts.override {fonts = ["VictorMono" "Monaspace"];})
       google-chrome
-      gsettings-desktop-schemas
+      kcolorchooser
       libinput
       libreoffice-fresh
       lsix

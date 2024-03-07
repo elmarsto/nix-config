@@ -222,11 +222,11 @@ function lsp.setup()
         settings = {
             yaml = {
                 schemas = {
-                    ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
-                    ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "/docker-compose.*",
-                    ["https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json"] = "/openapi-schema.*"
-
-                    -- TODO: docker-compose schema
+                    ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*.y{,a}ml",
+                    ["https://json.schemastore.org/github-action.json"] = "/action.y{,a}ml",
+                    ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "docker-compose.y{,a}ml",
+                    ["https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json"] = "*schema.y{,a}ml",
+                    ["https://json.schemastore.org/lefthook.json"] = "/lefthook.y{,a}ml"
                 },
                 format = {
                     enable = true,
