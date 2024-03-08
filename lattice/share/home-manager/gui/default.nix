@@ -10,6 +10,8 @@
     packages = with pkgs; [
       bitwarden
       dconf
+      jetbrains-mono
+      udev-gothic
       (google-fonts.override {
         fonts = [
           "Oxanium"
