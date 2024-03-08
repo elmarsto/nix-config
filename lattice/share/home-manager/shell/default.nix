@@ -8,6 +8,11 @@
     ${pkgs.diceware}/bin/diceware -n 3 -d '-' --no-caps $@
   '';
 in {
+  imports = [
+    ./starship.nix
+    ./tmux.nix
+    ./ssh
+  ];
   editorconfig = {
     enable = true;
     settings = {
@@ -22,117 +27,117 @@ in {
       };
     };
   };
-  home.packages = with pkgs;
-  with nodePackages; [
-    alejandra
-    angle-grinder
-    bash-language-server
-    bind
-    black
-    boost
-    sqlfluff
-    buf-language-server
-    ccls
-    choose
-    clang-analyzer
-    clang-tools
-    clang-tools # clangd
-    cmake-language-server
-    croc
-    ctop
-    eslint
-    curl
-    dasel # csv/json/yaml tool like jq but universal
-    ddgr # duckduckgo
-    deno
-    diceware
-    docker-compose-language-service
-    dog
-    drill
-    duf
-    dw
-    efm-langserver
-    emmet-language-server
-    entr
-    eslint_d
-    fd
-    fennel
-    fennel-ls
-    fx
-    gdb
-    gpg-tui
-    graphql-language-service-cli
-    helm-ls
-    htmx-lsp
-    hyperfine
-    jaq # fast jq
-    jc
-    jless
-    jo
-    jq
-    jq-lsp
-    lazydocker
-    lazygit
-    libsecret
-    lldb
-    llvm
-    lnav
-    lua
-    lua-fmt
-    lua-language-server
-    magic-wormhole
-    marksman
-    miller
-    mtr
-    ncdu
-    nixd
-    nodejs
-    nsh
-    nushell
-    parallel
-    pgcli
-    pinentry.qt
-    plocate
-    postgres-lsp
-    prettierd
-    pv
-    pyright
-    python312Packages.ipython
-    python312
-    rbw
-    ripgrep
-    ripgrep-all
-    rsync
-    rustup
-    shellcheck
-    shfmt
-    sqls
-    statix
-    steam-run
-    stylelint
-    taplo
-    tree-sitter
-    ts
-    typescript
-    typescript-language-server
-    unzip
-    vale
-    vim-language-server
-    visidata
-    vscode-langservers-extracted
-    wring
-    xh
-    xsv
-    xz
-    yaml-language-server
-    zk
-    zls
-  ];
-  imports = [
-    ./starship.nix
-    ./tmux.nix
-    ./ssh
-  ];
+  home = {
+    packages = with pkgs;
+    with nodePackages; [
+      alejandra
+      angle-grinder
+      bash-language-server
+      bind
+      black
+      boost
+      sqlfluff
+      buf-language-server
+      ccls
+      choose
+      clang-analyzer
+      clang-tools
+      clang-tools # clangd
+      cmake-language-server
+      croc
+      ctop
+      eslint
+      curl
+      dasel # csv/json/yaml tool like jq but universal
+      ddgr # duckduckgo
+      deno
+      diceware
+      docker-compose-language-service
+      dog
+      drill
+      duf
+      dw
+      efm-langserver
+      emmet-language-server
+      entr
+      eslint_d
+      fd
+      fennel
+      fennel-ls
+      fx
+      gdb
+      gpg-tui
+      graphql-language-service-cli
+      helm-ls
+      htmx-lsp
+      hyperfine
+      jaq # fast jq
+      jc
+      jless
+      jo
+      jq
+      jq-lsp
+      lazydocker
+      lazygit
+      libsecret
+      lldb
+      llvm
+      lnav
+      lua
+      lua-fmt
+      lua-language-server
+      magic-wormhole
+      marksman
+      miller
+      mtr
+      ncdu
+      nixd
+      nodejs
+      nsh
+      nushell
+      parallel
+      pgcli
+      pinentry.qt
+      plocate
+      postgres-lsp
+      prettierd
+      pv
+      pyright
+      python312Packages.ipython
+      python312
+      rbw
+      ripgrep
+      ripgrep-all
+      rsync
+      rustup
+      shellcheck
+      shfmt
+      sqls
+      statix
+      steam-run
+      stylelint
+      taplo
+      tree-sitter
+      ts
+      typescript
+      typescript-language-server
+      unzip
+      vale
+      vim-language-server
+      visidata
+      vscode-langservers-extracted
+      wring
+      xh
+      xsv
+      xz
+      yaml-language-server
+      zk
+      zls
+    ];
+    sessionPath = [
+      "$HOME/.local/bin"
+    ];
+  };
   programs = {
     bash = {
       enable = true;
