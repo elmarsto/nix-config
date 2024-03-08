@@ -19,6 +19,7 @@
     set list
     set mouse=a
     set nospell
+    set nu
     set relativenumber
     set shiftwidth=2
     set signcolumn=yes
@@ -117,6 +118,7 @@ in {
         vim-dadbod-completion
         vim-dadbod-ui
         vim-fugitive
+        vim-gist
         vim-just
         vim-matchup
         vim-pencil

@@ -34,6 +34,7 @@ in {
       angle-grinder
       bash-language-server
       bind
+      gist
       black
       boost
       sqlfluff
