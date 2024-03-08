@@ -135,14 +135,15 @@ in {
       zls
     ];
     sessionPath = [
-      "$HOME/.local/bin"
-    ];
+      "~/.local/bin" # why no work
+     ];
   };
   programs = {
     bash = {
       enable = true;
       initExtra = ''
         set -o vi
+        export PATH="$PATH:~/.local/bin"
       '';
     };
     bat = {

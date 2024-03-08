@@ -210,9 +210,9 @@ function lsp.setup()
     vim.g.markdown_fenced_languages = {
         "ts=typescript"
     }
-    -- nvim_lsp.vale_ls.setup {
-    --   capabilities = capabilities,
-    -- }
+    nvim_lsp.vale_ls.setup {
+      capabilities = capabilities,
+    }
     nvim_lsp.vimls.setup {
         capabilities = capabilities
     }
