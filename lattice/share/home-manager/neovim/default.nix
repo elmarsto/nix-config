@@ -131,58 +131,6 @@ in {
       withPython3 = true;
       vimdiffAlias = true;
       extraLuaPackages = p: with p; [luautf8];
-      extraPackages = with pkgs.unstable;
-      with nodePackages; [
-        alejandra
-        black
-        bash-language-server
-        tsserver
-        boost
-        ccls
-        cmake-language-server
-        prettierd
-        deno
-        fennel
-        typescript
-        graphql-language-service-cli
-        jq-lsp
-        llvm
-        lua
-        lua-fmt
-        lua-language-server
-        marksman
-        nixd
-        nsh
-        pyright
-        shfmt
-        python311Packages.ipython
-        shellcheck
-        sqls
-        statix
-        stylelint
-        taplo
-        tree-sitter
-        typescript-language-server
-        vale
-        vim-language-server
-        vscode-langservers-extracted
-        yaml-language-server
-        zls
-        efm-langserver
-        emmet-language-server
-        docker-compose-language-service
-        buf-language-server
-        clang-tools # clangd
-        cmake-language-server
-        helm-ls
-        fennel-ls
-        jq-lsp
-        htmx-lsp
-        postgres-lsp
-        rust-analyzer
-        zk
-        nushell
-      ];
       extraConfig = ''
         ${vimConfig}
         au TermOpen * setlocal scrollback=-1

@@ -39,6 +39,7 @@
       xdg-utils
       xorg.xeyes
       sublime-merge
+      lapce
       vscode
     ];
     sessionVariables = {

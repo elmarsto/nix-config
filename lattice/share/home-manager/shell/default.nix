@@ -22,72 +22,109 @@ in {
       };
     };
   };
-  home.packages = with pkgs; [
+  home.packages = with pkgs;
+  with nodePackages; [
+    alejandra
     angle-grinder
+    bash-language-server
     bind
+    black
+    boost
+    buf-language-server
+    ccls
     choose
+    clang-analyzer
+    clang-tools
+    clang-tools # clangd
+    cmake-language-server
     croc
     ctop
     curl
     dasel # csv/json/yaml tool like jq but universal
     ddgr # duckduckgo
+    deno
     diceware
+    docker-compose-language-service
     dog
     drill
     duf
     dw
+    efm-langserver
+    emmet-language-server
     entr
+    eslint_d
     fd
+    fennel
+    fennel-ls
     fx
     gdb
     gpg-tui
+    graphql-language-service-cli
+    helm-ls
+    htmx-lsp
     hyperfine
     jaq # fast jq
     jc
     jless
     jo
     jq
+    jq-lsp
     lazydocker
     lazygit
     libsecret
     lldb
+    llvm
     lnav
+    lua
+    lua-fmt
+    lua-language-server
     magic-wormhole
-    nodePackages_latest.wring
+    marksman
     miller
     mtr
     ncdu
+    nixd
+    nodejs
+    nsh
+    nushell
     parallel
     pgcli
-    deno
-    nodejs
-    python312
     pinentry.qt
     plocate
+    postgres-lsp
     prettierd
     pv
+    pyright
+    python312Packages.ipython
+    python312
     rbw
-    clang-tools
-    clang-analyzer
-    ccls
-    rustup
-    nixd
     ripgrep
     ripgrep-all
     rsync
+    rustup
     shellcheck
-    alejandra
-    yaml-language-server
-    nodePackages_latest.bash-language-server
-    eslint_d
+    shfmt
+    sqls
     statix
     steam-run
+    stylelint
+    taplo
+    tree-sitter
     ts
+    typescript
+    typescript-language-server
     unzip
+    vale
+    vim-language-server
     visidata
+    vscode-langservers-extracted
+    wring
     xh
     xsv
     xz
+    yaml-language-server
+    zk
+    zls
   ];
   imports = [
     ./starship.nix
