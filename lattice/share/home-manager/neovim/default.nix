@@ -17,10 +17,8 @@
     set foldlevel=6
     set laststatus=2
     set list
-    set listchars=precedes:«,extends:»
     set mouse=a
     set nospell
-    set nu
     set relativenumber
     set shiftwidth=2
     set signcolumn=yes
@@ -29,7 +27,6 @@
     set tabstop=2
     set termguicolors
     set undofile
-    set wrap
   '';
 in {
   home.packages = with pkgs; [neovide neovim-remote];
