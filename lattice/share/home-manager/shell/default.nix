@@ -136,14 +136,14 @@ in {
     ];
     sessionPath = [
       "~/.local/bin" # why no work
-     ];
+    ];
   };
   programs = {
     bash = {
       enable = true;
       initExtra = ''
         set -o vi
-        export PATH="$PATH:~/.local/bin"
+        export PATH="$PATH:$HOME/.local/bin"
       '';
     };
     bat = {
@@ -243,5 +243,18 @@ in {
       enable = true;
       automount = false; # may help with garmin mess
     };
+  };
+  xdg = {
+    configFile = {
+      "vale/vale.ini".text = ''
+        StylesPath = styles
+        MinAlertLevel = suggestion
+        Packages = proselint
+        [*]
+        BasedOnStyles = Vale, proselint
+      '';
+      "vale/styles/.ignore".text = "";
+    };
+    dataFile."../bin/vale-ls".source = ./vale-ls;
   };
 }
