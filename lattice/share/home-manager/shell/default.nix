@@ -37,6 +37,7 @@ in {
       black
       boost
       sqlfluff
+      frogmouth
       buf-language-server
       ccls
       choose
