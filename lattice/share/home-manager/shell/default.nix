@@ -30,6 +30,7 @@ in {
     bind
     black
     boost
+    sqlfluff
     buf-language-server
     ccls
     choose
@@ -39,6 +40,7 @@ in {
     cmake-language-server
     croc
     ctop
+    eslint
     curl
     dasel # csv/json/yaml tool like jq but universal
     ddgr # duckduckgo
