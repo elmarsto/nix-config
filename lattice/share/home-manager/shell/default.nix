@@ -23,22 +23,70 @@ in {
     };
   };
   home.packages = with pkgs; [
+    angle-grinder
     bind
+    choose
+    croc
+    ctop
     curl
-    ddgr
+    dasel # csv/json/yaml tool like jq but universal
+    ddgr # duckduckgo
     diceware
+    dog
+    drill
+    duf
     dw
-    gpg-tui
+    entr
+    fd
+    fx
     gdb
+    gpg-tui
+    hyperfine
+    jaq # fast jq
+    jc
+    jless
+    jo
+    jq
+    lazydocker
+    lazygit
     libsecret
     lldb
+    lnav
+    magic-wormhole
+    nodePackages_latest.wring
+    miller
+    mtr
     ncdu
+    parallel
+    pgcli
+    deno
+    nodejs
+    python312
     pinentry.qt
+    plocate
+    prettierd
+    pv
     rbw
+    clang-tools
+    clang-analyzer
+    ccls
+    rustup
+    nixd
     ripgrep
+    ripgrep-all
     rsync
+    shellcheck
+    alejandra
+    yaml-language-server
+    nodePackages_latest.bash-language-server
+    eslint_d
+    statix
     steam-run
+    ts
     unzip
+    visidata
+    xh
+    xsv
     xz
   ];
   imports = [

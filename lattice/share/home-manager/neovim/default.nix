@@ -136,12 +136,14 @@ in {
         alejandra
         black
         bash-language-server
+        tsserver
         boost
         ccls
         cmake-language-server
         prettierd
         deno
         fennel
+        typescript
         graphql-language-service-cli
         jq-lsp
         llvm
