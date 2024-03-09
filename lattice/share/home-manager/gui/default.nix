@@ -16,16 +16,16 @@
         fonts = [
           "Oxanium"
           "Raleway"
-          "Roboto Slab"
-          "Roboto Mono"
-          "Roboto Sans"
-          "Roboto Serif"
-          "Source Code Pro"
-          "Source Sans"
-          "Source Serif"
           "Zen Loop"
         ];
       })
+      roboto
+      roboto-slab
+      roboto-mono
+      roboto-serif
+      source-sans
+      source-code-pro
+      source-serif
       (nerdfonts.override {fonts = ["VictorMono" "Monaspace"];})
       google-chrome
       kcolorchooser
