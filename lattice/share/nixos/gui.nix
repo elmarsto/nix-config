@@ -60,7 +60,7 @@
       };
       enable = true;
       xkb = {
-        options = "caps:escape"; #sanity
+        options = "caps:escape,compose:ralt"; #sanity
         variant = "";
         layout = "us";
       };

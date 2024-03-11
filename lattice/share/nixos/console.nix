@@ -56,6 +56,6 @@ in {
     logind.extraConfig = ''
       HandlePowerKey=ignore
     '';
-    xserver.xkb.options = "caps:escape";
+    xserver.xkb.options = "caps:escape,compose:ralt";
   };
 }
