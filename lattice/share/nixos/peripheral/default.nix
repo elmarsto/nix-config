@@ -22,10 +22,13 @@
     allowFrom = ["all"];
     defaultShared = true;
   };
-  hardware.sane = {
-    openFirewall = true;
-    enable = true;
-    extraBackends = with pkgs; [utsushi hplipWithPlugin sane-airscan];
-    brscan5.enable = true;
+  hardware = {
+    bluetooth.enable = true;
+    sane = {
+      openFirewall = true;
+      enable = true;
+      extraBackends = with pkgs; [utsushi hplipWithPlugin sane-airscan];
+      brscan5.enable = true;
+    };
   };
 }
