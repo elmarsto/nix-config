@@ -34,6 +34,7 @@
       lsix
       monaspace
       notify-desktop
+      obsidian
       qjournalctl
       wayland-utils
       wezterm
