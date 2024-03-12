@@ -1,5 +1,5 @@
 { config, pkgs, ... }: {
-  imports = [ ./fleshy.nix ];
+  imports = [ ./fleshy.nix ./rsync-net.nix ];
   programs.ssh = {
     compression = true;
     controlMaster = "auto";
