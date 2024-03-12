@@ -158,6 +158,7 @@ in {
     broot.enable = true;
     eza = {
       enable = true;
+      enableBashIntegration = true;
       extraOptions = ["--group-directories-first" "--header"];
       git = true;
       icons = true;
