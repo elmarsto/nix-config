@@ -100,7 +100,6 @@ in {
       nsh
       nushell
       pandoc
-      parallel
       pgcli
       pinentry.qt
       plocate
@@ -123,7 +122,6 @@ in {
       stylelint
       taplo
       tree-sitter
-      ts
       typescript
       typescript-language-server
       unzip
