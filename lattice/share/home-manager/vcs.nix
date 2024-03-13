@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   home = {
     packages = with pkgs; [
       meld
@@ -20,13 +25,13 @@
     # };
     git = {
       aliases = {
-        c  = "commit";
+        c = "commit";
         co = "checkout";
-        m  = "merge";
-        p  = "pull";
-        P  = "push";
-        r  = "rebase";
-        s  = "switch";
+        m = "merge";
+        p = "pull";
+        P = "push";
+        r = "rebase";
+        s = "switch";
       };
       enable = true;
       package = pkgs.gitAndTools.gitFull;
@@ -54,6 +59,13 @@
           contents.user = {
             email = "elizabeth.marston@quandri.io";
             signingKey = "63FB C302 8ECE 1230 8062 BA09 4FF0 F4F0 B516 693E";
+          };
+        }
+        {
+          condition = "gitdir:~/navaruk";
+          contents.user = {
+            email = "her@lizmars.net";
+            signingKey = "B8DF C273 AE23 1E17 1D53 0303 76B1 AEC6 6EDD 0C29";
           };
         }
       ];
