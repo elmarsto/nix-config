@@ -93,7 +93,7 @@ in {
       miller
       mtr
       ncdu
-      nixd
+      nixd # TODO: fix this
       nodejs
       nsh
       nushell
