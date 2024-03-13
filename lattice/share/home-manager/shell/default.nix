@@ -97,6 +97,7 @@ in {
       nodejs
       nsh
       nushell
+      pandoc
       parallel
       pgcli
       pinentry.qt
