@@ -2,10 +2,16 @@ local other = {}
 
 function other.setup(use)
     use {
-        "rawnly/gist.nvim",
-        config = function()
-            require("gist").setup()
-        end
+      "rawnly/gist.nvim",
+      config = function()
+          require("gist").setup()
+      end
+    }
+    use {
+      "amitds1997/remote-nvim.nvim",
+      config = function()
+          require("remote-nvim").setup()
+      end
     }
     vim.g.unception_block_while_host_edits = true
     require("ssr").setup {
