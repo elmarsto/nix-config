@@ -12,6 +12,7 @@ in {
     ./starship.nix
     ./tmux.nix
     ./ssh
+    ./L.nix
   ];
   editorconfig = {
     enable = true;
@@ -91,6 +92,7 @@ in {
       magic-wormhole
       marksman
       miller
+      moreutils
       mtr
       ncdu
       nixd # TODO: fix this
