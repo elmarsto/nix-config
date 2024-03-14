@@ -1,6 +1,11 @@
-{ config, pkgs, ... }: {
-  imports = [ ./fleshy.nix ./rsync-net.nix ];
+{
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [./fleshy.nix ./rsync-net.nix];
   programs.ssh = {
+    addKeysToAgent = "4h";
     compression = true;
     controlMaster = "auto";
     controlPath = "/tmp/${config.home.username}-%r@%h:%p";
@@ -24,4 +29,3 @@
     };
   };
 }
-

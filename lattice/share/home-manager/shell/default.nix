@@ -211,6 +211,7 @@ in {
       enable = true;
       enableExtraSocket = true;
       pinentryFlavor = "qt";
+      defaultCacheTtl = 14400; #4h in seconds
     };
     gnome-keyring = {
       enable = true;
