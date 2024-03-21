@@ -47,6 +47,11 @@
 in {
   home = {
     packages = [L l git-L git-l];
+    file.l = {
+      recursive = true;
+      source = ./l;
+      target = ".l";
+    };
   };
   programs.bash.initExtra = ''
     export JUST_UNSAFE=1
