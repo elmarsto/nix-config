@@ -36,6 +36,7 @@ in {
       bash-language-server
       bind
       gist
+      gh
       black
       boost
       sqlfluff
