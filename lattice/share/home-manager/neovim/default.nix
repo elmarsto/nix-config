@@ -28,6 +28,7 @@
     set tabstop=2
     set termguicolors
     set undofile
+    set nowrap
   '';
 in {
   home.packages = with pkgs; [neovide neovim-remote];
