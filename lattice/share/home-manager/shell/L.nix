@@ -44,9 +44,12 @@
   git-l = pkgs.writeScriptBin "git-l" ''
     ${l}/bin/l git "$@"
   '';
+  git-hub = pkgs.writeScriptBin "git-hub" ''
+    ${pkgs.git}/bin/git clone "git@github.com:$1"
+  '';
 in {
   home = {
-    packages = [L l git-L git-l];
+    packages = [L l git-L git-l git-hub];
     file.l = {
       recursive = true;
       source = ./l;
