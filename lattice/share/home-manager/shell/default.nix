@@ -99,7 +99,6 @@ in {
       moreutils
       mtr
       ncdu
-      nixd # TODO: fix this
       nodejs
       nsh
       nushell
