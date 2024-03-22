@@ -93,6 +93,9 @@ in {
       magic-wormhole
       marksman
       miller
+      minikube
+      kompose
+      kubectl
       moreutils
       mtr
       ncdu
