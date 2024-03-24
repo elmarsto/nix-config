@@ -42,11 +42,11 @@
       jack.enable = true;
       pulse.enable = true;
     };
+    desktopManager = {
+      # gnome.enable = true;
+      plasma6.enable = true;
+    };
     xserver = {
-      desktopManager = {
-        # gnome.enable = true;
-        plasma6.enable = true;
-      };
       displayManager = {
         defaultSession = "plasma";
         sddm = {

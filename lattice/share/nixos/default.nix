@@ -41,15 +41,27 @@
     # tracee RESEARCH: what thisis and how to use it
     bcc
     below
+    bpftrace
     coreutils
+    cpuid
+    ethtool
     exfat
     findutils
     lsof
+    linuxKernel.packages.linux_libre.perf
+    linuxKernel.packages.linux_libre.turbostat
+    msr-tools
     nethogs
+    numactl
     nvd
     perf-tools
+    procps
+    sysstat
     sysz # systemctl tui
+    tcpdump
     termshark
+    tiptop
+    trace-cmd
     traceroute
     tshark
   ];

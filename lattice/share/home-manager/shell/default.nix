@@ -189,7 +189,7 @@ in {
       settings = {
         email = "liz.mars@pm.me";
         lock_timeout = 300;
-        pinentry = "qt";
+        pinentry = pkgs.pinentry-qt;
       };
     };
     watson.enable = true;
@@ -213,7 +213,7 @@ in {
     gpg-agent = {
       enable = true;
       enableExtraSocket = true;
-      pinentryFlavor = "qt";
+      pinentryPackage = pkgs.pinentry-qt;
       defaultCacheTtl = 14400; #4h in seconds
     };
     gnome-keyring = {

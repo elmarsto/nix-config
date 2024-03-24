@@ -2,7 +2,7 @@
   home.packages = with pkgs; [
     fdk-aac-encoder
     ffmpeg-full
-    handbrake
+    #handbrake
     losslesscut-bin
     yt-dlp
   ];
