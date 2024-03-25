@@ -5,6 +5,16 @@
   ...
 }: let
   gitJust = pkgs.writeText "gitJust" ''
+    just := 'L git'
+    code := '~/code'
+    quandri := '{{code}}/quandri'
+    ours := '{{code}}/ours'
+    navaruk := '~/navaruk'
+    liz-notes := '{{quandri}}/liz-notes'
+    qcr-ui := '{{quandri}}/control-room-ui'
+    qcr-api := '{{quandri}}/control-room-api'
+    nix-config := '{{ ours }}/nix-config'
+
     [no-cd]
     default:
      git status
@@ -15,9 +25,28 @@
       git commit -m '{{ msg }}'
       git pull -r
       git push
+
+    _eod repo:
+      pushd {{ repo }}
+      git co -b elmarsto/{{ today }}-wip
+      git add .
+      git commit -am 'eod'
+      git push
+      git co -
+      popd
+
+    eod:
+      {{ just }} _eod  {{ navaruk }}
+      {{ just }} _eod  {{ liz-notes }}
+      {{ just }} _eod  {{ qcr-ui }}
+      {{ just }} _eod  {{ qcr-api }}
+      {{ just }} _eod  {{ nix-config }}
+
   '';
   # sorry not sorry
   Lustfile = pkgs.writeText "Lustfile" ''
+    just := 'L'
+    today := `date +%F`
     mod? l '~/.l/mod.just'
     mod git '${gitJust}'
     default:
@@ -31,6 +60,11 @@
          \ \_______\
           \|_______|
       EOF
+
+      eod:
+        {{ L }} git eod
+
+
   '';
   L = pkgs.writeScriptBin "L" ''
     ${pkgs.just}/bin/just --unstable -d ~ -f ${Lustfile} "$@"
