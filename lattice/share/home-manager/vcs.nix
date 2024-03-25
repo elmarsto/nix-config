@@ -15,6 +15,11 @@
     sessionVariables = {
       GIT_PAGER = "delta";
     };
+    programs.bash.initExtra = ''
+      export JUST_UNSAFE=1
+      GIT_PAGER='delta';
+      alias g='git';
+    '';
   };
   programs = {
     # gh = {
