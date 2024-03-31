@@ -94,6 +94,7 @@ in {
       marksman
       miller
       minikube
+      nixd
       kompose
       kubectl
       moreutils
@@ -106,6 +107,7 @@ in {
       pgcli
       pinentry.qt
       plocate
+      pomodoro
       postgres-lsp
       prettierd
       pv
