@@ -11,6 +11,7 @@
       git-lfs
       gitui
       hub
+      pijul
     ];
     sessionVariables = {
       GIT_PAGER = "delta";
