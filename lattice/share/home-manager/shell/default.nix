@@ -50,7 +50,6 @@ in {
       cmake-language-server
       croc
       ctop
-      ddg
       eslint
       curl
       dasel # csv/json/yaml tool like jq but universal
