@@ -97,6 +97,7 @@ in {
       nixd
       kompose
       kubectl
+      ocamlPackages.magic-trace
       moreutils
       mtr
       ncdu
@@ -107,6 +108,7 @@ in {
       pgcli
       pinentry.qt
       plocate
+      pprof
       pomodoro
       postgres-lsp
       prettierd
