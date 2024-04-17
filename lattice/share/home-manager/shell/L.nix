@@ -10,8 +10,7 @@
     quandri := '{{code}}/quandri'
     ours := '{{code}}/ours'
     navaruk := '~/navaruk'
-    liz-notes := '{{quandri}}/liz-notes'
-    qcr-ui := '{{quandri}}/control-room-ui'
+    liz-notes := '{{quandri}}/liz-second-brain'
     qcr-api := '{{quandri}}/control-room-api'
     nix-config := '{{ ours }}/nix-config'
 
@@ -28,7 +27,7 @@
 
     _eod repo:
       pushd {{ repo }}
-      git co -b elmarsto/{{ today }}-wip
+      git pull
       git add .
       git commit -am 'eod'
       git push
@@ -37,8 +36,7 @@
 
     eod:
       {{ just }} _eod  {{ navaruk }}
-      {{ just }} _eod  {{ liz-notes }}
-      {{ just }} _eod  {{ qcr-ui }}
+      {{ just }} _eod  {{ liz-second-brain }}
       {{ just }} _eod  {{ qcr-api }}
       {{ just }} _eod  {{ nix-config }}
 
