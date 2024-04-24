@@ -7,7 +7,7 @@
   home = {
     packages = with pkgs; [
       meld
-      git-interactive-rebase-tool
+      #git-interactive-rebase-tool
       git-lfs
       gitui
       hub
@@ -95,7 +95,7 @@
           prune = true;
           prunetags = true;
         };
-        global.sequence.editor = "${pkgs.git-interactive-rebase-tool}/bin/interactive-rebase-tool";
+        #global.sequence.editor = "${pkgs.git-interactive-rebase-tool}/bin/interactive-rebase-tool";
         init.defaultbranch = "main";
         log.date = "iso";
         merge = {
