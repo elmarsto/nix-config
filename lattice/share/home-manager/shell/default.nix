@@ -90,6 +90,7 @@ in {
       lua
       lua-fmt
       lua-language-server
+      lynx
       magic-wormhole
       marksman
       miller
