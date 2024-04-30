@@ -1,6 +1,6 @@
-{ pkgs,  ... }: let
+{pkgs, ...}: let
 in {
-  services.xserver = {
+  services = {
     libinput = {
       enable = true;
       touchpad = {
@@ -10,6 +10,8 @@ in {
         horizontalScrolling = false;
       };
     };
-    wacom.enable = true;
+    xserver = {
+      wacom.enable = true;
+    };
   };
 }

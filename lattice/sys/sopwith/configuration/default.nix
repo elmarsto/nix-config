@@ -5,7 +5,10 @@
   modulesPath,
   ...
 }: {
-  hardware.nvidia.modesetting.enable = true;
+  hardware = {
+    nvidia.modesetting.enable = true;
+    nvidia-container-toolkit.enable = true;
+  };
   services.xserver.videoDrivers = ["nvidia"];
   networking = {
     hostName = "sopwith";

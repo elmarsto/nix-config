@@ -46,18 +46,18 @@
       # gnome.enable = true;
       plasma6.enable = true;
     };
-    xserver = {
-      displayManager = {
-        defaultSession = "plasma";
-        sddm = {
-          enable = true;
-          wayland.enable = true;
-        };
-        # gdm = {
-        #   enable = true;
-        #   wayland = true;
-        # };
+    displayManager = {
+      defaultSession = "plasma";
+      sddm = {
+        enable = true;
+        wayland.enable = true;
       };
+      # gdm = {
+      #   enable = true;
+      #   wayland = true;
+      # };
+    };
+    xserver = {
       enable = true;
       xkb = {
         options = "caps:escape,compose:ralt"; #sanity

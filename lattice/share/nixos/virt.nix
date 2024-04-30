@@ -19,7 +19,6 @@
         setSocketVariable = true;
       };
     };
-    containers.cdi.dynamic.nvidia.enable = true;
     # podman = {
     #   enable = true;
     #   dockerCompat = true;
