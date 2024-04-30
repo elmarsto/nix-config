@@ -58,10 +58,11 @@
     nrs = pkgs.writeShellScript "flake-nrs" ''
       ${pkgs.nixos-rebuild}/bin/nixos-rebuild switch --flake `${host}`
       ${pkgs.nix}/bin/nix-channel --update
+      ${pkgs.nix-index}/bin/nix-index
     '';
     switch = pkgs.writeShellScript "flake-switch" ''
+      doas ${nrs}
       ${hms}
-      ${nrs}
     '';
   in {
     apps.x86_64-linux = {
