@@ -42,6 +42,7 @@
       xdg-utils
       xorg.xeyes
       sublime-merge
+      kdenlive
       lapce
       vscode
     ];
