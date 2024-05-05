@@ -43,6 +43,7 @@
       xorg.xeyes
       sublime-merge
       kdenlive
+      glaxnimate # for kdenlive 
       lapce
       vscode
     ];
