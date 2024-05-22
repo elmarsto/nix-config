@@ -101,7 +101,6 @@ in {
         open-browser-vim
         plenary-nvim
         smart-splits-nvim
-        specs-nvim
         sqlite-lua
         ssr
         telescope-frecency-nvim
