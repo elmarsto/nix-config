@@ -35,7 +35,8 @@ in {
       angle-grinder
       bash-language-server
       bind
-      ep
+      emoji-pick
+      uni
       gist
       gh
       black
