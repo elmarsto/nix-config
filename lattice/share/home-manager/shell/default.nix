@@ -32,14 +32,19 @@ in {
     packages = with pkgs;
     with nodePackages; [
       alejandra
-      angle-grinder
+      angle-grinder # logfile navigator
       bash-language-server
       bind
       emoji-picker
-      uni
+      gimoji # gitmoji-cli but in rust
+      uwc # unicode wordcount
+      cicero-tui # unicode picker
+      gitmoji-cli
+      uni # unicode picker
       gist
       gh
       black
+      uwc
       boost
       sqlfluff
       frogmouth
@@ -50,7 +55,7 @@ in {
       clang-tools
       clang-tools # clangd
       cmake-language-server
-      croc
+      croc # send things between computers
       ctop
       eslint
       curl
@@ -59,8 +64,6 @@ in {
       deno
       diceware
       docker-compose-language-service
-      dog
-      drill
       duf
       dw
       efm-langserver
@@ -70,7 +73,7 @@ in {
       fd
       fennel
       fennel-ls
-      fx
+      fx # terminal json viewer
       gdb
       gpg-tui
       graphql-language-service-cli
@@ -78,9 +81,9 @@ in {
       htmx-lsp
       hyperfine
       jaq # fast jq
-      jc
-      jless
-      jo
+      jc # serialize common unix outputs to json
+      jless # json pager
+      jo # json object thingy
       jq
       jq-lsp
       lazydocker
@@ -88,21 +91,21 @@ in {
       libsecret
       lldb
       llvm
-      lnav
+      lnav # logfile navigator
       lua
       lua-fmt
       lua-language-server
       lynx
       magic-wormhole
       marksman
-      miller
+      miller # csv cli tool
       minikube
       nixd
       kompose
       kubectl
       ocamlPackages.magic-trace
       moreutils
-      mtr
+      mtr # network diagnostics
       ncdu
       nodejs
       nsh
@@ -110,22 +113,22 @@ in {
       pandoc
       pgcli
       pinentry.qt
-      plocate
-      pprof
+      plocate # faster `locate`
+      pprof # visualize profiling data
       pomodoro
       postgres-lsp
       prettierd
       pv
-      pyright
+      pyright # python linter
       python312Packages.ipython
       python312
-      rbw
+      rbw # bitwarden cli
       ripgrep
       ripgrep-all
       rsync
       rustup
-      shellcheck
-      shfmt
+      shellcheck # shell  linter
+      shfmt # shell `prettier`
       sqls
       statix
       steam-run
@@ -134,18 +137,18 @@ in {
       tree-sitter
       typescript
       typescript-language-server
-      uni
+      uni # unicode cli tool
       unzip
       vale
       vim-language-server
-      visidata
-      vscode-langservers-extracted
+      visidata # vim but for csv
+      vscode-langservers-extracted # html, json, css langservers
       wring
       xh
-      xsv
+      xsv # csv cli tool
       xz
       yaml-language-server
-      zk
+      zk # zettelkasten cli
       zls
     ];
     sessionPath = [

@@ -29,9 +29,11 @@
       (nerdfonts.override {fonts = ["VictorMono" "Monaspace"];})
       google-chrome
       kcolorchooser
+      insomnia
       libinput
       libreoffice-fresh
       lsix
+      mtr-gui # gui for mtr network diagnostics tool
       monaspace
       notify-desktop
       obsidian
@@ -43,7 +45,7 @@
       xorg.xeyes
       sublime-merge
       kdenlive
-      glaxnimate # for kdenlive 
+      glaxnimate # for kdenlive
       lapce
       vscode
     ];
