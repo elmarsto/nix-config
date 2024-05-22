@@ -105,7 +105,6 @@ in {
       kubectl
       ocamlPackages.magic-trace
       moreutils
-      mtr # network diagnostics
       ncdu
       nodejs
       nsh
