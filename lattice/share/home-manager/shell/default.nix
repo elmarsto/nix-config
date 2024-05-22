@@ -35,6 +35,7 @@ in {
       angle-grinder
       bash-language-server
       bind
+      ep
       gist
       gh
       black
@@ -132,6 +133,7 @@ in {
       tree-sitter
       typescript
       typescript-language-server
+      uni
       unzip
       vale
       vim-language-server
