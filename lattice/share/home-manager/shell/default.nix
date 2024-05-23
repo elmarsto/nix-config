@@ -37,10 +37,11 @@ in {
   home = {
     packages = with pkgs;
     with nodePackages; [
-      alejandra
+      alejandra # nix formatter
       angle-grinder # logfile navigator
       bash-language-server
-      bind
+      bind # the one and only
+      comby # syntax-aware (AST?) search/replace CLI
       emoji-picker
       gimoji # gitmoji-cli but in rust
       uwc # unicode wordcount
@@ -50,17 +51,17 @@ in {
       uank
       gist
       gh
-      black
-      uwc
+      black # python formatter
+      uwc # unicode wordcount
       chars # unicode cli
       yank # pipe to clipboard with picker
       unipicker # unicode cli
       boost
-      sqlfluff
-      frogmouth
-      buf-language-server
-      ccls
-      choose
+      sqlfluff # sql linter/formatter
+      frogmouth # markdown browser for terminal
+      buf-language-server # protobuf LS
+      ccls # C/C++ LS
+      choose # (awk alternatives) pick ranges and regexes
       clang-analyzer
       clang-tools
       clang-tools # clangd
@@ -74,14 +75,14 @@ in {
       deno
       diceware
       docker-compose-language-service
-      duf
+      duf # disk usage/free utility
       dw
       efm-langserver
       emmet-language-server
-      entr
+      entr # file monitor
       eslint_d
       fd
-      fennel
+      fennel # scheme that compiles to lua
       fennel-ls
       fx # terminal json viewer
       gdb
@@ -120,14 +121,14 @@ in {
       nsh
       nushell
       pandoc
-      pgcli
+      pgcli # postgres cli
       pinentry.qt
       plocate # faster `locate`
       pprof # visualize profiling data
       pomodoro
       postgres-lsp
       prettierd
-      pv
+      pv # pipeline monitor/progress baer
       pyright # python linter
       python312Packages.ipython
       python312
