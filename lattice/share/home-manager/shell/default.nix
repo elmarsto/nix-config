@@ -91,6 +91,7 @@ in {
       helm-ls
       htmx-lsp
       hyperfine
+      ast-grep # treesitter + grep
       jaq # fast jq
       jc # serialize common unix outputs to json
       jless # json pager
