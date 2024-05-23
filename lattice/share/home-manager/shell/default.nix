@@ -7,6 +7,12 @@
   dw = pkgs.writeScriptBin "dw" ''
     ${pkgs.diceware}/bin/diceware -n 3 -d '-' --no-caps $@
   '';
+  uank = pkgs.writeScriptBin "dw" ''
+    ${pkgs.uni}/bin/uni search "$1"\
+    | ${pkgs.yank}/bin/yank\
+    | ${pkgs.gnused}/bin/sed "s/'//g"\
+    | ${pkgs.wl-clipboard}/bin/wl-copy
+  '';
 in {
   imports = [
     ./starship.nix
@@ -41,6 +47,7 @@ in {
       cicero-tui # unicode picker
       gitmoji-cli
       uni # unicode picker
+      uank
       gist
       gh
       black
