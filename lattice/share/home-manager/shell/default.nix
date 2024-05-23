@@ -7,7 +7,7 @@
   dw = pkgs.writeScriptBin "dw" ''
     ${pkgs.diceware}/bin/diceware -n 3 -d '-' --no-caps $@
   '';
-  uank = pkgs.writeScriptBin "dw" ''
+  uank = pkgs.writeScriptBin "uank" ''
     ${pkgs.uni}/bin/uni search "$1"\
     | ${pkgs.yank}/bin/yank\
     | ${pkgs.gnused}/bin/sed "s/'//g"\
