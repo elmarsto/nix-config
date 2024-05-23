@@ -45,6 +45,9 @@ in {
       gh
       black
       uwc
+      chars # unicode cli
+      yank # pipe to clipboard with picker
+      unipicker # unicode cli
       boost
       sqlfluff
       frogmouth
