@@ -37,54 +37,49 @@ in {
   home = {
     packages = with pkgs;
     with nodePackages; [
-      alejandra
+      alejandra # nix formatter
       angle-grinder # logfile navigator
+      ast-grep # treesitter + grep
       bash-language-server
-      bind
-      emoji-picker
-      gimoji # gitmoji-cli but in rust
-      uwc # unicode wordcount
-      cicero-tui # unicode picker
-      gitmoji-cli
-      uni # unicode picker
-      uank
-      gist
-      gh
-      black
-      uwc
-      chars # unicode cli
-      yank # pipe to clipboard with picker
-      unipicker # unicode cli
+      bind # the one and only
+      black # python formatter
       boost
-      sqlfluff
-      frogmouth
-      buf-language-server
-      ccls
-      choose
+      buf-language-server # protobuf LS
+      ccls # C/C++ LS
+      chars # unicode cli
+      choose # (awk alternatives) pick ranges and regexes
+      cicero-tui # unicode picker
       clang-analyzer
       clang-tools
       clang-tools # clangd
       cmake-language-server
+      comby # syntax-aware (AST?) search/replace CLI
       croc # send things between computers
       ctop
-      eslint
       curl
       dasel # csv/json/yaml tool like jq but universal
       ddgr # duckduckgo
       deno
       diceware
       docker-compose-language-service
-      duf
+      duf # disk usage/free utility
       dw
       efm-langserver
       emmet-language-server
-      entr
+      emoji-picker
+      entr # file monitor
+      eslint
       eslint_d
       fd
-      fennel
+      fennel # scheme that compiles to lua
       fennel-ls
+      frogmouth # markdown browser for terminal
       fx # terminal json viewer
       gdb
+      gh
+      gimoji # gitmoji-cli but in rust
+      gist
+      gitmoji-cli
       gpg-tui
       graphql-language-service-cli
       helm-ls
@@ -96,6 +91,8 @@ in {
       jo # json object thingy
       jq
       jq-lsp
+      kompose # docker-compose for k8s
+      kubectl
       lazydocker
       lazygit
       libsecret
@@ -107,30 +104,27 @@ in {
       lua-language-server
       lynx
       magic-wormhole
-      marksman
+      marksman # langserver for .md
       miller # csv cli tool
       minikube
-      nixd
-      kompose
-      kubectl
-      ocamlPackages.magic-trace
       moreutils
       ncdu
+      nixd
       nodejs
-      nsh
-      nushell
+      nsh # small posix shell in rust
+      nushell # shell alternative
+      ocamlPackages.magic-trace
       pandoc
-      pgcli
+      pgcli # postgres cli
       pinentry.qt
       plocate # faster `locate`
-      pprof # visualize profiling data
-      pomodoro
       postgres-lsp
+      pprof # visualize profiling data
       prettierd
-      pv
+      pv # pipeline monitor/progress baer
       pyright # python linter
-      python312Packages.ipython
       python312
+      python312Packages.ipython
       rbw # bitwarden cli
       ripgrep
       ripgrep-all
@@ -138,27 +132,32 @@ in {
       rustup
       shellcheck # shell  linter
       shfmt # shell `prettier`
-      sqls
-      statix
-      steam-run
-      stylelint
+      sqlfluff # sql linter/formatter
+      sqls # sql langserver
+      statix # nix linter
+      steam-run # simulates standard linux filesystem
+      stylelint # css linter
       taplo
       tree-sitter
       typescript
       typescript-language-server
+      uank
       uni # unicode cli tool
+      unipicker # unicode cli
       unzip
+      uwc # unicode wordcount
       vale
       vim-language-server
       visidata # vim but for csv
       vscode-langservers-extracted # html, json, css langservers
-      wring
-      xh
+      wring # CSS selectors / xpath html extraction tool ('jq for html')
+      xh # HTTP REST tool
       xsv # csv cli tool
       xz
       yaml-language-server
+      yank # pipe to clipboard with picker
       zk # zettelkasten cli
-      zls
+      zls # zig lsp
     ];
     sessionPath = [
       "~/.local/bin" # why no work
