@@ -5,6 +5,8 @@
     #handbrake
     losslesscut-bin
     yt-dlp
+    obs-do
+    obs-cmd
   ];
   programs = {
     mpv.enable = true;
