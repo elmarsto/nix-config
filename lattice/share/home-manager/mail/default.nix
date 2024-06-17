@@ -26,7 +26,6 @@ in {
       };
       primary = false;
       passwordCommand = fleshyPassword;
-      notmuch.enable = true;
       smtp = {
         host = host;
         port = 587;
@@ -60,7 +59,6 @@ in {
       };
       primary = false;
       passwordCommand = fleshyPassword;
-      notmuch.enable = true;
       smtp = {
         host = host;
         port = 587;
@@ -91,7 +89,6 @@ in {
       };
       primary = false;
       passwordCommand = newsletterPassword;
-      notmuch.enable = true;
       smtp = {
         host = host;
         port = 587;
@@ -125,7 +122,6 @@ in {
       };
       primary = true;
       passwordCommand = fleshyPassword;
-      notmuch.enable = true;
       smtp = {
         host = host;
         port = 587;
@@ -160,7 +156,6 @@ in {
       };
       primary = false;
       passwordCommand = protonPassword;
-      notmuch.enable = true;
       smtp = {
         host = "127.0.0.1";
         port = 1025;
