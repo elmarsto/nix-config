@@ -40,7 +40,7 @@ in {
       alejandra # nix formatter
       angle-grinder # logfile navigator
       ast-grep # treesitter + grep
-      bash-language-server
+      pkgs.bash-language-server
       bind # the one and only
       black # python formatter
       boost
@@ -145,7 +145,7 @@ in {
       uni # unicode cli tool
       unipicker # unicode cli
       unzip
-      uwc # unicode wordcount
+      #uwc # unicode wordcount
       vale
       vim-language-server
       visidata # vim but for csv

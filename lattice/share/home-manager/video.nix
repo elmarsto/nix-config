@@ -5,7 +5,6 @@
     #handbrake
     losslesscut-bin
     yt-dlp
-    obs-do
     obs-cmd
   ];
   programs = {
