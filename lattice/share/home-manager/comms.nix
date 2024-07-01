@@ -4,6 +4,7 @@
     element-desktop
     signal-desktop
     slack
+    whatsapp-for-linux
     zoom-us
   ];
 }

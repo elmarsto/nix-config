@@ -23,10 +23,7 @@
       noto-fonts-emoji
     ];
   };
-  hardware.opengl = {
-    driSupport = true;
-    driSupport32Bit = true;
-  };
+  hardware.graphics.enable32Bit = true;
   nixpkgs.config.firefox.enableGnomeExtensions = true;
   programs = {
     xwayland.enable = true;
