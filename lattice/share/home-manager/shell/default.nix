@@ -108,7 +108,6 @@ in {
       miller # csv cli tool
       minikube
       moreutils
-      ncdu
       nixd
       nodejs
       nsh # small posix shell in rust

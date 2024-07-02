@@ -33,7 +33,6 @@ hostname: {
         home-manager switch --flake ${repo}#${hostname} --refresh $@
       '')
       cachix
-      comma
       manix
       nix-doc
       nurl

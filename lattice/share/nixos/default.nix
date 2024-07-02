@@ -42,6 +42,7 @@
     bcc
     below
     bpftrace
+    comma
     coreutils
     cpuid
     ethtool
