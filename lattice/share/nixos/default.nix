@@ -51,6 +51,7 @@
     linuxKernel.packages.linux_libre.perf
     linuxKernel.packages.linux_libre.turbostat
     msr-tools
+    ncdu
     nethogs
     numactl
     nvd
