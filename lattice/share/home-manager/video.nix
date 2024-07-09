@@ -18,14 +18,14 @@
       enable = true;
       plugins = with pkgs.obs-studio-plugins; [
         input-overlay
-        pipewire-audio-capture
-        source-clone
-        obs-mute-filter
-        obs-text-pthread
-        obs-shaderfilter
-        gradient-source
-        obs-composite-blur
         obs-backgroundremoval
+        obs-composite-blur
+        obs-gradient-source
+        obs-mute-filter
+        obs-pipewire-audio-capture
+        obs-shaderfilter
+        obs-source-clone
+        obs-text-pthread
       ];
     };
   };

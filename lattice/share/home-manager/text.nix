@@ -12,13 +12,13 @@ let
 in
 {
   home.packages = with pkgs; [
-    joplin
+    #joplin
     ripgrep
     ruplacer
     calibre
     foliate
     glow
-    joplin-desktop
+    #joplin-desktop
     write_stylus
   ];
   programs = {
