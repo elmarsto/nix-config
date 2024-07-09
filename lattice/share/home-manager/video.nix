@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }: {
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   home.packages = with pkgs; [
     fdk-aac-encoder
     ffmpeg-full
@@ -12,24 +17,30 @@
     obs-studio = {
       enable = true;
       plugins = with pkgs.obs-studio-plugins; [
-        obs-multi-rtmp
-        looking-glass-obs
+        input-overlay
+        pipewire-audio-capture
+        source-clone
+        obs-mute-filter
+        obs-text-pthread
+        obs-shaderfilter
+        gradient-source
+        obs-composite-blur
+        obs-backgroundremoval
       ];
-
     };
   };
   xdg = {
     mimeApps.defaultApplications = {
-      "video/mp4" = [ "mpv.desktop" ];
-      "video/x-matroska" = [ "mpv.desktop" ];
-      "video/quicktime" = [ "mpv.desktop" ];
-      "video/webm" = [ "mpv.desktop" ];
+      "video/mp4" = ["mpv.desktop"];
+      "video/x-matroska" = ["mpv.desktop"];
+      "video/quicktime" = ["mpv.desktop"];
+      "video/webm" = ["mpv.desktop"];
     };
     desktopEntries.mpv = {
       name = "mpv";
       exec = "${pkgs.mpv}/bin/mpv %U";
       genericName = "Video and audio player";
-      mimeType = [ "video/mp4" "video/x-matroska" "video/quicktime" ];
+      mimeType = ["video/mp4" "video/x-matroska" "video/quicktime"];
     };
   };
 }
