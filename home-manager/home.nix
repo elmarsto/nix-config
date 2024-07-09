@@ -37,7 +37,7 @@ hostname: {
       nix-doc
       nurl
     ];
-    stateVersion = "23.11";
+    stateVersion = "24.11";
   };
   manual.html.enable = true;
   programs = {

@@ -17,7 +17,7 @@
   ];
   services.printing = {
     enable = true;
-    drivers = with pkgs; [gutenprint gutenprintBin epson-escpr epson-escpr2 hplipWithPlugin canon-cups-ufr2];
+    drivers = with pkgs; [gutenprint gutenprintBin epson-escpr epson-escpr2 canon-cups-ufr2];
     browsing = true;
     allowFrom = ["all"];
     defaultShared = true;
@@ -27,7 +27,7 @@
     sane = {
       openFirewall = true;
       enable = true;
-      extraBackends = with pkgs; [utsushi hplipWithPlugin sane-airscan];
+      extraBackends = with pkgs; [utsushi sane-airscan];
       brscan5.enable = true;
     };
   };

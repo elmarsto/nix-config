@@ -103,7 +103,6 @@ in {
       lua-fmt
       lua-language-server
       lynx
-      magic-wormhole
       marksman # langserver for .md
       miller # csv cli tool
       minikube
