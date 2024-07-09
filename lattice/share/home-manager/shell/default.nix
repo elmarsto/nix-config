@@ -106,7 +106,6 @@ in {
       marksman # langserver for .md
       miller # csv cli tool
       minikube
-      moreutils
       nixd
       nodejs
       nsh # small posix shell in rust
