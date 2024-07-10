@@ -28,6 +28,7 @@
       source-serif
       (nerdfonts.override {fonts = ["VictorMono" "Monaspace"];})
       google-chrome
+      ladybird
       kcolorchooser
       insomnia
       libinput
