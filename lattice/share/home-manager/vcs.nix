@@ -60,22 +60,22 @@
         ".trash/"
         ".*trashed"
       ];
-      includes = [
-        {
-          condition = "gitdir:~/code/quandri/**/*";
-          contents.user = {
-            email = "elizabeth.marston@quandri.io";
-            signingKey = "63FB C302 8ECE 1230 8062 BA09 4FF0 F4F0 B516 693E";
-          };
-        }
-        {
-          condition = "gitdir:~/navaruk";
-          contents.user = {
-            email = "her@lizmars.net";
-            signingKey = "B8DF C273 AE23 1E17 1D53 0303 76B1 AEC6 6EDD 0C29";
-          };
-        }
-      ];
+      # includes = [
+      #   {
+      #     condition = "gitdir:~/code/quandri/**/*";
+      #     contents.user = {
+      #       email = "elizabeth.marston@quandri.io";
+      #       signingKey = "63FB C302 8ECE 1230 8062 BA09 4FF0 F4F0 B516 693E";
+      #     };
+      #   }
+      #   {
+      #     condition = "gitdir:~/navaruk";
+      #     contents.user = {
+      #       email = "her@lizmars.net";
+      #       signingKey = "B8DF C273 AE23 1E17 1D53 0303 76B1 AEC6 6EDD 0C29";
+      #     };
+      #   }
+      # ];
       extraConfig = {
         branch.sort = "committerdate";
         commit.verbose = true;
@@ -119,10 +119,10 @@
         tag.sort = "taggerdate";
         transfer.fsckobjects = true;
       };
-      signing = {
-        key = "3B65 D56E 51BB 22BC FB8E  E221 8405 F834 149D 0ED8";
-        signByDefault = true;
-      };
+      # signing = {
+      #   key = "3B65 D56E 51BB 22BC FB8E  E221 8405 F834 149D 0ED8";
+      #   signByDefault = true;
+      # };
     };
   };
 }

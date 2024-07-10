@@ -50,6 +50,7 @@
       glaxnimate # for kdenlive
       lapce
       vscode
+      zed-editor
     ];
     sessionVariables = {
       MOZ_ENABLE_WAYLAND = 1;
