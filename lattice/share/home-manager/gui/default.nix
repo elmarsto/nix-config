@@ -29,6 +29,7 @@
       (nerdfonts.override {fonts = ["VictorMono" "Monaspace"];})
       google-chrome
       ladybird
+      monolith
       kcolorchooser
       insomnia
       libinput
