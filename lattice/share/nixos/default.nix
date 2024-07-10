@@ -39,6 +39,7 @@
   };
   environment.systemPackages = with pkgs; [
     # tracee RESEARCH: what thisis and how to use it
+    appimage-run
     bcc
     below
     bpftrace

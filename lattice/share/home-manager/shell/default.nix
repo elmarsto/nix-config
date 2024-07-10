@@ -106,7 +106,6 @@ in {
       marksman # langserver for .md
       miller # csv cli tool
       minikube
-      moreutils
       nixd
       nodejs
       nsh # small posix shell in rust
@@ -130,7 +129,7 @@ in {
       rustup
       shellcheck # shell  linter
       shfmt # shell `prettier`
-      sqlfluff # sql linter/formatter
+      #sqlfluff # sql linter/formatter
       sqls # sql langserver
       statix # nix linter
       steam-run # simulates standard linux filesystem
@@ -146,7 +145,7 @@ in {
       #uwc # unicode wordcount
       vale
       vim-language-server
-      visidata # vim but for csv
+      #visidata # vim but for csv
       vscode-langservers-extracted # html, json, css langservers
       wring # CSS selectors / xpath html extraction tool ('jq for html')
       xh # HTTP REST tool

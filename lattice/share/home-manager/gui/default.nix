@@ -8,7 +8,7 @@
   fonts.fontconfig.enable = true;
   home = {
     packages = with pkgs; [
-      bitwarden
+      #bitwarden
       dconf
       jetbrains-mono
       udev-gothic

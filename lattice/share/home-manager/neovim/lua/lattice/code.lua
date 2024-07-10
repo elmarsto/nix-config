@@ -32,9 +32,9 @@ function code.setup()
             sh = {
                 require("formatter.filetypes.sh").shfmt
             },
-            sql = {
-                require("formatter.filetypes.sql").sqlfluff
-            },
+            -- sql = {
+            --     require("formatter.filetypes.sql").sqlfluff
+            -- },
             toml = {
                 require("formatter.filetypes.toml").taplo
             },

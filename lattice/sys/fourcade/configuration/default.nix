@@ -39,12 +39,10 @@
     radeon-profile
     radeontools
     radeontop
-    rocmPackages.clr # radeon
-    rocmPackages.rocm-thunk # radeon
   ];
   hardware.graphics.extraPackages = with pkgs; [
-    rocm-opencl-icd
-    rocmPackages.rocm-runtime
+    #rocm-opencl-icd
+    #rocmPackages.rocm-runtime
     amdvlk
   ];
   imports = [
