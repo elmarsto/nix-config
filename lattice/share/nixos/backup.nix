@@ -5,21 +5,8 @@
   lattice,
   ...
 }: let
-  mkBackup = import (lattice + /share/util/mk-backup.nix) {
-    inherit lib;
-    repo = "lattice@localhost:/tmp/";
-    passCommand = "/etc/secrets/borgbackup.sh";
-  };
 in {
   services = {
-    borgbackup.jobs =
-      mkBackup "system" {
-        paths = ["/etc" "/opt" "/usr/local" "/root"];
-        startAt = "monthly";
-      }
-      // mkBackup "user" {
-        paths = ["/home" "/var/backup" "/var/spool"];
-      };
     btrbk = {
       ioSchedulingClass = "idle";
       niceness = 19;
