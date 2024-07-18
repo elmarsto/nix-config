@@ -63,5 +63,4 @@
       };
     };
   };
-  sound.enable = true;
 }
