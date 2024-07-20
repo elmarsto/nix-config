@@ -122,6 +122,7 @@ in {
       pyright # python linter
       python312
       python312Packages.ipython
+      qrtool
       rbw # bitwarden cli
       ripgrep
       ripgrep-all
