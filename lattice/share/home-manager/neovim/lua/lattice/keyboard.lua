@@ -390,14 +390,6 @@ function keyboard.setup(use)
                     }
                 },
                 {
-                    itemgroup = "copilot",
-                    description = "Copilot",
-                    icon = "🤖",
-                    keymaps = {
-                        {"<F11>", ":Copilot panel<cr>", description = "Copilot panel"}
-                    }
-                },
-                {
                     itemgroup = "cut/copy/paste",
                     description = "system clipboard integration",
                     icon = "✂️",

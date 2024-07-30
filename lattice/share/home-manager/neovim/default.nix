@@ -53,8 +53,6 @@ in {
         cmp-treesitter
         cmp_luasnip
         comment-nvim
-        copilot-cmp
-        copilot-lua
         diffview-nvim
         dressing-nvim
         fidget-nvim

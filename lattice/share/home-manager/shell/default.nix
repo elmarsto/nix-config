@@ -73,7 +73,6 @@ in {
       fd
       fennel # scheme that compiles to lua
       fennel-ls
-      frogmouth # markdown browser for terminal
       fx # terminal json viewer
       gdb
       gh
@@ -136,7 +135,6 @@ in {
       steam-run # simulates standard linux filesystem
       stylelint # css linter
       taplo
-      tree-sitter
       typescript
       typescript-language-server
       uank
