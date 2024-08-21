@@ -145,7 +145,7 @@ in {
       vale
       vim-language-server
       #visidata # vim but for csv
-      vscode-langservers-extracted # html, json, css langservers
+        #vscode-langservers-extracted # html, json, css langservers
       wring # CSS selectors / xpath html extraction tool ('jq for html')
       xh # HTTP REST tool
       xsv # csv cli tool

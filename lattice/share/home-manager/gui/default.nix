@@ -49,7 +49,7 @@
       sublime-merge
       kdenlive
       glaxnimate # for kdenlive
-      lapce
+      #lapce
       vscode
       zed-editor
     ];
