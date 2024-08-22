@@ -26,7 +26,7 @@
       source-sans
       source-code-pro
       source-serif
-      (nerdfonts.override {fonts = ["VictorMono" "Monaspace"];})
+      (nerdfonts.override {fonts = ["Monaspace"];})
       google-chrome
       sqlitebrowser
       ladybird
