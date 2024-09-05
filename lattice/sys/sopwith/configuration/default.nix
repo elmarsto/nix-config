@@ -1,12 +1,9 @@
-{
-  config,
-  lib,
-  pkgs,
-  modulesPath,
-  ...
-}: {
+{...}: {
   hardware = {
-    nvidia.modesetting.enable = true;
+    nvidia = {
+      modesetting.enable = true;
+      open = true;
+    };
     nvidia-container-toolkit.enable = true;
   };
   services = {
