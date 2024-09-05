@@ -68,7 +68,7 @@ in {
       emmet-language-server
       emoji-picker
       entr # file monitor
-      eslint
+      #eslint
       eslint_d
       fd
       fennel # scheme that compiles to lua
