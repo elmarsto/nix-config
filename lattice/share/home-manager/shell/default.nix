@@ -47,6 +47,7 @@ in {
       buf-language-server # protobuf LS
       ccls # C/C++ LS
       chars # unicode cli
+      charm-freeze # screencaps of code
       choose # (awk alternatives) pick ranges and regexes
       cicero-tui # unicode picker
       clang-analyzer

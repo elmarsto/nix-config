@@ -60,6 +60,7 @@ in {
         git-conflict-nvim
         gitsigns-nvim
         glow-nvim
+        grug-far-nvim
         inc-rename-nvim
         indent-blankline-nvim
         iron-nvim
