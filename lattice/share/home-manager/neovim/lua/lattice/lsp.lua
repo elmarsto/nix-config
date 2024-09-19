@@ -196,7 +196,7 @@ function lsp.setup()
     nvim_lsp.taplo.setup {
         capabilities = capabilities
     }
-    nvim_lsp.tsserver.setup {
+    nvim_lsp.ts_ls.setup {
         capabilities = capabilities,
         filetypes = {
             "javascript",
@@ -211,7 +211,7 @@ function lsp.setup()
         "ts=typescript"
     }
     nvim_lsp.vale_ls.setup {
-      capabilities = capabilities,
+        capabilities = capabilities
     }
     nvim_lsp.vimls.setup {
         capabilities = capabilities
