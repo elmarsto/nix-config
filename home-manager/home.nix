@@ -11,7 +11,6 @@ hostname: {
 }: {
   imports = [
     (lattice + /sys/${hostname}/home.nix)
-    (lattice + /share/home-manager)
   ];
   nixpkgs = {
     config = {
@@ -25,33 +24,33 @@ hostname: {
     ];
   };
   home = {
-    activation.report-changes = config.lib.dag.entryAnywhere ''
-      ${pkgs.nvd}/bin/nvd diff $oldGenPath $newGenPath
-    '';
+    # activation.report-changes = config.lib.dag.entryAnywhere ''
+    #   ${pkgs.nvd}/bin/nvd diff $oldGenPath $newGenPath
+    # '';
     packages = with pkgs; [
-      (pkgs.writeScriptBin "lattice-hms" ''
-        home-manager switch --flake ${repo}#${hostname} --refresh $@
-      '')
-      cachix
-      manix
-      nix-doc
-      nurl
+      # (pkgs.writeScriptBin "lattice-hms" ''
+      #   home-manager switch --flake ${repo}#${hostname} --refresh $@
+      # '')
+      # cachix
+      # manix
+      # nix-doc
+      # nurl
     ];
     stateVersion = "24.11";
   };
-  manual.html.enable = true;
+  # manual.html.enable = true;
   programs = {
-    direnv = {
-      enable = true;
-      enableBashIntegration = true;
-      enableNushellIntegration = true;
-      nix-direnv.enable = true;
-    };
+    # direnv = {
+    #   enable = true;
+    #   enableBashIntegration = true;
+    #   enableNushellIntegration = true;
+    #   nix-direnv.enable = true;
+    # };
     home-manager.enable = true;
-    nix-index = {
-      enable = true;
-      enableBashIntegration = true;
-    };
+    # nix-index = {
+    #   enable = true;
+    #   enableBashIntegration = true;
+    # };
   };
-  systemd.user.startServices = "sd-switch";
+  # systemd.user.startServices = "sd-switch";
 }
