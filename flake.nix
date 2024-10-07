@@ -26,7 +26,8 @@
 
     lattice = ./lattice;
     repo = "github:elmarsto/nix-config";
-    pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+    x64LinuxPkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+    aarch64DarwinPkgs = nixpkgs.legacyPackages.aarch64-darwin; # Home-manager requires 'pkgs' instance
 
     ns = import ./nixos/configuration.nix;
     mk-app = p: {
@@ -41,27 +42,27 @@
         ];
       };
     hm = import ./home-manager/home.nix;
-    mk-home = hostname:
+    mk-home = hostname: pkgs:
       home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+        pkgs = pkgs;
         extraSpecialArgs = {inherit inputs outputs lattice repo;};
         modules = [
           (hm hostname)
         ];
       };
 
-    host = pkgs.writeShellScript "host" ''
-      echo .#`${pkgs.nettools}/bin/hostname`
+    host = x64LinuxPkgs.writeShellScript "host" ''
+      echo .#`${x64LinuxPkgs.nettools}/bin/hostname`
     '';
-    hms = pkgs.writeShellScript "flake-hms" ''
-      ${pkgs.home-manager}/bin/home-manager switch --flake `${host}`
-      ${pkgs.nix-index}/bin/nix-index
+    hms = x64LinuxPkgs.writeShellScript "flake-hms" ''
+      ${x64LinuxPkgs.home-manager}/bin/home-manager switch --flake `${host}`
+      ${x64LinuxPkgs.nix-index}/bin/nix-index
     '';
-    nrs = pkgs.writeShellScript "flake-nrs" ''
-      ${pkgs.nixos-rebuild}/bin/nixos-rebuild switch --flake `${host}`
-      ${pkgs.nix}/bin/nix-channel --update
+    nrs = x64LinuxPkgs.writeShellScript "flake-nrs" ''
+      ${x64LinuxPkgs.nixos-rebuild}/bin/nixos-rebuild switch --flake `${host}`
+      ${x64LinuxPkgs.nix}/bin/nix-channel --update
     '';
-    switch = pkgs.writeShellScript "flake-switch" ''
+    switch = x64LinuxPkgs.writeShellScript "flake-switch" ''
       doas ${nrs}
       ${hms}
     '';
@@ -97,10 +98,10 @@
     };
     # Available through 'home-manager --flake .#hostname'
     homeConfigurations = {
-      fourcade = mk-home "fourcade";
-      bowsprit = mk-home "bowsprit";
-      sopwith = mk-home "sopwith";
-      pamplemoose = mk-home "pamplemoose";
+      fourcade = mk-home "fourcade" x64LinuxPkgs;
+      bowsprit = mk-home "bowsprit" x64LinuxPkgs;
+      sopwith = mk-home "sopwith" x64LinuxPkgs;
+      pamplemoose = mk-home "pamplemoose" aarch64DarwinPkgs;
     };
   };
 }
