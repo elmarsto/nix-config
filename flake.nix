@@ -20,6 +20,7 @@
       "aarch64-linux"
       "i686-linux"
       "x86_64-linux"
+      "aarch64-darwin"
     ];
     forAllSystems = nixpkgs.lib.genAttrs systems;
 
@@ -92,12 +93,14 @@
       fourcade = mk-system "fourcade";
       bowsprit = mk-system "bowsprit";
       sopwith = mk-system "sopwith";
+      pamplemoose = mk-system "pamplemoose";
     };
     # Available through 'home-manager --flake .#hostname'
     homeConfigurations = {
       fourcade = mk-home "fourcade";
       bowsprit = mk-home "bowsprit";
       sopwith = mk-home "sopwith";
+      pamplemoose = mk-home "pamplemoose";
     };
   };
 }
