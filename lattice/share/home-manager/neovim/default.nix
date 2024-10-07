@@ -57,7 +57,7 @@ in {
         dressing-nvim
         fidget-nvim
         formatter-nvim
-        git-conflict-nvim
+        # git-conflict-nvim # Disabled 2024 Oct 07; ironically, was causing conflicts
         gitsigns-nvim
         glow-nvim
         grug-far-nvim
