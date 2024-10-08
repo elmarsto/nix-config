@@ -11,7 +11,6 @@ hostname: {
 }: {
   imports = [
     (lattice + /sys/${hostname}/home.nix)
-    (lattice + /share/home-manager)
   ];
   nixpkgs = {
     config = {
