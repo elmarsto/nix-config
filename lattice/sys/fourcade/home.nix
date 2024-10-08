@@ -1,5 +1,5 @@
-{ lattice, ... }: {
+{lattice, ...}: {
   imports = [
-    (lattice + /share/home-manager/)
+    (lattice + /share/home-manager)
   ];
 }
