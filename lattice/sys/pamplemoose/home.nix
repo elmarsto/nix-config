@@ -1,6 +1,9 @@
 { lattice, ... }:  {
   imports = [
     (lattice + /share/home-manager/neovim)
+    (lattice + /share/home-manager/shell)
+    (lattice + /share/home-manager/text.nix)
+    (lattice + /share/home-manager/vcs.nix)
   ];
   home = {
     username = "elizabeth.marston";
