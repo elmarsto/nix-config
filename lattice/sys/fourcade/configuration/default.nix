@@ -52,7 +52,8 @@
   networking = {
     hostId = "1183aa1f";
     hostName = "fourcade";
-    networkmanager.enable = false;
+    networkmanager.enable = true;
+    interfaces.wlp4s0.useDHCP = true;
   };
   services.xserver.videoDrivers = ["amdgpu"];
 }
