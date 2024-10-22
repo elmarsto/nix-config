@@ -1,12 +1,11 @@
 {
-  config,
   lib,
   pkgs,
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
   nix = {
-    package = pkgs.nixFlakes;
+    package = pkgs.nixVersions.stable;
     gc = {
       automatic = true;
       dates = "weekly";
