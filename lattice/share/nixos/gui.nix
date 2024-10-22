@@ -20,7 +20,6 @@
     ];
   };
   hardware.graphics.enable32Bit = true;
-  nixpkgs.config.firefox.enableGnomeExtensions = true;
   programs = {
     xwayland.enable = true;
     dconf.enable = true;
