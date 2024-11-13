@@ -159,9 +159,9 @@ function lsp.setup()
     nvim_lsp.pyright.setup {
         capabilities = capabilities
     }
-    nvim_lsp.ocamllsp.setup {
-        capabilities = capabilities
-    }
+    -- nvim_lsp.ocamllsp.setup {
+    --     capabilities = capabilities
+    -- }
     nvim_lsp.qmlls.setup {
         capabilities = capabilities
     }
@@ -238,9 +238,9 @@ function lsp.setup()
             }
         }
     }
-    require "lspconfig".zls.setup {
-        capabilities = capabilities
-    }
+    -- require "lspconfig".zls.setup {
+    --     capabilities = capabilities
+    -- }
     -- TODO: json schemas
     require("inc_rename").setup()
 end

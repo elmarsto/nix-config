@@ -54,7 +54,6 @@ in {
       clang-tools
       clang-tools # clangd
       cmake-language-server
-      comby # syntax-aware (AST?) search/replace CLI
       croc # send things between computers
       ctop
       curl
@@ -154,7 +153,6 @@ in {
       yaml-language-server
       yank # pipe to clipboard with picker
       zk # zettelkasten cli
-      zls # zig lsp
     ];
     # sessionPath = [
     #   "~/.local/bin" # why no work
@@ -180,7 +178,7 @@ in {
       enableBashIntegration = true;
       extraOptions = ["--group-directories-first" "--header"];
       git = true;
-      icons = true;
+      icons = "auto";
     };
     fzf.enable = true;
     gpg = {

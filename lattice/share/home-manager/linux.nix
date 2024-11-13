@@ -1,5 +1,4 @@
-{ ... }: 
-let
+{pkgs, ...}: let
   mdMime = pkgs.writeText "text-markdown.xml" ''
     <?xml version="1.0" encoding="UTF-8"?>
     <mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
@@ -8,8 +7,17 @@ let
         <glob pattern="*.md"/>
       </mime-type>
     </mime-info>
-  ''; in {
+  '';
+in {
   home = {
+    packages = with pkgs; [
+      neovide
+      figma-linux
+      cheese
+      krita
+      comby # syntax-aware (AST?) search/replace CLI
+      zls # zig lsp
+    ];
     services = {
       gnome-keyring = {
         enable = true;
@@ -59,7 +67,7 @@ let
       dataFile."../bin/vale-ls".source = ./vale-ls;
       mimeApps = {
         defaultApplications = {
-          "text/markdown" = [ "firefox.desktop" ];
+          "text/markdown" = ["firefox.desktop"];
         };
       };
       dataFile."mime/packages/text-markdown.xml".source = mdMime;
@@ -68,7 +76,7 @@ let
           name = "Glow";
           genericName = "Markdown previewer";
           exec = ''${pkgs.alacritty}/bin/alacritty -e "${pkgs.glow}/bin/glow %U"'';
-          mimeType = [ "text/markdown" ];
+          mimeType = ["text/markdown"];
         };
       };
     };

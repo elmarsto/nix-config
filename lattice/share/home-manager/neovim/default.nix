@@ -1,12 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  modulesPath,
-  options,
-  specialArgs,
-  ...
-}: let
+{pkgs, ...}: let
   vimConfig = ''
     au CursorHold,CursorHoldI * :silent! checktime
     au FocusGained,BufEnter * :silent! checktime
@@ -31,7 +23,7 @@
     set nowrap
   '';
 in {
-  home.packages = with pkgs; [neovide neovim-remote];
+  home.packages = with pkgs; [neovim-remote];
   programs = {
     neovim = {
       enable = true;
