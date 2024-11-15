@@ -29,7 +29,6 @@
       (nerdfonts.override {fonts = ["Monaspace"];})
       google-chrome
       sqlitebrowser
-      ladybird
       monolith
       kcolorchooser
       insomnia

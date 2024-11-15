@@ -45,6 +45,7 @@ in {
       black # python formatter
       boost
       buf-language-server # protobuf LS
+      bun
       ccls # C/C++ LS
       chars # unicode cli
       charm-freeze # screencaps of code
