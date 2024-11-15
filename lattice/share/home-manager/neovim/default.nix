@@ -1,12 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  modulesPath,
-  options,
-  specialArgs,
-  ...
-}: let
+{pkgs, ...}: let
   vimConfig = ''
     au CursorHold,CursorHoldI * :silent! checktime
     au FocusGained,BufEnter * :silent! checktime

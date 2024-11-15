@@ -136,6 +136,8 @@ in {
       statix # nix linter
       steam-run # simulates standard linux filesystem
       stylelint # css linter
+      svelte-check
+      svelte-language-server
       taplo
       typescript
       typescript-language-server
