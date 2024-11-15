@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: let
+{pkgs, ...}: let
   dw = pkgs.writeScriptBin "dw" ''
     ${pkgs.diceware}/bin/diceware -n 3 -d '-' --no-caps $@
   '';
@@ -149,7 +144,7 @@ in {
       vale
       vim-language-server
       #visidata # vim but for csv
-      #vscode-langservers-extracted # html, json, css langservers
+      vscode-langservers-extracted # html, json, css langservers
       wring # CSS selectors / xpath html extraction tool ('jq for html')
       xh # HTTP REST tool
       xsv # csv cli tool
