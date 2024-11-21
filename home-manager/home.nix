@@ -2,11 +2,9 @@
 hostname: {
   config,
   lattice,
-  lib,
   outputs,
   pkgs,
   repo,
-  unstable,
   ...
 }: {
   imports = [
@@ -38,7 +36,7 @@ hostname: {
     ];
     stateVersion = "24.11";
   };
-  manual.html.enable = true;
+  # manual.html.enable = true;
   programs = {
     direnv = {
       enable = true;

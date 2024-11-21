@@ -44,7 +44,8 @@ in {
       bind # the one and only
       black # python formatter
       boost
-      buf-language-server # protobuf LS
+      buf # protobuf stuff incl LS
+      bun
       ccls # C/C++ LS
       chars # unicode cli
       charm-freeze # screencaps of code

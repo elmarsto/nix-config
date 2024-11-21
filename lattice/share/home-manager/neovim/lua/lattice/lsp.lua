@@ -29,7 +29,7 @@ function lsp.setup()
     nvim_lsp.autotools_ls.setup {
         capabilities = capabilities
     }
-    nvim_lsp.bufls.setup {
+    nvim_lsp.buf_ls.setup {
         capabilities = capabilities
     }
     nvim_lsp.ccls.setup {
