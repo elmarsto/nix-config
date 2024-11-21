@@ -90,6 +90,6 @@ in {
   };
   programs.bash.initExtra = ''
     export JUST_UNSAFE=1
-    unalias l
+    unalias l 2>/dev/null
   '';
 }
