@@ -39,7 +39,7 @@ in {
       bind # the one and only
       black # python formatter
       boost
-      buf-language-server # protobuf LS
+        #buf-language-server # protobuf LS
       bun
       ccls # C/C++ LS
       chars # unicode cli

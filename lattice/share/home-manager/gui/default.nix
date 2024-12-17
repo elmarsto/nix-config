@@ -26,7 +26,7 @@
       source-sans
       source-code-pro
       source-serif
-      (nerdfonts.override {fonts = ["Monaspace"];})
+      nerd-fonts.monaspace
       google-chrome
       sqlitebrowser
       monolith
