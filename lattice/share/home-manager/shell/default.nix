@@ -133,6 +133,7 @@ in {
       stylelint # css linter
       svelte-check
       svelte-language-server
+      soupault
       taplo
       typescript
       typescript-language-server

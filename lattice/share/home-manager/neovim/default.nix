@@ -23,7 +23,7 @@
     set nowrap
   '';
 in {
-  home.packages = with pkgs; [neovide neovim-remote];
+  home.packages = with pkgs; [neovide neovim-remote live-server];
   programs = {
     neovim = {
       enable = true;
