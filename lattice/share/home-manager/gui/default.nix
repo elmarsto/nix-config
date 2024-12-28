@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   dconf.enable = true;
   fonts.fontconfig.enable = true;
   home = {
@@ -25,6 +20,7 @@
       roboto-serif
       source-sans
       source-code-pro
+      kando
       source-serif
       nerd-fonts.monaspace
       google-chrome
