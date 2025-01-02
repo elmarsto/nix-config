@@ -41,7 +41,7 @@
     appimage-run
     bcc
     below
-    bpftrace
+    #bpftrace
     comma
     coreutils
     cpuid

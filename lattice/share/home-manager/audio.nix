@@ -5,7 +5,7 @@
   ...
 }: {
   home.packages = with pkgs; [
-    castget
+    #castget
     mpv
     sayonara
     spotify
