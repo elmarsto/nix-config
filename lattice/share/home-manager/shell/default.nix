@@ -32,7 +32,6 @@ in {
   home = {
     packages = with pkgs;
     with nodePackages; [
-      ollama
       aichat
       aider-chat
       alejandra # nix formatter
@@ -79,7 +78,7 @@ in {
       gimoji # gitmoji-cli but in rust
       gist
       gitmoji-cli
-      open-interpreter
+      #open-interpreter
       shell-gpt
       gpg-tui
       graphql-language-service-cli

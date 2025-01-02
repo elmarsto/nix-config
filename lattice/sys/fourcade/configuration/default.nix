@@ -1,9 +1,4 @@
-{
-  pkgs,
-  modulesPath,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   boot = {
     initrd.availableKernelModules = [
       "aesni_intel"
@@ -40,11 +35,26 @@
     radeontools
     radeontop
   ];
-  hardware.graphics.extraPackages = with pkgs; [
-    #rocm-opencl-icd
-    #rocmPackages.rocm-runtime
-    amdvlk
-  ];
+  hardware = {
+    #amdgpu.opencl.enable = true;
+    graphics.extraPackages = with pkgs; [
+      #rocm-opencl-icd
+      #rocmPackages.rocm-runtime
+      amdvlk
+    ];
+  };
+  services = {
+    ollama = {
+      package = pkgs.ollama-rocm;
+      acceleration = "rocm";
+      enable = true;
+      loadModels = ["llama3.3"];
+    };
+    nextjs-ollama-llm-ui = {
+      enable = true;
+      port = 33000;
+    };
+  };
   imports = [
     ./backup.nix
     ./filesystem.nix
