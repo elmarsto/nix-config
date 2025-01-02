@@ -31,6 +31,7 @@ in {
       plugins = with pkgs.unstable.vimPlugins; [
         SchemaStore-nvim
         aurora
+        aider-nvim
         blamer-nvim
         boole-nvim
         cmp-buffer

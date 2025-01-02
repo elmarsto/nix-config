@@ -32,6 +32,9 @@ in {
   home = {
     packages = with pkgs;
     with nodePackages; [
+      ollama
+      aichat
+      aider-chat
       alejandra # nix formatter
       angle-grinder # logfile navigator
       ast-grep # treesitter + grep
@@ -39,7 +42,7 @@ in {
       bind # the one and only
       black # python formatter
       boost
-        #buf-language-server # protobuf LS
+      #buf-language-server # protobuf LS
       bun
       ccls # C/C++ LS
       chars # unicode cli
@@ -76,6 +79,8 @@ in {
       gimoji # gitmoji-cli but in rust
       gist
       gitmoji-cli
+      open-interpreter
+      shell-gpt
       gpg-tui
       graphql-language-service-cli
       helm-ls
@@ -92,6 +97,7 @@ in {
       lazydocker
       lazygit
       libsecret
+      llm
       lldb
       llvm
       lnav # logfile navigator
@@ -107,6 +113,7 @@ in {
       nsh # small posix shell in rust
       nushell # shell alternative
       ocamlPackages.magic-trace
+      openai
       pandoc
       pgcli # postgres cli
       pinentry.qt
