@@ -32,25 +32,22 @@ in {
   home = {
     packages = with pkgs;
     with nodePackages; [
-      aichat
       aider-chat
+      aichat
       alejandra # nix formatter
       angle-grinder # logfile navigator
       ast-grep # treesitter + grep
-      pkgs.bash-language-server
       bind # the one and only
       black # python formatter
       boost
-      #buf-language-server # protobuf LS
       bun
       ccls # C/C++ LS
-      chars # unicode cli
       charm-freeze # screencaps of code
+      chars # unicode cli
       choose # (awk alternatives) pick ranges and regexes
       cicero-tui # unicode picker
       clang-analyzer
       clang-tools
-      clang-tools # clangd
       cmake-language-server
       comby # syntax-aware (AST?) search/replace CLI
       croc # send things between computers
@@ -67,7 +64,6 @@ in {
       emmet-language-server
       emoji-picker
       entr # file monitor
-      #eslint
       eslint_d
       fd
       fennel # scheme that compiles to lua
@@ -78,10 +74,8 @@ in {
       gimoji # gitmoji-cli but in rust
       gist
       gitmoji-cli
-      #open-interpreter
-      shell-gpt
-      gpg-tui
       graphql-language-service-cli
+      gpg-tui
       helm-ls
       htmx-lsp
       hyperfine
@@ -113,7 +107,6 @@ in {
       nushell # shell alternative
       ocamlPackages.magic-trace
       openai
-      pandoc
       pgcli # postgres cli
       pinentry.qt
       plocate # faster `locate`
@@ -130,16 +123,16 @@ in {
       ripgrep-all
       rsync
       rustup
+      shell-gpt
       shellcheck # shell  linter
       shfmt # shell `prettier`
-      #sqlfluff # sql linter/formatter
+      soupault
       sqls # sql langserver
       statix # nix linter
       steam-run # simulates standard linux filesystem
       stylelint # css linter
       svelte-check
       svelte-language-server
-      soupault
       taplo
       typescript
       typescript-language-server
@@ -147,10 +140,8 @@ in {
       uni # unicode cli tool
       unipicker # unicode cli
       unzip
-      #uwc # unicode wordcount
       vale
       vim-language-server
-      #visidata # vim but for csv
       vscode-langservers-extracted # html, json, css langservers
       wring # CSS selectors / xpath html extraction tool ('jq for html')
       xh # HTTP REST tool

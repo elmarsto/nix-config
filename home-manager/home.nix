@@ -28,13 +28,13 @@ hostname: {
       ${pkgs.nvd}/bin/nvd diff $oldGenPath $newGenPath
     '';
     packages = with pkgs; [
-      (pkgs.writeScriptBin "lattice-hms" ''
-        home-manager switch --flake ${repo}#${hostname} --refresh $@
-      '')
       cachix
       manix
       nix-doc
       nurl
+      (pkgs.writeScriptBin "lattice-hms" ''
+        home-manager switch --flake ${repo}#${hostname} --refresh $@
+      '')
     ];
     stateVersion = "24.11";
   };

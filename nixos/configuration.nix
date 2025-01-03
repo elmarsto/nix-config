@@ -11,8 +11,8 @@ hostname: {
   nrs = pkgs.writeShellScript "nrs" "nixos-rebuild switch --flake ${repo}#${hostname} --refresh";
 in {
   imports = [
-    (lattice + /sys/${hostname}/configuration)
     (lattice + /share/nixos)
+    (lattice + /sys/${hostname}/configuration)
   ];
 
   nixpkgs = {

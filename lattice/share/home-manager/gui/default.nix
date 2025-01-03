@@ -3,10 +3,42 @@
   fonts.fontconfig.enable = true;
   home = {
     packages = with pkgs; [
-      bitwarden
-      dconf
+      google-chrome
+      glaxnimate # for kdenlive
+      insomnia
+      jetbrains-mono
+      kcolorchooser
+      kdenlive
+      libinput
+      libreoffice-fresh
+      lsix
+      monaspace
+      monolith
+      mtr-gui # gui for mtr network diagnostics tool
+      notify-desktop
+      obsidian
+      qjournalctl
+      roboto
+      roboto-mono
+      roboto-slab
+      roboto-serif
+      source-code-pro
+      source-sans
+      source-serif
+      sqlitebrowser
+      sublime-merge
+      udev-gothic
+      vscode
+      wayland-utils
+      wezterm
+      wl-clipboard
+      xdg-utils
+      xorg.xeyes
+      zed-editor
       jetbrains-mono
       udev-gothic
+      dconf
+      bitwarden
       (google-fonts.override {
         fonts = [
           "Oxanium"

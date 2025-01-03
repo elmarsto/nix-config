@@ -23,15 +23,14 @@
     set nowrap
   '';
 in {
-  home.packages = with pkgs; [neovide neovim-remote live-server];
+  home.packages = with pkgs; [live-server neovide neovim-remote];
   programs = {
     neovim = {
       enable = true;
       defaultEditor = true;
       plugins = with pkgs.unstable.vimPlugins; [
-        SchemaStore-nvim
-        aurora
         aider-nvim
+        aurora
         blamer-nvim
         boole-nvim
         cmp-buffer
@@ -92,6 +91,7 @@ in {
         oil-nvim
         open-browser-vim
         plenary-nvim
+        SchemaStore-nvim
         smart-splits-nvim
         sqlite-lua
         ssr
