@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    darktable
+    #darktable
     exif
     exiv2
     gimp

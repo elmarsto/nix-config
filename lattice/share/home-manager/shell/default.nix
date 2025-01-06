@@ -37,6 +37,8 @@ in {
   home = {
     packages = with pkgs;
     with nodePackages; [
+      aider-chat
+      aichat
       alejandra # nix formatter
       angle-grinder # logfile navigator
       ast-grep # treesitter + grep
@@ -129,6 +131,7 @@ in {
       rsync
       rustup
       shellcheck # shell  linter
+      shell-gpt
       shfmt # shell `prettier`
       #sqlfluff # sql linter/formatter
       sqls # sql langserver
