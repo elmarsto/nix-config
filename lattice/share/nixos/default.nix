@@ -130,7 +130,6 @@
     incron.enable = true;
     locate = {
       enable = true;
-      localuser = null; # silences warning about plocate not supporting option
       interval = "3:00";
       package = pkgs.plocate;
       pruneBindMounts = true;

@@ -44,16 +44,16 @@
     ];
   };
   services = {
-    ollama = {
-      package = pkgs.ollama-rocm;
-      acceleration = "rocm";
-      enable = true;
-      loadModels = ["llama3.3"];
-    };
-    nextjs-ollama-llm-ui = {
-      enable = true;
-      port = 33000;
-    };
+    # ollama = {
+    #   package = pkgs.ollama-rocm;
+    #   acceleration = "rocm";
+    #   enable = true;
+    #   loadModels = ["llama3.3"];
+    # };
+    # nextjs-ollama-llm-ui = {
+    #   enable = true;
+    #   port = 33000;
+    # };
   };
   imports = [
     ./backup.nix
