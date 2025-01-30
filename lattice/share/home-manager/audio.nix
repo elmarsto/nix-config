@@ -1,11 +1,9 @@
 {
-  config,
   pkgs,
-  lib,
   ...
 }: {
   home.packages = with pkgs; [
-    #castget
+    castero
     mpv
     sayonara
     spotify
