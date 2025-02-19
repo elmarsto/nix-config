@@ -83,7 +83,6 @@ in {
       gist
       gitmoji-cli
       gpg-tui
-      graphql-language-service-cli
       helm-ls
       htmx-lsp
       hyperfine
@@ -152,7 +151,7 @@ in {
       #   #vscode-langservers-extracted # html, json, css langservers
       wring # CSS selectors / xpath html extraction tool ('jq for html')
       xh # HTTP REST tool
-      xsv # csv cli tool
+      xan # csv cli tool
       xz
       yaml-language-server
       yank # pipe to clipboard with picker
