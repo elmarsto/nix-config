@@ -1,12 +1,10 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
-    castero
     mpv
     sayonara
-    spotify
+    tidal-hifi
+    tidal-dl
+    kdePackages.kasts
     reaper
   ];
   xdg = {

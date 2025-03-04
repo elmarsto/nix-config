@@ -70,7 +70,6 @@
     cpu.intel.updateMicrocode = true;
     cpu.amd.updateMicrocode = true;
     enableRedistributableFirmware = lib.mkDefault true;
-    pulseaudio.enable = false;
   };
   i18n.defaultLocale = "en_US.UTF-8";
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
@@ -137,6 +136,7 @@
       prunePaths = ["/tmp" "/var/tmp" "/var/cache" "/var/lock" "/var/run" "/var/spool" "/nix/store" "/nix/var/log/nix"];
     };
     postfix.enable = true;
+    pulseaudio.enable = false;
   };
   system = {
     autoUpgrade = {
