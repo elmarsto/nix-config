@@ -78,9 +78,9 @@ function lsp.setup()
     nvim_lsp.gopls.setup {
         capabilities = capabilities
     }
-    nvim_lsp.graphql.setup {
-        capabilities = capabilities
-    }
+    -- nvim_lsp.graphql.setup {
+    --     capabilities = capabilities
+    -- }
     nvim_lsp.hls.setup {
         capabilities = capabilities
     }

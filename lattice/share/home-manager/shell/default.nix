@@ -74,7 +74,6 @@ in {
       gimoji # gitmoji-cli but in rust
       gist
       gitmoji-cli
-      graphql-language-service-cli
       gpg-tui
       helm-ls
       htmx-lsp
@@ -144,6 +143,7 @@ in {
       vim-language-server
       vscode-langservers-extracted # html, json, css langservers
       wring # CSS selectors / xpath html extraction tool ('jq for html')
+      wasm-language-tools
       xh # HTTP REST tool
       xan # csv cli tool
       xz
