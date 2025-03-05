@@ -7,8 +7,8 @@
       glaxnimate # for kdenlive
       insomnia
       jetbrains-mono
-      kcolorchooser
-      kdenlive
+      kdePackages.kcolorchooser
+      kdePackages.kdenlive
       libinput
       libreoffice-fresh
       lsix
@@ -58,7 +58,6 @@
       google-chrome
       sqlitebrowser
       monolith
-      kcolorchooser
       insomnia
       libinput
       libreoffice-fresh
@@ -74,7 +73,6 @@
       xdg-utils
       xorg.xeyes
       sublime-merge
-      kdenlive
       glaxnimate # for kdenlive
       #lapce
       vscode
