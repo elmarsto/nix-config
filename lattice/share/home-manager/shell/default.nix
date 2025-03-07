@@ -65,6 +65,7 @@ in {
       deno
       diceware
       docker-compose-language-service
+      dockerfile-language-server-nodejs
       duf # disk usage/free utility
       #dw
       efm-langserver
