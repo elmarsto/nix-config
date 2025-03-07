@@ -39,13 +39,13 @@
       udev-gothic
       dconf
       bitwarden
-      (google-fonts.override {
-        fonts = [
-          "Oxanium"
-          "Raleway"
-          "Zen Loop"
-        ];
-      })
+      # (google-fonts.override {
+      #   fonts = [
+      #     "Oxanium"
+      #     "Raleway"
+      #     "Zen Loop"
+      #   ];
+      # })
       roboto
       roboto-slab
       roboto-mono
@@ -58,7 +58,6 @@
       google-chrome
       sqlitebrowser
       monolith
-      insomnia
       libinput
       libreoffice-fresh
       lsix
