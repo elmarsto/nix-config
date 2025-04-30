@@ -21,6 +21,7 @@
     set termguicolors
     set undofile
     set nowrap
+    set background=light
   '';
 in {
   home.packages = with pkgs; [live-server neovide neovim-remote];
