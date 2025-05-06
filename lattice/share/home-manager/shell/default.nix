@@ -32,6 +32,11 @@ in {
   home = {
     packages = with pkgs;
     with nodePackages; [
+      ruby-lsp
+      docker-ls
+      docker-compose-language-service
+      graphql-language-service-cli
+      terraform-ls
       aider-chat
       aichat
       alejandra # nix formatter
@@ -57,7 +62,7 @@ in {
       ddgr # duckduckgo
       deno
       diceware
-      docker-compose-language-service
+      docker-language-server
       duf # disk usage/free utility
       dw
       efm-langserver
@@ -65,6 +70,7 @@ in {
       emoji-picker
       entr # file monitor
       eslint_d
+      elixir-ls
       fd
       fennel # scheme that compiles to lua
       fennel-ls
@@ -133,6 +139,8 @@ in {
       svelte-check
       svelte-language-server
       taplo
+      terraform
+      terraform-ls
       typescript
       typescript-language-server
       uank

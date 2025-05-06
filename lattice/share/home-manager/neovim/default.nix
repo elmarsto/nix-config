@@ -24,7 +24,11 @@
     set background=light
   '';
 in {
-  home.packages = with pkgs; [live-server neovide neovim-remote];
+  home.packages = with pkgs; [
+    live-server
+    neovide
+    neovim-remote
+  ];
   programs = {
     neovim = {
       enable = true;
@@ -64,6 +68,7 @@ in {
         lualine-nvim
         luasnip
         marks-nvim
+        elixir-tools-nvim
         mkdir-nvim
         mkdnflow-nvim
         neoscroll-nvim
