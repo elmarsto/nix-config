@@ -47,9 +47,9 @@ function lsp.setup()
     nvim_lsp.cssls.setup {
         capabilities = capabilities
     }
-    nvim_lsp.docker_compose_language_service.setup {
-        capabilities = capabilities
-    }
+    -- nvim_lsp.docker_compose_language_service.setup {
+    --     capabilities = capabilities
+    -- }
     nvim_lsp.dockerls.setup {
         capabilities = capabilities
     }
@@ -60,7 +60,8 @@ function lsp.setup()
         capabilities = capabilities
     }
     nvim_lsp.elixirls.setup {
-        capabilities = capabilities
+        capabilities = capabilities,
+        cmd = {"elixir-ls"}
     }
     -- nvim_lsp.emmet_ls.setup {
     --   capabilities = capabilities,
@@ -75,9 +76,9 @@ function lsp.setup()
     nvim_lsp.gopls.setup {
         capabilities = capabilities
     }
-    -- nvim_lsp.graphql.setup {
-    --     capabilities = capabilities
-    -- }
+    nvim_lsp.graphql.setup {
+        capabilities = capabilities
+    }
     nvim_lsp.hls.setup {
         capabilities = capabilities
     }
@@ -169,9 +170,9 @@ function lsp.setup()
     nvim_lsp.rust_analyzer.setup {
         capabilities = capabilities
     }
-    nvim_lsp.ruby_lsp.setup {
-        capabilities = capabilities
-    }
+    -- nvim_lsp.ruby_lsp.setup {
+    --     capabilities = capabilities
+    -- }
     -- nvim_lsp.spectral.setup {
     --   capabilities = capabilities,
     -- }

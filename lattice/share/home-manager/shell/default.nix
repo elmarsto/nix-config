@@ -32,9 +32,9 @@ in {
   home = {
     packages = with pkgs;
     with nodePackages; [
-      ruby-lsp
-      docker-ls
-      docker-compose-language-service
+      beam27Packages.elixir-ls
+      docker-language-server
+      dockerfile-language-server-nodejs
       graphql-language-service-cli
       terraform-ls
       aider-chat
@@ -70,7 +70,6 @@ in {
       emoji-picker
       entr # file monitor
       eslint_d
-      elixir-ls
       fd
       fennel # scheme that compiles to lua
       fennel-ls
@@ -169,7 +168,7 @@ in {
       enable = true;
       initExtra = ''
         set -o vi
-        export PATH="$PATH:$HOME/.local/bin"
+        export PATH="$PATH:$HOME/.local/bin:$HOME/.local/share/gem/ruby/3.4.0/bin"
       '';
     };
     bat = {
