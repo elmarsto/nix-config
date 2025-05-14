@@ -3,42 +3,6 @@
   fonts.fontconfig.enable = true;
   home = {
     packages = with pkgs; [
-      google-chrome
-      glaxnimate # for kdenlive
-      insomnia
-      jetbrains-mono
-      kdePackages.kcolorchooser
-      kdePackages.kdenlive
-      libinput
-      libreoffice-fresh
-      lsix
-      monaspace
-      monolith
-      mtr-gui # gui for mtr network diagnostics tool
-      notify-desktop
-      obsidian
-      qjournalctl
-      roboto
-      roboto-mono
-      roboto-slab
-      roboto-serif
-      source-code-pro
-      source-sans
-      source-serif
-      sqlitebrowser
-      sublime-merge
-      udev-gothic
-      vscode
-      wayland-utils
-      wezterm
-      wl-clipboard
-      xdg-utils
-      xorg.xeyes
-      zed-editor
-      jetbrains-mono
-      udev-gothic
-      dconf
-      bitwarden
       (google-fonts.override {
         fonts = [
           "Oxanium"
@@ -46,36 +10,42 @@
           "Zen Loop"
         ];
       })
-      roboto
-      roboto-slab
-      roboto-mono
-      roboto-serif
-      source-sans
-      source-code-pro
-      kando
-      source-serif
-      nerd-fonts.monaspace
+      bitwarden
+      dconf
+      glaxnimate
       google-chrome
-      sqlitebrowser
-      monolith
       insomnia
+      jetbrains-mono
+      kando
+      kdePackages.kcolorchooser
+      kdePackages.kdenlive
       libinput
       libreoffice-fresh
       lsix
-      mtr-gui # gui for mtr network diagnostics tool
       monaspace
+      monolith
+      mtr-gui
+      nerd-fonts.monaspace
       notify-desktop
       obsidian
       qjournalctl
+      qcad
+      roboto
+      roboto-mono
+      roboto-serif
+      roboto-slab
+      source-code-pro
+      source-sans
+      source-serif
+      sqlitebrowser
+      sublime-merge
+      udev-gothic
+      vscode
       wayland-utils
       wezterm
       wl-clipboard
       xdg-utils
       xorg.xeyes
-      sublime-merge
-      glaxnimate # for kdenlive
-      #lapce
-      vscode
       zed-editor
     ];
     sessionVariables = {
