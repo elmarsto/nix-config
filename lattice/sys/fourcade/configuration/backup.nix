@@ -45,9 +45,6 @@ in {
               "lattice" = {
                 snapshot_create = "always";
               };
-              "too-many-secrets" = {
-                snapshot_create = "always";
-              };
               "backed-up-elsewhere" = {
                 snapshot_create = "always";
               };
@@ -64,9 +61,6 @@ in {
             snapshot_dir = ".snapshots";
             subvolume = {
               "lattice" = {
-                snapshot_create = "always";
-              };
-              "too-many-secrets" = {
                 snapshot_create = "always";
               };
               "backed-up-elsewhere" = {
