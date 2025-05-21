@@ -232,7 +232,9 @@ in {
     gpg-agent = {
       enable = true;
       enableExtraSocket = true;
-      pinentryPackage = pkgs.pinentry-qt;
+      pinentry = {
+        package = pkgs.pinentry-qt;
+      };
       defaultCacheTtl = 14400; #4h in seconds
     };
     gnome-keyring = {
