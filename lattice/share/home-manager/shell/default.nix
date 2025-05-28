@@ -32,6 +32,16 @@ in {
   home = {
     packages = with pkgs;
     with nodePackages; [
+      kalker #cli calculator
+      rink #cli calculator (with units)
+      wcalc #cli calculator
+      hclfmt #hcl tool
+      hcledit #hcl tool
+      hcl2json
+      json2hcl
+      yj # hcl tool
+      refmt #hcl tool
+      bash-language-server
       beam27Packages.elixir-ls
       docker-language-server
       dockerfile-language-server-nodejs
@@ -42,6 +52,7 @@ in {
       alejandra # nix formatter
       angle-grinder # logfile navigator
       ast-grep # treesitter + grep
+      bc
       bind # the one and only
       black # python formatter
       boost
