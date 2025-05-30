@@ -35,7 +35,6 @@ in {
       defaultEditor = true;
       plugins = with pkgs.unstable.vimPlugins; [
         aider-nvim
-        aurora
         blamer-nvim
         boole-nvim
         cmp-buffer

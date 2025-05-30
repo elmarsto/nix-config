@@ -62,32 +62,6 @@ function bunt.setup(use)
             warning = {"LspDiagnosticsDefaultWarning", "WarningMsg", "#FB8F24"}
         }
     }
-    vim.cmd [[
-    set termguicolors
-    let g:aurora_italic = 1
-    let g:aurora_transparent = 1
-    let g:aurora_bold = 0
-    let g:aurora_darker = 1
-
-    colorscheme aurora
-    "  My fixes
-    hi SpellBad guifg=#999999 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE guisp=#999999
-    hi Boolean guifg=#c4a2ff gui=NONE cterm=NONE
-    hi @constant.builtin guifg=#c4a2ff gui=NONE cterm=NONE
-    hi @repeat guifg=#EE82EE gui=NONE cterm=NONE
-    hi @keyword guifg=#EE82EE gui=NONE cterm=NONE
-    hi @keyword.return guifg=#EE82EE gui=NONE cterm=NONE
-    hi @keyword.operator guifg=#EE82EE gui=NONE cterm=NONE
-    hi @label.json guifg=#EE82EE gui=NONE cterm=NONE
-    hi @label.jsonc guifg=#EE82EE gui=NONE cterm=NONE
-
-    " " customize your own highlight with lua
-    " lua <<EOF
-    "   vim.api.nvim_set_hl(0, '@string', {fg='#59E343'})
-    "   vim.api.nvim_set_hl(0, '@field', {fg='#f93393'})
-    "   vim.api.nvim_set_hl(0, '@number', {fg='#e933e3'})
-    " EOF
-  ]]
     require("neoscroll").setup(
         {
             mappings = {"<C-u>", "<C-d>", "<C-b>", "<C-f>", "<C-y>", "<C-e>", "zt", "zz", "zb"},
@@ -97,7 +71,7 @@ function bunt.setup(use)
     require("lualine").setup(
         {
             options = {
-                theme = "everforest"
+                theme = "nightfly"
             },
             sections = {
                 lualine_b = {
@@ -192,6 +166,16 @@ function bunt.setup(use)
         }
     )
     require("scrollbar").setup()
+    use {
+        "sontungexpt/witch",
+        config = function()
+            require("witch").setup()
+        end
+    }
+    vim.cmd [[
+    set termguicolors
+    colorscheme witch-dark
+    ]]
 end
 
 return bunt
