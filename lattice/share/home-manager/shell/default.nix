@@ -179,7 +179,7 @@ in {
       enable = true;
       initExtra = ''
         set -o vi
-        export PATH="$PATH:$HOME/.local/bin:$HOME/.local/share/gem/ruby/3.4.0/bin"
+        export PATH="$PATH:$HOME/.local/bin"
       '';
     };
     bat = {

@@ -1,6 +1,25 @@
 local code = {}
 
-function code.setup()
+function code.setup(use)
+    use {
+        "slim-template/vim-slim",
+        config = function()
+            vim.api.nvim_create_autocmd(
+                {"BufNewFile", "BufRead"},
+                {
+                    pattern = {"*.slim"},
+                    command = "set ft=slim"
+                }
+            )
+        end
+    }
+    vim.api.nvim_create_autocmd(
+        {"BufNewFile", "BufRead"},
+        {
+            pattern = {"*.arb"},
+            command = "set ft=ruby"
+        }
+    )
     require("Comment").setup()
     require("config-local").setup {
         config_files = {".nvim.lua", ".nvimrc", ".exrc"},

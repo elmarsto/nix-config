@@ -63,13 +63,6 @@
       ];
       # includes = [
       #   {
-      #     condition = "gitdir:~/code/quandri/**/*";
-      #     contents.user = {
-      #       email = "elizabeth.marston@quandri.io";
-      #       signingKey = "63FB C302 8ECE 1230 8062 BA09 4FF0 F4F0 B516 693E";
-      #     };
-      #   }
-      #   {
       #     condition = "gitdir:~/navaruk";
       #     contents.user = {
       #       email = "her@lizmars.net";

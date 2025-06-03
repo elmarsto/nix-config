@@ -41,6 +41,7 @@
       sublime-merge
       udev-gothic
       vscode
+      code-cursor 
       wayland-utils
       wezterm
       wl-clipboard

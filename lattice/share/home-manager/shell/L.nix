@@ -7,11 +7,8 @@
   gitJust = pkgs.writeText "gitJust" ''
     just := 'L git'
     code := '~/code'
-    quandri := '{{code}}/quandri'
     ours := '{{code}}/ours'
     navaruk := '~/navaruk'
-    liz-notes := '{{quandri}}/liz-second-brain'
-    qcr-api := '{{quandri}}/control-room-api'
     nix-config := '{{ ours }}/nix-config'
 
     [no-cd]
@@ -36,8 +33,6 @@
 
     eod:
       {{ just }} _eod  {{ navaruk }}
-      {{ just }} _eod  {{ liz-second-brain }}
-      {{ just }} _eod  {{ qcr-api }}
       {{ just }} _eod  {{ nix-config }}
 
   '';
