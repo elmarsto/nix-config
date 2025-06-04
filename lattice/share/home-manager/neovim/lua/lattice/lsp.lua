@@ -170,12 +170,13 @@ function lsp.setup()
     nvim_lsp.rust_analyzer.setup {
         capabilities = capabilities
     }
-    -- nvim_lsp.ruby_lsp.setup {
-    --     capabilities = capabilities
-    -- }
     -- nvim_lsp.spectral.setup {
     --   capabilities = capabilities,
     -- }
+
+    nvim_lsp.solargraph.setup {
+        capabilities = capabilities
+    }
     nvim_lsp.sqlls.setup {
         settings = {
             sqlls = {

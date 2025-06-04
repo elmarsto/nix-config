@@ -38,6 +38,9 @@ in {
       hclfmt #hcl tool
       hcledit #hcl tool
       hcl2json
+      ruby_3_4
+      rubyfmt
+      rubyPackages_3_4.solargraph #ruby lsp
       json2hcl
       yj # hcl tool
       refmt #hcl tool
