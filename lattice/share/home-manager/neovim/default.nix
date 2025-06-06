@@ -155,6 +155,11 @@ in {
             require 'lattice'.setup(use)
           end
         }
+        -- currently needed! why?
+        local function linear()
+          require('lualine').setup()
+        end
+        vim.schedule(linear)
       '';
     };
     vim = {
