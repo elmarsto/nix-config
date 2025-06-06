@@ -199,6 +199,9 @@ function lsp.setup()
     nvim_lsp.taplo.setup {
         capabilities = capabilities
     }
+    nvim_lsp.tinymist.setup {
+        capabilities = capabilities
+    }
     nvim_lsp.ts_ls.setup {
         capabilities = capabilities,
         filetypes = {

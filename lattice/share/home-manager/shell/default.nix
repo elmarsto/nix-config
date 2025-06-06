@@ -32,6 +32,17 @@ in {
   home = {
     packages = with pkgs;
     with nodePackages; [
+      typst # document formatter
+      tinymist #lsp for typst
+      typstyle #prettier for typst
+      typstPackages.t4t # XD
+      typstPackages.tbl # tables
+      typstPackages.js # JS formatting
+      typstPackages.ilm # basic nonfic layout
+      typstPackages.cheq # checklist support
+      typst-live # liveserver
+      typstwriter # GUI (keep?)
+
       kalker #cli calculator
       rink #cli calculator (with units)
       wcalc #cli calculator

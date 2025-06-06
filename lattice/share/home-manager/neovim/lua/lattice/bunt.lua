@@ -68,45 +68,6 @@ function bunt.setup(use)
             easing_function = "quadratic" -- Default easing function
         }
     )
-    require("lualine").setup(
-        {
-            options = {
-                theme = "nightfly"
-            },
-            sections = {
-                lualine_b = {
-                    "vim.loop.cwd()",
-                    "branch",
-                    "diff",
-                    "diagnostics"
-                },
-                lualine_c = {
-                    {
-                        "filename",
-                        file_status = true,
-                        newfile_status = true,
-                        path = 1,
-                        shorting_target = 40,
-                        symbols = {
-                            modified = "⊙",
-                            readonly = "⊘",
-                            unnamed = "⊚",
-                            newfile = "⊛"
-                        }
-                    }
-                },
-                lualine_y = {
-                    "progress"
-                },
-                lualine_z = {
-                    "location",
-                    function()
-                        return tostring(vim.fn.wordcount().words)
-                    end
-                }
-            }
-        }
-    )
     require "colorizer".setup()
     require("lspkind").init(
         {
@@ -176,6 +137,43 @@ function bunt.setup(use)
     set termguicolors
     colorscheme witch-dark
     ]]
+    require("lualine").setup {
+        options = {
+            theme = "nightfly"
+        },
+        sections = {
+            lualine_b = {
+                "vim.loop.cwd()",
+                "branch",
+                "diff",
+                "diagnostics"
+            },
+            lualine_c = {
+                {
+                    "filename",
+                    file_status = true,
+                    newfile_status = true,
+                    path = 1,
+                    shorting_target = 40,
+                    symbols = {
+                        modified = "⊙",
+                        readonly = "⊘",
+                        unnamed = "⊚",
+                        newfile = "⊛"
+                    }
+                }
+            },
+            lualine_y = {
+                "progress"
+            },
+            lualine_z = {
+                "location",
+                function()
+                    return tostring(vim.fn.wordcount().words)
+                end
+            }
+        }
+    }
 end
 
 return bunt
