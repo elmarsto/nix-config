@@ -32,6 +32,7 @@ in {
   home = {
     packages = with pkgs;
     with nodePackages; [
+      hours # curses time tracker
       typst # document formatter
       tinymist #lsp for typst
       typstyle #prettier for typst
@@ -42,7 +43,6 @@ in {
       typstPackages.cheq # checklist support
       typst-live # liveserver
       typstwriter # GUI (keep?)
-
       kalker #cli calculator
       rink #cli calculator (with units)
       wcalc #cli calculator
