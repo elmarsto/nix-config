@@ -34,6 +34,7 @@ in {
       enable = true;
       defaultEditor = true;
       plugins = with pkgs.unstable.vimPlugins; [
+        claude-code-nvim
         aider-nvim
         blamer-nvim
         boole-nvim

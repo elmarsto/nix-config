@@ -32,6 +32,11 @@ in {
   home = {
     packages = with pkgs;
     with nodePackages; [
+      just
+      sops
+      claude-code
+      gpt-cli
+      emcee
       hours # curses time tracker
       typst # document formatter
       tinymist #lsp for typst
