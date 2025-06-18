@@ -33,6 +33,7 @@ in {
     packages = with pkgs;
     with nodePackages; [
       pandoc
+      caddy
       mermaid-filter
       mermaid-cli
       mdbook-mermaid
