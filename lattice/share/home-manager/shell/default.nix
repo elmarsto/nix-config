@@ -32,6 +32,11 @@ in {
   home = {
     packages = with pkgs;
     with nodePackages; [
+      pandoc
+      mermaid-filter
+      mermaid-cli
+      mdbook-mermaid
+      mdbook
       just
       sops
       claude-code
@@ -41,6 +46,7 @@ in {
       typst # document formatter
       tinymist #lsp for typst
       typstyle #prettier for typst
+      typstPackages.pintorita # mermaid for typst
       typstPackages.t4t # XD
       typstPackages.tbl # tables
       typstPackages.js # JS formatting
