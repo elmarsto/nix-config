@@ -21,7 +21,7 @@
     set termguicolors
     set undofile
     set nowrap
-    set background=light
+    set background=dark
   '';
 in {
   home.packages = with pkgs; [

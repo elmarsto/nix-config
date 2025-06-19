@@ -45,6 +45,8 @@ in {
       emcee
       hours # curses time tracker
       typst # document formatter
+      xmlformat
+      moreutils
       tinymist #lsp for typst
       typstyle #prettier for typst
       typstPackages.pintorita # mermaid for typst
