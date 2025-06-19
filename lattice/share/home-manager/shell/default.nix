@@ -32,6 +32,7 @@ in {
   home = {
     packages = with pkgs;
     with nodePackages; [
+      magic-wormhole
       pandoc
       caddy
       mermaid-filter
