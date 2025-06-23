@@ -39,6 +39,7 @@ in {
       mermaid-cli
       mdbook-mermaid
       mdbook
+      mdbook-pdf
       just
       sops
       claude-code
@@ -50,6 +51,7 @@ in {
       moreutils
       tinymist #lsp for typst
       typstyle #prettier for typst
+      typstfmt
       typstPackages.pintorita # mermaid for typst
       typstPackages.t4t # XD
       typstPackages.tbl # tables
@@ -238,6 +240,15 @@ in {
           source = ./gpg-pubkeys.txt;
           trust = "full";
         }
+      ];
+    };
+    git = {
+      enable = true;
+      ignores = [
+        "*~"
+        "*.swp"
+        "*.swo"
+        "CLAUDE.md"
       ];
     };
     man = {
