@@ -14,15 +14,16 @@
       hub
       pijul
     ];
-    sessionVariables = {
-      GIT_PAGER = "delta";
-    };
+    # sessionVariables = {
+    #   GIT_PAGER = "delta";
+    # };
   };
   programs = {
     bash.initExtra = ''
-      export JUST_UNSAFE=1
-      GIT_PAGER='delta';
-      alias g='git';
+         export JUST_UNSAFE=1
+         alias g='git';
+      #   GIT_PAGER = "delta";
+
     '';
     # gh = {
     #   enable = true;
@@ -30,6 +31,9 @@
     #     git_protocol = "ssh";
     #   };
     # };
+    git-cliff.enable = true;
+    git-worktree-switcher.enable = true;
+    gitui.enable = true;
     git = {
       aliases = {
         c = "commit";
@@ -43,11 +47,12 @@
       };
       enable = true;
       package = pkgs.gitAndTools.gitFull;
+      patdiff.enable = true;
       lfs.enable = true;
-      delta.enable = true;
       userName = "Elizabeth Marston";
       userEmail = "315987+elmarsto@users.noreply.github.com";
       ignores = [
+        "CLAUDE.md"
         " .stignore"
         "*.secret"
         "*.stversions"

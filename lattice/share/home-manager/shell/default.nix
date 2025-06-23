@@ -242,15 +242,6 @@ in {
         }
       ];
     };
-    git = {
-      enable = true;
-      ignores = [
-        "*~"
-        "*.swp"
-        "*.swo"
-        "CLAUDE.md"
-      ];
-    };
     man = {
       enable = true;
       generateCaches = true;
