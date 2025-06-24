@@ -32,6 +32,7 @@ in {
   home = {
     packages = with pkgs;
     with nodePackages; [
+      lefthook
       magic-wormhole
       pandoc
       caddy
