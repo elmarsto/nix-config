@@ -42,7 +42,6 @@
         p = "pull";
         P = "push";
         r = "rebase";
-        wt = "worktree";
         s = "switch";
       };
       enable = true;

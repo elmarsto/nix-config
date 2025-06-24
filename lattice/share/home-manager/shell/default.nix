@@ -75,6 +75,12 @@ in {
       yj # hcl tool
       refmt #hcl tool
       bash-language-server
+      beam27Packages.elixir
+      beam27Packages.erlang
+      beam27Packages.erlfmt
+      beam27Packages.rebar3
+      beam27Packages.ex_doc
+      beam27Packages.hex
       beam27Packages.elixir-ls
       docker-language-server
       dockerfile-language-server-nodejs

@@ -63,14 +63,21 @@ function code.setup(use)
         }
     }
     vim.cmd [[
-    augroup FormatAutogroup
-    autocmd!
-    autocmd BufWritePost * FormatWrite
-    augroup END
-  ]]
+      augroup FormatAutogroup
+      autocmd!
+      autocmd BufWritePost * FormatWrite
+      augroup END
+    ]]
     require("nvim-autopairs").setup(
         {
             disable_filetype = {"TelescopePrompt", "vim", "markdown", "guihua", "guihua_rust", "clap_input"}
+        }
+    )
+    vim.filetype.add(
+        {
+            extension = {
+                alloy = "hcl"
+            }
         }
     )
 end
