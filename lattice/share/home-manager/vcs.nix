@@ -52,6 +52,7 @@
       userEmail = "315987+elmarsto@users.noreply.github.com";
       ignores = [
         "CLAUDE.md"
+        "/.claude/"
         " .stignore"
         "*.secret"
         "*.stversions"
