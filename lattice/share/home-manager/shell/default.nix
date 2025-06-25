@@ -33,6 +33,10 @@ in {
     packages = with pkgs;
     with nodePackages; [
       lefthook
+      git-secrets
+      ruplacer
+      jaq
+      nomino
       magic-wormhole
       pandoc
       caddy
@@ -134,7 +138,6 @@ in {
       helm-ls
       htmx-lsp
       hyperfine
-      jaq # fast jq
       jc # serialize common unix outputs to json
       jless # json pager
       jo # json object thingy
