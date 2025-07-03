@@ -30,17 +30,17 @@
       "kernel.sysrq" = 1;
     };
   };
-  environment.systemPackages = with pkgs; [
-    radeon-profile
-    radeontools
-    radeontop
-  ];
+  # environment.systemPackages = with pkgs; [
+  #   radeon-profile
+  #   radeontools
+  #   radeontop
+  # ];
   hardware = {
     #amdgpu.opencl.enable = true;
     graphics.extraPackages = with pkgs; [
       #rocm-opencl-icd
       #rocmPackages.rocm-runtime
-      amdvlk
+      #   amdvlk
     ];
   };
   services = {
@@ -65,5 +65,5 @@
     networkmanager.enable = true;
     interfaces.wlp4s0.useDHCP = true;
   };
-  services.xserver.videoDrivers = ["amdgpu"];
+  #services.xserver.videoDrivers = ["amdgpu"];
 }

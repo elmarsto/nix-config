@@ -36,8 +36,17 @@ function code.setup(use)
             lua = {
                 require("formatter.filetypes.lua").luafmt
             },
-            markdown = {
-                require("formatter.filetypes.markdown").prettierd
+            -- markdown = {
+            --     require("formatter.filetypes.markdown").prettierd
+            -- },
+            js = {
+                require("formatter.filetypes.javascript").prettierd
+            },
+            ts = {
+                require("formatter.filetypes.typescript").prettierd
+            },
+            yaml = {
+                require("formatter.filetypes.yaml").prettierd
             },
             nix = {
                 require("formatter.filetypes.nix").alejandra
