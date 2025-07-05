@@ -28,13 +28,12 @@
       bind j select-pane -D
       bind k select-pane -U
       bind l select-pane -R
-      bind [ swap-pane -D
-      bind ] swap-pane -U
       bind < resize-pane -L 10
       bind > resize-pane -R 10
       bind = resize-pane -D 10
       bind - resize-pane -U 10
       bind x rotate-window
+      bind [ copy-mode
 
       set -g mode-style "fg=#82aaff,bg=#3b4261"
 

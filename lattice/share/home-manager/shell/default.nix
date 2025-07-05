@@ -32,6 +32,8 @@ in {
   home = {
     packages = with pkgs;
     with nodePackages; [
+      awscli2
+      plantuml-c4
       lefthook
       git-secrets
       ruplacer

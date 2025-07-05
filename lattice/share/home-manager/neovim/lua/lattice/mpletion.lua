@@ -66,7 +66,7 @@ function mpletion.setup()
                 {name = "luasnip"},
                 {name = "nvim_lsp"},
                 {name = "cmp_treesitter"},
-                {name = "mkdnflow"},
+                -- {name = "mkdnflow"},
                 {name = "rg"},
                 {name = "path"},
                 {name = "buffer"},

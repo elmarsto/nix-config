@@ -65,10 +65,10 @@ function code.setup(use)
             -- },
             toml = {
                 require("formatter.filetypes.toml").taplo
-            },
-            ["*"] = {
-                require("formatter.defaults").prettierd
             }
+            -- ["*"] = {
+            --     require("formatter.defaults").prettierd
+            -- }
         }
     }
     vim.cmd [[
