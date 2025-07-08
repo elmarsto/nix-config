@@ -70,7 +70,7 @@ in {
         marks-nvim
         elixir-tools-nvim
         mkdir-nvim
-        # mkdnflow-nvim
+        mkdnflow-nvim
         neoscroll-nvim
         nui-nvim
         nvim-autopairs
