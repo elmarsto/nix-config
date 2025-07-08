@@ -16,19 +16,19 @@ function prose.setup(use)
                 maps = true,
                 paths = true,
                 tables = true,
-                yaml = false,
-                cmp = false
+                yaml = true,
+                cmp = true
             },
             filetypes = {md = true, rmd = true, markdown = true},
-            create_dirs = true,
+            create_dirs = false,
             perspective = {
-                priority = "first",
-                fallback = "current",
-                root_tell = false,
+                priority = "current",
+                fallback = "root",
+                root_tell = "SUMMARY.md",
                 nvim_wd_heel = false,
                 update = false
             },
-            wrap = false,
+            wrap = true,
             bib = {
                 default_path = nil,
                 find_in_root = true
@@ -50,7 +50,7 @@ function prose.setup(use)
                     text = os.date("+%Y.%m.%d_%H.%M.%S") .. text
                     return (text)
                 end,
-                create_on_follow_failure = true
+                create_on_follow_failure = false
             },
             new_file_template = {
                 use_template = true,
