@@ -32,6 +32,7 @@ in {
   home = {
     packages = with pkgs;
     with nodePackages; [
+      mdformat
       awscli2
       plantuml-c4
       lefthook
