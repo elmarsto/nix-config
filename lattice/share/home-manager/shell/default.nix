@@ -74,10 +74,10 @@ in {
       hclfmt #hcl tool
       hcledit #hcl tool
       hcl2json
-      ruby_3_4
+      #ruby_3_4
       rubyfmt
-      rubyPackages_3_4.solargraph #ruby lsp
-      rubyPackages_3_4.sorbet-runtime #ruby type checker
+      #rubyPackages_3_4.solargraph #ruby lsp
+      #rubyPackages_3_4.sorbet-runtime #ruby type checker
       watchman # needed by sorbet
       json2hcl
       yj # hcl tool
@@ -225,7 +225,7 @@ in {
       enable = true;
       initExtra = ''
         set -o vi
-        export PATH="$PATH:$HOME/.local/bin:$PATH:$HOME/.local/share/gem/ruby/3.4.0/bin"
+        export PATH="$PATH:$HOME/.local/bin:$PATH:$HOME/.cargo/bin"
       '';
     };
     bat = {
