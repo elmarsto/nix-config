@@ -7,20 +7,10 @@
   programs.tmux = {
     enable = true;
     mouse = true;
-    newSession = true;
+    newSession = false;
     keyMode = "vi";
-    historyLimit = 10000;
+    historyLimit = 100000;
     terminal = "tmux-256color";
-    plugins = with pkgs.tmuxPlugins; [
-      resurrect
-      {
-        plugin = continuum;
-        extraConfig = ''
-          set -g @continuum-restore 'on'
-          set -g @continuum-save-interval '60'
-        '';
-      }
-    ];
     extraConfig = ''
       bind-key s choose-tree -Zs
       bind r source-file ~/.config/tmux/tmux.conf
@@ -33,8 +23,8 @@
       bind = resize-pane -D 10
       bind - resize-pane -U 10
       bind x rotate-window
-      bind [ copy-mode
 
+      set -s copy-command 'wl-copy'
       set -g mode-style "fg=#82aaff,bg=#3b4261"
 
       set -g message-style "fg=#82aaff,bg=#3b4261"
