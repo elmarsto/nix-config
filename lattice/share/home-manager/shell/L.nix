@@ -3,12 +3,13 @@
   Lustfile = pkgs.writeText "Lustfile" ''
     just := 'L'
     today := `date +%F`
+
     [private]
-    default:
+    @default:
       L --list
 
-    svgify:
-      echo "TODO"
+    @svgify:
+      
   '';
   L = pkgs.writeScriptBin "L" ''
     ${pkgs.just}/bin/just --unstable -d ~ -f ${Lustfile} "$@"

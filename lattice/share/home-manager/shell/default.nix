@@ -32,7 +32,7 @@ in {
   home = {
     packages = with pkgs;
     with nodePackages; [
-      asciinema
+      asciinema_3
       mdformat
       awscli2
       plantuml-c4
