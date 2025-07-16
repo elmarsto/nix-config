@@ -10,6 +10,7 @@
           "Zen Loop"
         ];
       })
+      baobab
       bitwarden
       dconf
       glaxnimate
