@@ -114,6 +114,10 @@ in {
       clang-tools
       cmake-language-server
       comby # syntax-aware (AST?) search/replace CLI
+      cmake
+      gnumake
+      docker-buildx
+      autoconf
       croc # send things between computers
       ctop
       curl

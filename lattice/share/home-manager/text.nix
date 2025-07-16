@@ -23,6 +23,12 @@ in {
     fzf.enable = true;
     readline.enable = true;
     skim.enable = true;
+    helix = {
+      enable = true;
+      settings = {
+        theme = "base16";
+      };
+    };
   };
   xdg = {
     dataFile."mime/packages/text-markdown.xml".source = mdMime;
