@@ -18,8 +18,10 @@
       -- For example, changing the color scheme:
       c.color_scheme = 'Tomorrow Night'
       c.xcursor_theme = 'Adwaita'
-      c.font = wezterm.font 'Monaspace Argon'
-      c.harfbuzz_features = { "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "ss07", "ss08", "calt", "liga" }
+      c.font = wezterm.font {
+        family = 'Monaspace Argon',
+        harfbuzz_features = { "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "ss07", "ss08", "calt", "liga" }
+      }
       c.font_size = 14
       c.font_rules = {
         {
@@ -63,6 +65,15 @@
       c.tab_bar_at_bottom = true
       c.use_fancy_tab_bar = false
       c.warn_about_missing_glyphs = false
+      c.launch_menu = {
+        {
+          args = { 'top' },
+        },
+        {
+          label = 'Bash',
+          args = { 'bash', '-l' }
+        }
+      }
 
       -- and finally, return the configuration to wezterm
       return c
