@@ -61,9 +61,9 @@
       }
       c.underline_position = -5
       c.colors = { background = 'rgba(50, 50, 50, 0.8)' }
-      c.hide_tab_bar_if_only_one_tab = true
+      c.hide_tab_bar_if_only_one_tab = false
       c.tab_bar_at_bottom = true
-      c.use_fancy_tab_bar = false
+      c.use_fancy_tab_bar = true
       c.warn_about_missing_glyphs = false
       c.launch_menu = {
         {
@@ -76,6 +76,10 @@
         {
           label = 'aichat',
           args = { 'aichat' }
+        }
+        {
+          label = 'yazi',
+          args = { 'yazi' }
         }
       }
 
