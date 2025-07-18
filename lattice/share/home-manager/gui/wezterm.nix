@@ -76,7 +76,7 @@
         {
           label = 'aichat',
           args = { 'aichat' }
-        }
+        },
         {
           label = 'yazi',
           args = { 'yazi' }
