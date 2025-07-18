@@ -103,5 +103,20 @@
       sopwith = mk-home "sopwith" x64LinuxPkgs;
       pamplemoose = mk-home "pamplemoose" aarch64DarwinPkgs;
     };
+    devShells.x86_64-linux = {
+      default = x64LinuxPkgs.mkShell {
+        name = "lattice";
+        packages = with x64LinuxPkgs; [
+          alejandra
+          statix
+          docker
+          gh
+          lefthook
+          just
+          diceware
+          moreutils # it might get used
+        ];
+      };
+    };
   };
 }

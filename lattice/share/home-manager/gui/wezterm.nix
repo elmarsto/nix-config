@@ -70,8 +70,12 @@
           args = { 'top' },
         },
         {
-          label = 'Bash',
+          label = 'bash',
           args = { 'bash', '-l' }
+        },
+        {
+          label = 'aichat',
+          args = { 'aichat' }
         }
       }
 
