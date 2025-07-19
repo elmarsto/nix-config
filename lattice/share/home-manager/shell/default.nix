@@ -164,6 +164,7 @@ in {
       lua-fmt
       lua-language-server
       lynx
+      lsr
       marksman # langserver for .md
       miller # csv cli tool
       minikube
