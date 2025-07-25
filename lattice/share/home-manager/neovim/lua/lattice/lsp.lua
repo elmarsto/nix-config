@@ -222,6 +222,9 @@ function lsp.setup()
     nvim_lsp.vimls.setup {
         capabilities = capabilities
     }
+    nvim_lsp.terraformls.setup {
+        capabilities = capabilities
+    }
     nvim_lsp.yamlls.setup {
         capabilities = capabilities,
         filetypes = {"yaml", "yml"},
