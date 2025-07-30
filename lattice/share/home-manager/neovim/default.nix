@@ -35,7 +35,6 @@ in {
       defaultEditor = true;
       plugins = with pkgs.unstable.vimPlugins; [
         claude-code-nvim
-        aider-nvim
         blamer-nvim
         boole-nvim
         cmp-buffer
@@ -51,12 +50,10 @@ in {
         cmp_luasnip
         comment-nvim
         diffview-nvim
-        dressing-nvim
         fidget-nvim
         formatter-nvim
         # git-conflict-nvim # Disabled 2024 Oct 07; ironically, was causing conflicts
         gitsigns-nvim
-        glow-nvim
         grug-far-nvim
         inc-rename-nvim
         indent-blankline-nvim
