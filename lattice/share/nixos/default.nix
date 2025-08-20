@@ -47,8 +47,8 @@
     ethtool
     exfat
     findutils
-    linuxKernel.packages.linux_libre.perf
-    linuxKernel.packages.linux_libre.turbostat
+    # linuxKernel.packages.linux_libre.perf
+    # linuxKernel.packages.linux_libre.turbostat
     lsof
     msr-tools
     ncdu

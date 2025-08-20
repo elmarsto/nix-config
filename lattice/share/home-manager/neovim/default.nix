@@ -26,10 +26,21 @@
 in {
   home.packages = with pkgs; [
     live-server
-    neovide
     neovim-remote
   ];
   programs = {
+    neovide = {
+      enable = true;
+      settings = {
+        font = {
+          normal = ["Monaspace Xenon"];
+          size = 16.0;
+          features = {
+            "Monaspace Xenon" = ["+ss01" "+ss02" "+ss03" "+ss04" "+ss05" "+ss06" "+ss07" "+ss08" "+calt" "+liga"];
+          };
+        };
+      };
+    };
     neovim = {
       enable = true;
       defaultEditor = true;
@@ -131,6 +142,11 @@ in {
         set scrollback=100000
       '';
       extraLuaConfig = ''
+        if vim.g.neovide == true then
+          vim.api.nvim_set_keymap("n", "<C-=>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>", { silent = true })
+          vim.api.nvim_set_keymap("n", "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>", { silent = true })
+          vim.api.nvim_set_keymap("n", "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>", { silent = true })
+        end
         vim.g.lattice = {
           sqlls = {
             config = {

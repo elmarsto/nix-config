@@ -56,7 +56,7 @@ in {
       emcee
       hours # curses time tracker
       typst # document formatter
-      xmlformat
+        #xmlformat
       moreutils
       tinymist #lsp for typst
       typstyle #prettier for typst
