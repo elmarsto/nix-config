@@ -19,7 +19,7 @@
       c.color_scheme = 'Tomorrow Night'
       c.xcursor_theme = 'Adwaita'
       c.font = wezterm.font {
-        family = 'Monaspace Argon',
+        family = 'Monaspace Krypton',
         harfbuzz_features = { 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'calt', 'liga' }
       }
       c.font_size = 14
@@ -31,17 +31,17 @@
         {
           intensity = 'Half',
           italic = false,
-          font = wezterm.font { family = 'Monaspace Argon', weight = 'ExtraLight', style = 'Normal' }
+          font = wezterm.font { family = 'Monaspace Krypton', weight = 'ExtraLight', style = 'Normal' }
         },
         {
           intensity = 'Normal',
           italic = false,
-          font = wezterm.font { family = 'Monaspace Argon', weight = 'Regular', style = 'Normal' }
+          font = wezterm.font { family = 'Monaspace Krypton', weight = 'Regular', style = 'Normal' }
         },
         {
           intensity = 'Bold',
           italic = false,
-          font = wezterm.font { family = 'Monaspace Neon', weight = 'ExtraBold', style = 'Normal' }
+          font = wezterm.font { family = 'Monaspace Krypton', weight = 'ExtraBold', style = 'Normal' }
         },
         {
           intensity = 'Half',
@@ -56,7 +56,7 @@
         {
           intensity = 'Bold',
           italic = true,
-          font = wezterm.font { family = 'Monaspace Neon', weight = 'ExtraBold', style = 'Italic' }
+          font = wezterm.font { family = 'Monaspace Krypton', weight = 'ExtraBold', style = 'Italic' }
         },
       }
       c.underline_position = -5
