@@ -17,7 +17,7 @@ in {
   ];
   accounts.email.accounts = {
     root = {
-      address = "root@fleshcassette.net";
+      address = "root@saccades.ca";
       realName = "Root";
       imap = {
         host = host;
@@ -34,7 +34,7 @@ in {
           useStartTls = true;
         };
       };
-      userName = "root@fleshcassette.net";
+      userName = "root@saccades.ca";
       himalaya = {
         enable = true;
         #backend = "imap";
@@ -49,9 +49,6 @@ in {
     saccades = {
       address = "lattice@saccades.ca";
       realName = "Lattice";
-      aliases = [
-        "lattice@fleshcassette.net"
-      ];
       imap = {
         host = host;
         port = 993;
@@ -72,36 +69,6 @@ in {
         enable = true;
         #sender = "smtp";
         #backend = "imap";
-        settings = {
-          imap-insecure = true;
-          smtp-insecure = true;
-          smtp-starttls = true;
-        };
-      };
-    };
-    newsletter = {
-      address = "newsletter@lizmars.net";
-      realName = "Liz Mars Newsletter";
-      imap = {
-        host = host;
-        port = 993;
-        tls.enable = true;
-      };
-      primary = false;
-      passwordCommand = newsletterPassword;
-      smtp = {
-        host = host;
-        port = 587;
-        tls = {
-          enable = true;
-          useStartTls = true;
-        };
-      };
-      userName = "newsletter@lizmars.net";
-      himalaya = {
-        enable = true;
-        #backend = "imap";
-        #sender = "smtp";
         settings = {
           imap-insecure = true;
           smtp-insecure = true;

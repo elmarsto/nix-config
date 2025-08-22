@@ -9,6 +9,7 @@
     hostId = "a0300937"; # first 8 of /etc/machine-id, req for zfs
     networkmanager.enable = true;
     interfaces.wlp0s20f3.useDHCP = true;
+    nameservers = ["100.100.100.100" "1.1.1.1" "8.8.8.8" "8.8.4.4"];
   };
   imports = [./hardware-configuration.nix];
   services.udev.extraRules = ''
