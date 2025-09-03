@@ -53,9 +53,6 @@ in {
       '';
     };
     gpm.enable = true;
-    logind.extraConfig = ''
-      HandlePowerKey=ignore
-    '';
     xserver.xkb.options = "caps:escape,compose:ralt";
   };
 }

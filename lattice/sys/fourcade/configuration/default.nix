@@ -65,6 +65,7 @@
     networkmanager.enable = true;
     interfaces.wlp4s0.useDHCP = true;
     nameservers = ["100.100.100.100" "1.1.1.1" "8.8.8.8" "8.8.4.4"];
+    search = ["tail6e61.ts.net"];
   };
   #services.xserver.videoDrivers = ["amdgpu"];
 }

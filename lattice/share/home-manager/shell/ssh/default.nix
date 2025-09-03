@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  imports = [./fleshy.nix ./rsync-net.nix];
+  imports = [./saccades.nix ./rsync-net.nix];
   programs.ssh = {
     addKeysToAgent = "4h";
     compression = true;

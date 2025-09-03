@@ -137,6 +137,7 @@
     };
     postfix.enable = true;
     pulseaudio.enable = false;
+    postgresql.enable = true;
   };
   system = {
     autoUpgrade = {
