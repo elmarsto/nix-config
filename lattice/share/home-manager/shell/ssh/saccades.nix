@@ -4,7 +4,7 @@
   ...
 }: {
   programs.ssh.matchBlocks = {
-    sac = {
+    sc = {
       forwardAgent = true;
       hostname = "saccades.tail6e61.ts.net";
       user = "lattice";
@@ -18,7 +18,7 @@
         }
       ];
     };
-    hackysac = {
+    saccades = {
       forwardAgent = true;
       hostname = "saccades.ca";
       user = "root";

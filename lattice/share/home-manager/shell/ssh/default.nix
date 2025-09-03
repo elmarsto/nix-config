@@ -5,12 +5,8 @@
 }: {
   imports = [./saccades.nix ./rsync-net.nix];
   programs.ssh = {
-    addKeysToAgent = "4h";
-    compression = true;
-    controlMaster = "auto";
-    controlPath = "/tmp/${config.home.username}-%r@%h:%p";
-    controlPersist = "10m";
     enable = true;
+    enableDefaultConfig = false;
     extraConfig = ''
       AddKeysToAgent yes
       Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
@@ -25,6 +21,13 @@
         hostname = "127.0.0.1";
         user = "root";
         identityFile = "~/.ssh/id_ed25519_sk";
+      };
+      "*" = {
+        addKeysToAgent = "4h";
+        compression = true;
+        controlMaster = "auto";
+        controlPath = "/tmp/${config.home.username}-%r@%h:%p";
+        controlPersist = "10m";
       };
     };
   };
