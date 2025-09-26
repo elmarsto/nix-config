@@ -42,12 +42,13 @@
       sublime-merge
       udev-gothic
       vscode
-      code-cursor 
+      code-cursor
       wayland-utils
       wezterm
       wl-clipboard
       xdg-utils
       xorg.xeyes
+      yarr
       zed-editor
     ];
     sessionVariables = {
