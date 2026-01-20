@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     mpv
-    sayonara
     tidal-hifi
     tidal-dl
     kdePackages.kasts

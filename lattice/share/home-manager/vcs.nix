@@ -34,48 +34,23 @@
     git-cliff.enable = true;
     git-worktree-switcher.enable = true;
     gitui.enable = true;
-    git = {
-      aliases = {
-        c = "commit";
-        co = "checkout";
-        m = "merge";
-        p = "pull";
-        P = "push";
-        r = "rebase";
-        s = "switch";
-      };
+    patdiff = {
       enable = true;
-      package = pkgs.gitAndTools.gitFull;
-      patdiff.enable = true;
-      lfs.enable = true;
-      userName = "Elizabeth Marston";
-      userEmail = "315987+elmarsto@users.noreply.github.com";
-      ignores = [
-        "CLAUDE.md"
-        "/.claude/"
-        " .stignore"
-        "*.secret"
-        "*.stversions"
-        "*.swo"
-        "*.swp"
-        "*~"
-        ".DS_STORE/"
-        ".stfolder/"
-        ".stignore"
-        ".stversions/"
-        ".trash/"
-        ".*trashed"
-      ];
-      # includes = [
-      #   {
-      #     condition = "gitdir:~/navaruk";
-      #     contents.user = {
-      #       email = "her@lizmars.net";
-      #       signingKey = "B8DF C273 AE23 1E17 1D53 0303 76B1 AEC6 6EDD 0C29";
-      #     };
-      #   }
-      # ];
-      extraConfig = {
+      enableGitIntegration = true;
+    };
+    git = {
+      settings = {
+        alias = {
+          c = "commit";
+          co = "checkout";
+          m = "merge";
+          p = "pull";
+          P = "push";
+          r = "rebase";
+          s = "switch";
+        };
+        user.name = "Elizabeth Marston";
+        user.email = "315987+elmarsto@users.noreply.github.com";
         branch.sort = "committerdate";
         commit.verbose = true;
         credential.helper = "libsecret";
@@ -118,6 +93,34 @@
         tag.sort = "taggerdate";
         transfer.fsckobjects = true;
       };
+      enable = true;
+      package = pkgs.gitFull;
+      lfs.enable = true;
+      ignores = [
+        "CLAUDE.md"
+        "/.claude/"
+        " .stignore"
+        "*.secret"
+        "*.stversions"
+        "*.swo"
+        "*.swp"
+        "*~"
+        ".DS_STORE/"
+        ".stfolder/"
+        ".stignore"
+        ".stversions/"
+        ".trash/"
+        ".*trashed"
+      ];
+      # includes = [
+      #   {
+      #     condition = "gitdir:~/navaruk";
+      #     contents.user = {
+      #       email = "her@lizmars.net";
+      #       signingKey = "B8DF C273 AE23 1E17 1D53 0303 76B1 AEC6 6EDD 0C29";
+      #     };
+      #   }
+      # ];
       # signing = {
       #   key = "3B65 D56E 51BB 22BC FB8E  E221 8405 F834 149D 0ED8";
       #   signByDefault = true;

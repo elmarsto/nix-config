@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs,  ...}: {
   dconf.enable = true;
   fonts.fontconfig.enable = true;
   home = {
@@ -11,7 +11,7 @@
         ];
       })
       baobab
-      bitwarden
+      bitwarden-desktop
       dconf
       glaxnimate
       google-chrome
@@ -28,7 +28,7 @@
       mtr-gui
       nerd-fonts.monaspace
       notify-desktop
-      obsidian
+      unstable.obsidian
       qjournalctl
       qcad
       roboto

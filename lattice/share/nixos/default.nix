@@ -74,7 +74,6 @@
   i18n.defaultLocale = "en_US.UTF-8";
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   programs = {
-    adb.enable = true;
     command-not-found.enable = false;
     git.enable = true;
     nix-ld.enable = true;

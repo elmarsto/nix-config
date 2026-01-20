@@ -60,7 +60,6 @@ in {
       moreutils
       tinymist #lsp for typst
       typstyle #prettier for typst
-      typstfmt
       typstPackages.pintorita # mermaid for typst
       typstPackages.t4t # XD
       typstPackages.tbl # tables
@@ -92,7 +91,7 @@ in {
       beam27Packages.hex
       beam27Packages.elixir-ls
       docker-language-server
-      dockerfile-language-server-nodejs
+      dockerfile-language-server
       graphql-language-service-cli
       terraform-ls
       aider-chat
@@ -133,7 +132,7 @@ in {
       entr # file monitor
       eslint_d
       fd
-      fennel # scheme that compiles to lua
+      luaPackages.fennel # scheme that compiles to lua
       fennel-ls
       fx # terminal json viewer
       gdb
@@ -160,7 +159,6 @@ in {
       llvm
       lnav # logfile navigator
       lua
-      lua-fmt
       lua-language-server
       lynx
       lsr
@@ -174,7 +172,7 @@ in {
       ocamlPackages.magic-trace
       openai
       pgcli # postgres cli
-      pinentry.qt
+      pinentry-qt
       plocate # faster `locate`
       postgres-lsp
       pprof # visualize profiling data
@@ -212,7 +210,7 @@ in {
       vale
       vim-language-server
       vscode-langservers-extracted # html, json, css langservers
-      wring # CSS selectors / xpath html extraction tool ('jq for html')
+        #wring # CSS selectors / xpath html extraction tool ('jq for html')
       wasm-language-tools
       xh # HTTP REST tool
       xan # csv cli tool

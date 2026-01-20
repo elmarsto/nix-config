@@ -57,7 +57,7 @@ in {
         cmp-path
         cmp-rg
         cmp-spell
-        cmp-treesitter
+        # cmp-treesitter
         cmp_luasnip
         comment-nvim
         diffview-nvim
@@ -96,9 +96,9 @@ in {
         nvim-notify
         nvim-scrollbar
         nvim-surround
-        nvim-treesitter-refactor
-        nvim-treesitter-textobjects
-        nvim-treesitter-textsubjects
+        # nvim-treesitter-refactor
+        # nvim-treesitter-textobjects
+        # nvim-treesitter-textsubjects
         nvim-treesitter.withAllGrammars
         nvim-unception
         nvim-web-devicons
