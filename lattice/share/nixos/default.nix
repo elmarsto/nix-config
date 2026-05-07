@@ -37,7 +37,7 @@
     };
   };
   environment.systemPackages = with pkgs; [
-    # tracee RESEARCH: what thisis and how to use it
+    android-tools
     appimage-run
     bcc
     below
@@ -74,7 +74,6 @@
   i18n.defaultLocale = "en_US.UTF-8";
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   programs = {
-    adb.enable = true;
     command-not-found.enable = false;
     git.enable = true;
     nix-ld.enable = true;

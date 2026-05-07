@@ -16,7 +16,7 @@
     fontDir.enable = true;
     packages = with pkgs; [
       noto-fonts
-      noto-fonts-emoji
+      noto-fonts-color-emoji
     ];
   };
   hardware.graphics.enable32Bit = true;
