@@ -43,6 +43,7 @@ in {
     };
     neovim = {
       enable = true;
+      withRuby = false;
       defaultEditor = true;
       plugins = with pkgs.unstable.vimPlugins; [
         claude-code-nvim
@@ -57,7 +58,7 @@ in {
         cmp-path
         cmp-rg
         cmp-spell
-        cmp-treesitter
+        # cmp-treesitter
         cmp_luasnip
         comment-nvim
         diffview-nvim
@@ -96,9 +97,9 @@ in {
         nvim-notify
         nvim-scrollbar
         nvim-surround
-        nvim-treesitter-refactor
-        nvim-treesitter-textobjects
-        nvim-treesitter-textsubjects
+        # nvim-treesitter-refactor
+        # nvim-treesitter-textobjects
+        # nvim-treesitter-textsubjects
         nvim-treesitter.withAllGrammars
         nvim-unception
         nvim-web-devicons
@@ -108,7 +109,7 @@ in {
         SchemaStore-nvim
         smart-splits-nvim
         sqlite-lua
-        ssr
+        ssr-nvim
         telescope-frecency-nvim
         telescope-nvim
         telescope-project-nvim
@@ -141,7 +142,7 @@ in {
         au TermOpen * setlocal scrollback=-1
         set scrollback=100000
       '';
-      extraLuaConfig = ''
+      initLua = ''
         if vim.g.neovide == true then
           vim.api.nvim_set_keymap("n", "<C-=>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>", { silent = true })
           vim.api.nvim_set_keymap("n", "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>", { silent = true })

@@ -11,7 +11,7 @@
         ];
       })
       baobab
-      bitwarden
+      bitwarden-desktop
       dconf
       glaxnimate
       google-chrome
@@ -63,7 +63,10 @@
     chromium = {
       enable = true;
     };
-    firefox.enable = true;
+    firefox = {
+      enable = true;
+      configPath = ".mozilla/firefox";
+    };
   };
   services = {
     fusuma = {

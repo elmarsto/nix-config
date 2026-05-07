@@ -4,7 +4,7 @@
     telegram-desktop
     signal-desktop
     slack
-    whatsapp-for-linux
+    karere
     zoom-us
   ];
 }

@@ -17,7 +17,7 @@ in {
     foliate
     glow
     #joplin-desktop
-    write_stylus
+    styluslabs-write-bin
   ];
   programs = {
     fzf.enable = true;
