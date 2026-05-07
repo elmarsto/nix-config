@@ -5,7 +5,6 @@
     tidal-hifi
     tidal-dl
     kdePackages.kasts
-    reaper
   ];
   xdg = {
     mimeApps = {
