@@ -133,8 +133,8 @@ in {
         vim-test
         winshift-nvim
       ];
-      withNodeJs = true;
-      withPython3 = true;
+      withNodeJs = false;
+      withPython3 = false;
       vimdiffAlias = true;
       extraLuaPackages = p: with p; [luautf8];
       extraConfig = ''
@@ -156,25 +156,25 @@ in {
             }
           },
         }
-        local fn = vim.fn
-        local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-        if fn.empty(fn.glob(install_path)) > 0 then
-          fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
-          vim.cmd "packadd packer.nvim"
-        end
-        local packer = require "packer"
-        require "packer.luarocks".install_commands()
-        packer.startup {
-          function(use)
-            use "wbthomason/packer.nvim"
-            require 'lattice'.setup(use)
-          end
-        }
-        -- currently needed! why?
-        local function linear()
-          require('lualine').setup()
-        end
-        vim.schedule(linear)
+        --        local fn = vim.fn
+        --        local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+        --        if fn.empty(fn.glob(install_path)) > 0 then
+        --          fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
+        --          vim.cmd "packadd packer.nvim"
+        --        end
+        --        local packer = require "packer"
+        --        require "packer.luarocks".install_commands()
+        --        packer.startup {
+        --          function(use)
+        --            use "wbthomason/packer.nvim"
+        --            require 'lattice'.setup(use)
+        --          end
+        --        }
+        --        -- currently needed! why?
+        --        local function linear()
+        --          require('lualine').setup()
+        --        end
+        --        vim.schedule(linear)
       '';
     };
     vim = {
@@ -182,10 +182,10 @@ in {
       extraConfig = vimConfig;
     };
   };
-  xdg.configFile."nvim/lua" = {
-    source = ./lua;
-    recursive = true;
-  };
+#  xdg.configFile."nvim/lua" = {
+#    source = ./lua;
+#    recursive = true;
+#  };
   home.file = {
     ".vimrc".text = vimConfig;
   };
