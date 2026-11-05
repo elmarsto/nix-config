@@ -1,10 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     mpv
-    sayonara
-    tidal-hifi
-    tidal-dl
-    kdePackages.kasts
   ];
   xdg = {
     mimeApps = {
@@ -13,10 +9,10 @@
         "audio/wav" = ["mpv.desktop"];
       };
     };
-    desktopEntries = {
-      mpv = {
-        mimeType = ["audio/mpeg" "audio/wav"];
-      };
-    };
+    # desktopEntries = {
+    #   mpv = {
+    #     mimeType = ["audio/mpeg" "audio/wav"];
+    #   };
+    # };
   };
 }

@@ -77,7 +77,7 @@
     packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
     # Formatter for your nix files, available through 'nix fmt'
     # Other options beside 'alejandra' include 'nixpkgs-fmt'
-    formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
+    #formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
 
     # Your custom packages and modifications, exported as overlays
     overlays = import ./overlays {inherit inputs;};
@@ -93,23 +93,16 @@
     nixosConfigurations = {
       fourcade = mk-system "fourcade";
       bowsprit = mk-system "bowsprit";
-      sopwith = mk-system "sopwith";
-      pamplemoose = mk-system "pamplemoose";
     };
     # Available through 'home-manager --flake .#hostname'
     homeConfigurations = {
       fourcade = mk-home "fourcade" x64LinuxPkgs;
       bowsprit = mk-home "bowsprit" x64LinuxPkgs;
-      sopwith = mk-home "sopwith" x64LinuxPkgs;
-      pamplemoose = mk-home "pamplemoose" aarch64DarwinPkgs;
     };
     devShells.x86_64-linux = {
       default = x64LinuxPkgs.mkShell {
         name = "lattice";
         packages = with x64LinuxPkgs; [
-          alejandra
-          statix
-          docker
           gh
           lefthook
           just

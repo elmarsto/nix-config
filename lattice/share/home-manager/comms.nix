@@ -1,10 +1,9 @@
 { config, pkgs, ... }: {
   home.packages = with pkgs; [
-    discord
-    telegram-desktop
+    #discord
+    #telegram-desktop
     signal-desktop
-    slack
-    karere
+    #slack
     zoom-us
   ];
 }

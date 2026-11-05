@@ -11,9 +11,7 @@
 in {
   imports = [
     ./starship.nix
-    ./tmux.nix
     ./ssh
-    ./L.nix
   ];
   editorconfig = {
     enable = true;
@@ -31,192 +29,53 @@ in {
   };
   home = {
     packages = with pkgs; [
-      asciinema_3
-      mdformat
       awscli2
-      plantuml-c4
-      lefthook
-      git-secrets
-      ruplacer
       jaq
-      nomino
-      magic-wormhole
       pandoc
-      caddy
       mermaid-filter
       mermaid-cli
       mdbook-mermaid
       mdbook
       mdbook-pdf
       just
-      sops
-      claude-code
-      gpt-cli
-      emcee
-      hours # curses time tracker
-      typst # document formatter
-      #xmlformat
       moreutils
-      tinymist #lsp for typst
-      typstyle #prettier for typst
-      typstPackages.pintorita # mermaid for typst
-      typstPackages.t4t # XD
-      typstPackages.tbl # tables
-      typstPackages.js # JS formatting
-      typstPackages.ilm # basic nonfic layout
-      typstPackages.cheq # checklist support
-      typst-live # liveserver
-      typstwriter # GUI (keep?)
-      kalker #cli calculator
-      rink #cli calculator (with units)
-      wcalc #cli calculator
-      hclfmt #hcl tool
-      hcledit #hcl tool
-      hcl2json
-      #ruby_3_4
-      rubocop
-      #rubyPackages_3_4.solargraph #ruby lsp
-      #rubyPackages_3_4.sorbet-runtime #ruby type checker
-      watchman # needed by sorbet
-      json2hcl
-      yj # hcl tool
-      refmt #hcl tool
-      bash-language-server
-      beam27Packages.elixir
-      beam27Packages.erlang
-      beam27Packages.erlfmt
-      beam27Packages.rebar3
-      beam27Packages.ex_doc
-      beam27Packages.hex
-      beam27Packages.elixir-ls
-      docker-language-server
-      dockerfile-language-server-nodejs
-      graphql-language-service-cli
-      terraform-ls
-      aider-chat
-      aichat
-      alejandra # nix formatter
-      angle-grinder # logfile navigator
-      ast-grep # treesitter + grep
       bc
       bind # the one and only
-      black # python formatter
-      boost
-      bun
-      ccls # C/C++ LS
-      charm-freeze # screencaps of code
-      chars # unicode cli
-      choose # (awk alternatives) pick ranges and regexes
-      cicero-tui # unicode picker
-      clang-analyzer
-      clang-tools
-      cmake-language-server
-      cmake
-      gnumake
-      docker-buildx
-      autoconf
-      croc # send things between computers
-      ctop
       curl
-      dasel # csv/json/yaml tool like jq but universal
       ddgr # duckduckgo
       deno
       diceware
-      docker-language-server
-      duf # disk usage/free utility
       dw
-      efm-langserver
-      emmet-language-server
       emoji-picker
       entr # file monitor
-      eslint_d
       fd
-      luaPackages.fennel # scheme that compiles to lua
-      fennel-ls
-      fx # terminal json viewer
-      gdb
       gh
-      gimoji # gitmoji-cli but in rust
-      gist
-      gitmoji-cli
       gpg-tui
-      helm-ls
-      htmx-lsp
-      hyperfine
-      jc # serialize common unix outputs to json
-      jless # json pager
-      jo # json object thingy
       jq
-      jq-lsp
-      kompose # docker-compose for k8s
-      kubectl
       lazydocker
       lazygit
       libsecret
-      llm
       lldb
-      llvm
-      lnav # logfile navigator
-      lua
-      lua-language-server
       lynx
-      lsr
-      marksman # langserver for .md
-      miller # csv cli tool
-      minikube
       nixd
       nodejs
-      nsh # small posix shell in rust
-      nushell # shell alternative
-      ocamlPackages.magic-trace
-      openai
       pgcli # postgres cli
       pinentry-qt
-      plocate # faster `locate`
-      postgres-lsp
-      pprof # visualize profiling data
       prettierd
-      pv # pipeline monitor/progress baer
-      pyright # python linter
-      python312
-      python312Packages.ipython
       qrtool
       rbw # bitwarden cli
       ripgrep
-      ripgrep-all
       rsync
       rustup
-      shell-gpt
       shellcheck # shell  linter
-      shfmt # shell `prettier`
-      soupault
-      sqls # sql langserver
-      statix # nix linter
-      stc-cli # syncthing cli
       steam-run # simulates standard linux filesystem
-      stylelint # css linter
       svelte-check
-      svelte-language-server
-      taplo
-      terraform
-      terraform-ls
       typescript
-      typescript-language-server
       uank
       uni # unicode cli tool
       unipicker # unicode cli
       unzip
-      vale
-      vim-language-server
-      vscode-langservers-extracted # html, json, css langservers
-      wasm-language-tools
-      xh # HTTP REST tool
-      xan # csv cli tool
       xz
-      yaml-language-server
-      yank # pipe to clipboard with picker
-      zk # zettelkasten cli
-      zls # zig lsp
     ];
     sessionPath = [
       "~/.local/bin" # why no work
@@ -270,7 +129,6 @@ in {
         pinentry = pkgs.pinentry-qt;
       };
     };
-    watson.enable = true;
     yazi = {
       enable = true;
       enableBashIntegration = true;
@@ -330,18 +188,5 @@ in {
       enable = true;
       automount = false; # may help with garmin mess
     };
-  };
-  xdg = {
-    configFile = {
-      "vale/vale.ini".text = ''
-        StylesPath = styles
-        MinAlertLevel = suggestion
-        Packages = proselint
-        [*]
-        BasedOnStyles = Vale, proselint
-      '';
-      "vale/styles/.ignore".text = "";
-    };
-    dataFile."../bin/vale-ls".source = ./vale-ls;
   };
 }

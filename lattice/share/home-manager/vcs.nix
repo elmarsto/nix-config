@@ -4,33 +4,8 @@
   pkgs,
   ...
 }: {
-  home = {
-    packages = with pkgs; [
-      meld
-      git-interactive-rebase-tool
-      git-lfs
-      git-cliff
-      gitui
-      hub
-      pijul
-    ];
-    # sessionVariables = {
-    #   GIT_PAGER = "delta";
-    # };
-  };
   programs = {
-    bash.initExtra = ''
-         export JUST_UNSAFE=1
-         alias g='git';
-      #   GIT_PAGER = "delta";
-    '';
-    git-cliff.enable = true;
     git-worktree-switcher.enable = true;
-    gitui.enable = true;
-    patdiff = {
-      enable = true;
-      enableGitIntegration = true;
-    };
     git = {
       settings = {
         alias = {
@@ -47,28 +22,13 @@
         branch.sort = "committerdate";
         commit.verbose = true;
         credential.helper = "libsecret";
-        diff = {
-          algorithm = "histogram";
-          context = 10;
-          submodule = "log";
-          tool = "nvimdiff";
-        };
-        difftool = {
-          prompt = true;
-          nvimdiff.cmd = "nvim -d \"$LOCAL\" \"$REMOTE\"";
-        };
         fetch = {
           fsckobjects = true;
           prune = true;
           prunetags = true;
         };
-        global.sequence.editor = "${pkgs.git-interactive-rebase-tool}/bin/interactive-rebase-tool";
         init.defaultbranch = "main";
         log.date = "iso";
-        merge = {
-          conflictstyle = "zdiff3";
-          tool = "meld";
-        };
         pull.ff = "only";
         push = {
           autosetupremote = true;

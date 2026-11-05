@@ -5,32 +5,19 @@
     packages = with pkgs; [
       (google-fonts.override {
         fonts = [
-          "Oxanium"
           "Raleway"
-          "Zen Loop"
         ];
       })
       baobab
       bitwarden-desktop
-      dconf
-      glaxnimate
       google-chrome
       insomnia
-      jetbrains-mono
-      kando
-      kdePackages.kcolorchooser
-      kdePackages.kdenlive
-      libinput
-      libreoffice-fresh
-      lsix
+      libreoffice
       monaspace
-      monolith
-      mtr-gui
       nerd-fonts.monaspace
       notify-desktop
       obsidian
       qjournalctl
-      qcad
       roboto
       roboto-mono
       roboto-serif
@@ -38,17 +25,9 @@
       source-code-pro
       source-sans
       source-serif
-      sqlitebrowser
-      sublime-merge
-      udev-gothic
-      vscode
-      #code-cursor
       wayland-utils
       wezterm
       wl-clipboard
-      xdg-utils
-      xorg.xeyes
-      yarr
       zed-editor
     ];
     sessionVariables = {
@@ -69,10 +48,10 @@
     };
   };
   services = {
-    fusuma = {
-      enable = true;
-      settings = {};
-    };
+    # fusuma = {
+    #   enable = false;
+    #   settings = {};
+    # };
     kdeconnect = {
       enable = true;
       indicator = true;

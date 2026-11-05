@@ -4,11 +4,9 @@
     darktable
     exif
     exiv2
-    figma-linux
     gimp
-    graphviz
     imagemagick
-    inkscape-with-extensions
+    inkscape
     krita
     libheif
   ];
